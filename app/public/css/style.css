@@ -1,0 +1,225 @@
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch);
+@import url(http://fonts.googleapis.com/css?family=Damion);
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+@import url('./menu_items_rotation.css') all;
+
+@keyframes rotate_smile
+{
+    from {transform:rotate(0deg);}
+    to {transform:rotate(-360deg);}
+}
+@-webkit-keyframes rotate_smile
+{
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(-360deg);}
+}
+@-moz-keyframes rotate_smile
+{
+    from {-moz-transform:rotate(0deg);}
+    to {-moz-transform:rotate(-360deg);}
+}
+@-o-keyframes rotate_smile
+{
+    from {-o-transform:rotate(0deg);}
+    to {-o-transform:rotate(-360deg);}
+}
+
+@font-face{
+    font-family: Capture;
+    src: url("../fonts/capture.ttf") format('truetype');
+}
+@font-face{
+    font-family: Etud;
+    src: url("../fonts/etud.ttf") format('truetype');
+}
+@font-face{
+    font-family: LoveHardLive;
+    src: url("../fonts/BHLB.ttf") format('truetype');
+}
+
+html, body{
+    height: 100%;
+}
+body{
+    /*background: #F3F3F3;*/
+    background: #F3F3F3 url('../images/main/bg_pattern.jpg') repeat;
+    font-family: "Lucida Grande", arial, sans-serif;  
+    
+    margin: 0;
+    padding: 0;
+}
+.rr-container{
+    min-height: 100%;
+    position: relative;
+}
+    /* Header */
+    header.rr-header{
+        background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
+        height: 250px;
+    }
+        /* Rats records logo */
+        .rr-logo{
+            display: inline-block;
+            float: left;
+        }
+        .rr-logo > a{
+            color: #ffb;
+            font-family: 'Fredericka the Great' Arial;
+            font-weight: bold;
+            font-size: 4em;
+            line-height: 50px;
+
+            letter-spacing: -4px;
+            
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        /* Main menu with dropdown items */
+        ul.rr-top-menu{
+            right: 0;
+        }
+        ul.rr-top-menu, 
+        ul.rr-top-menu > li.dropdown > ul {
+            position: absolute;
+            display: block;
+            list-style-type: none;
+
+            top: 0;
+
+            padding: 0;
+            margin: 0;
+        }
+        ul.rr-top-menu > li.dropdown > ul {
+            z-index: 10;
+        }
+        ul.rr-top-menu li{
+            width: 100px;
+            height: 50px;
+            float: left;
+            color: #191919;  
+            text-align: center;  
+            overflow: hidden;  
+        }
+        ul.rr-top-menu > li.dropdown > ul > li{
+            position: absolute;
+        }
+        ul.rr-top-menu a{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #FFF;  
+            text-decoration: none;
+
+            line-height: 50px;  
+        }
+        ul.rr-top-menu > li.dropdown > a {
+            z-index: 20;
+        }
+        ul.rr-top-menu > li.dropdown > a::before{
+            content: '';
+
+            display: inline-block;
+            margin-right: 10px;
+
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 5px 0 5px 8px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .7);
+
+            -webkit-transition: all 0.7s ease;
+            -moz-transition: all 0.7s ease;
+            -o-transition: all 0.7s ease;
+            -ms-transition: all 0.7s ease;
+            transition: all 0.7s ease;
+        }
+        ul.rr-top-menu > li.dropdown.expanded > a::before{
+            -webkit-transform:rotate(810deg);
+        }
+
+        /* MESSAGE FOR PEOPLES */
+        .rr-main-info{
+            position: relative;
+            width: auto;
+            padding-left: 27px;
+            float: left;
+        }
+        span.smile{
+            position: relative;
+            display: inline-block;
+        }
+        .rr-main-info:hover span.smile{
+            -webkit-animation:rotate_smile 0.5s ease-in-out;
+            -moz-animation:rotate_smile 0.5s ease-in-out;
+            -o-animation:rotate_smile 0.5s ease-in-out;
+            animation:rotate_smile 0.5s ease-in-out;
+        }
+        .rr-main-info p{
+            color: #ffffff;
+            font-family: Capture;
+            line-height: 25px;
+            font-size: 18px;
+        }
+        .rr-main-info p:first-child{
+            font-size: 30px;
+        }
+        .rr-main-info p:first-child:first-letter{
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .rr-main-info p:nth-child(2n):first-letter{
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+    /* Section between header & footer */
+    section.rr-content{
+        padding-bottom: 110px;
+    }
+        .lesson {
+            margin: 50px;
+            font-family: arial, sans-serif;
+            line-height: normal;
+            text-align: center;
+        }
+        .lesson .content {
+            color: #666666;
+        }
+
+
+    /* Footer main */
+    footer.rr-footer{
+        position: absolute;
+        background: #F3F3F3 url('../images/main/bg_footer.png') repeat;  
+        color: #ffffff;
+        bottom: 0;
+        width: 100%;
+        height: 110px;   /* Height of the footer */
+    }
+        footer.rr-footer .copyright{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+p{  
+    padding:0px 5px;  
+}    
+  
+/*Menu Color Classes*/  
+.green{background:#6AA63B;}  
+.yellow{background:#FBC700;}  
+.red{background:#D52100;}  
+.purple{background:#5122B4;}  
+.blue{background:#0292C0;}
+.gray {background: #999;}
+
+.crimson {
+    color: rgb(153, 51, 153);
+}
