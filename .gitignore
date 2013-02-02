@@ -7,4 +7,3 @@ vendor/composer/*
 
 composer.phar
 composer.lock
-composer.json
