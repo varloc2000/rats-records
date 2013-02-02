@@ -1,8 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
-@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch);
-@import url(http://fonts.googleapis.com/css?family=Damion);
-@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+@import url('http://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
+@import url('http://fonts.googleapis.com/css?family=Damion');
+@import url('http://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('./menu_items_rotation.css') all;
 
 @keyframes rotate_smile
@@ -135,6 +134,10 @@ body{
         .rr-main-info p:first-child:first-letter{
             font-size: 50px;
             font-weight: bold;
+        }
+        .rr-error-message {
+            position: relative;
+            margin-top: 50px;
         }
 
 

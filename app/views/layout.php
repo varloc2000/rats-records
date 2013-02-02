@@ -76,7 +76,7 @@
                 </div>
             </header>
             <section class="rr-content">
-                <?php include sprintf(__DIR__.'/../../src/%s/views/index.php', ucfirst($_route)); ?>
+                <?php call_user_func_array($controller, $arguments); ?>
             </section>
             <footer class="rr-footer">
                 <div class="copyright">

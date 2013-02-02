@@ -2,35 +2,50 @@
 
     namespace Front;
 
+    require_once __DIR__ . '/autoload.php';
     require_once 'vendor/autoload.php';
-    require_once 'Core/db.php';
 
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing;
-
-    $baseDir = __DIR__;
-
+    
+    use Varloc\Controller\ControllerResolver;
+    
     $request = Request::createFromGlobals();
-    $routes = include __DIR__.'/Core/routing.php';
+    $routes = include __DIR__.'/app/config/routing.php';
      
     $context = new Routing\RequestContext();
     $context->fromRequest($request);
     $matcher = new Routing\Matcher\UrlMatcher($routes, $context);
 
     try {
-        extract($matcher->match($request->getPathInfo()), EXTR_SKIP);
+        /**
+         * Add all attributes getted from url, to $request->attributes 
+         * With help of symfony routing matcher
+         */
+        $request->attributes->add($matcher->match($request->getPathInfo()));
+        
+        $resolver = new ControllerResolver();
+        // Set request attributes from route _worker option
+        $resolver->addRequestAttributesFromString($request);
+        
+        $controller = $resolver->getController($request);
+        $arguments = $resolver->getArguments($request, $controller);
+        
         ob_start();
         include __DIR__.'/app/views/layout.php';
-     
+
         $response = new Response(ob_get_clean());
     } catch (Routing\Exception\ResourceNotFoundException $e) {
         ob_start();
-        include __DIR__.'/app/views/wtf404.html';
+        include __DIR__.'/app/views/wtf404.php';
 
         $response = new Response(ob_get_clean(), 404);
-    } catch (Exception $e) {
-        $response = new Response('Internal server error!', 500);
+    } catch (\Exception $e) {
+        ob_start();
+        include __DIR__.'/app/views/wtf500.php';
+
+        $response = new Response(ob_get_clean(), 500);
     }
      
     $response->send();
