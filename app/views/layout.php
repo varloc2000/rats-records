@@ -53,16 +53,16 @@
                         <a class="green" href="#">Уроки</a>
                         <ul>
                             <li class="yellow">   
-                                <a href="/index.php/lessons/1">Урок 1</a>
+                                <a href="/lessons/1">Урок 1</a>
                             </li>
                             <li class="red"> 
-                                <a href="/index.php/lessons/2">Урок 2</a>
+                                <a href="/lessons/2">Урок 2</a>
                             </li>
                             <li class="blue">
-                                <a href="/index.php/lessons/3">Урок 3</a>
+                                <a href="/lessons/3">Урок 3</a>
                             </li>
                             <li class="purple">
-                                <a href="/index.php/lessons/4">Урок 4</a>
+                                <a href="/lessons/4">Урок 4</a>
                             </li>
                         </ul>
                     </li>
