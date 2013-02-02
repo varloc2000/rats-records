@@ -1,6 +1,7 @@
 <?php
-
-foreach ($lessons as $lesson) {
-    echo $lesson['title'];
-}
+    $a = '';
+    foreach ($lessons as $lesson) {
+        $a .= $lesson['title'];
+    }
+    return $a;
 ?>

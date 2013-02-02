@@ -12,7 +12,7 @@
     use Varloc\Controller\ControllerResolver;
     use Varloc\DatabaseWorker\Connector;
     
-    Connector::configure('ratsreco_storage', 'root', '0177413');
+    Connector::configure('ratsreco_storage', 'root', '80177413');
     
     $request = Request::createFromGlobals();
     $routes = include __DIR__.'/app/config/routing.php';
@@ -36,17 +36,17 @@
         $arguments = $resolver->getArguments($request, $controller);
         
         ob_start();
-        include __DIR__.'/app/views/layout.php';
+        include __DIR__ . '/app/views/layout.php';
 
         $response = new Response(ob_get_clean());
     } catch (Routing\Exception\ResourceNotFoundException $e) {
         ob_start();
-        include __DIR__.'/app/views/wtf404.php';
+        include __DIR__ . '/app/views/wtf404.php';
 
         $response = new Response(ob_get_clean(), 404);
     } catch (\Exception $e) {
         ob_start();
-        include __DIR__.'/app/views/wtf500.php';
+        include __DIR__ . '/app/views/wtf500.php';
 
         $response = new Response(ob_get_clean(), 500);
     }

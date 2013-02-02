@@ -8,6 +8,13 @@ use Varloc\DatabaseWorker\Connector;
 
 class LessonController
 {
+    /**
+     * Show list of marysh lessons
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
     public function indexAction(Request $request)
     {
         $dbConnector = new Connector();
@@ -19,12 +26,17 @@ class LessonController
         $lessons = $dbConnector->select($query);
         
         if ($lessons) {
-            return new Response(include 'views/list.php');
-        } else {
-            $response->setContent('no');
+            return new Response(include('views/list.php'));
         }
     }
     
+    /**
+     * Show single lesson
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Exception
+     */
     public function lessonAction(Request $request)
     {
         $dbConnector = new Connector();
@@ -38,9 +50,9 @@ class LessonController
         $lesson = $dbConnector->select($query);
         
         if ($lesson) {
-            return new Response(include 'views/single.php');
+            return new Response(include('views/single.php'));
         } else {
-            return new Response(include 'views/404.html');
+            return new Response(include('views/404.html'));
         }
     }
 }
