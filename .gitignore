@@ -1,6 +1,10 @@
 nbproject/
-vendor
-!vendor/composer/autoload_namespaces.php
+
+vendor/*
+vendor/symfony/
+vendor/composer/*
+!autoload_namespaces.php
+
 composer.phar
 composer.lock
 composer.json
