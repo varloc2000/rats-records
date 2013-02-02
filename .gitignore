@@ -1,5 +1,7 @@
 nbproject/
 
+app/config/database.php
+
 vendor/*
 vendor/symfony/
 vendor/composer/*
