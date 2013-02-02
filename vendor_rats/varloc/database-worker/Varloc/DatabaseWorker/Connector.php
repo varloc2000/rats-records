@@ -4,10 +4,10 @@ namespace Varloc\DatabaseWorker;
 
 class Connector
 {
-    private $DBName      = 'database_name';
-    private $DBUsername  = 'root';
-    private $DBPassword  = 'password';
-    private $DBHostName  = 'localhost';
+    static private $DBName      = 'database_name';
+    static private $DBUsername  = 'root';
+    static private $DBPassword  = 'password';
+    static private $DBHostName  = 'localhost';
 
     private $connection;
     private $error;
@@ -18,11 +18,11 @@ class Connector
      * @param string $username
      * @param string $password
      */
-    public function configure($name, $username, $password = '')
+    static public function configure($name, $username, $password = '')
     {
-        $this->DBName       = $name;
-        $this->DBUsername   = $username;
-        $this->DBPassword   = $password;
+        self::$DBName       = $name;
+        self::$DBUsername   = $username;
+        self::$DBPassword   = $password;
     }
 
     /**
@@ -31,10 +31,10 @@ class Connector
      */
     public function connect()
     {
-        if (!$this->connection = mysql_connect($this->DBHostName, $this->DBUsername, $this->DBPassword)) {
+        if (!$this->connection = mysql_connect(self::$DBHostName, self::$DBUsername, self::$DBPassword)) {
             $this->error = mysql_error();
             return false;
-        } else if (!mysql_select_db($this->DBName, $this->connection)) {
+        } else if (!mysql_select_db(self::$DBName, $this->connection)) {
             $this->error = mysql_error();
             return false;
         } if (!mysql_set_charset('utf8', $this->connection)) {

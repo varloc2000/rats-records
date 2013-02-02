@@ -11,7 +11,6 @@ class LessonController
     public function indexAction(Request $request)
     {
         $dbConnector = new Connector();
-        $dbConnector->configure('ratsreco_storage', 'root', '80177413');
         if (false === $dbConnector->connect()) {
             throw new \Exception($dbConnector->getError());
         };
@@ -29,7 +28,6 @@ class LessonController
     public function lessonAction(Request $request)
     {
         $dbConnector = new Connector();
-        $dbConnector->configure('ratsreco_storage', 'root', '80177413');
         if (false === $dbConnector->connect()) {
             throw new \Exception($dbConnector->getError());
         };

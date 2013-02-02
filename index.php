@@ -10,6 +10,9 @@
     use Symfony\Component\Routing;
     
     use Varloc\Controller\ControllerResolver;
+    use Varloc\DatabaseWorker\Connector;
+    
+    Connector::configure('ratsreco_storage', 'root', '0177413');
     
     $request = Request::createFromGlobals();
     $routes = include __DIR__.'/app/config/routing.php';
