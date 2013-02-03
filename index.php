@@ -57,6 +57,8 @@
 
         $response = new Response(ob_get_clean(), 404);
     } catch (\Exception $e) {
+        // Clear buffer contaminated by layout and start new buffer
+        ob_clean();
         ob_start();
         include __DIR__ . '/app/views/wtf500.php';
 

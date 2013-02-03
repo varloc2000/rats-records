@@ -9,6 +9,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="/app/public/css/wtf_style.css" />
+        <!-- Scripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+        <script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
+        <script src="/app/public/js/script.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="rr-container">

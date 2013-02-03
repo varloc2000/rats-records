@@ -13,34 +13,8 @@
         <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
         <!-- Scripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
-        <script src="/app/public/js/modernizr.custom.63321.js" type="text/javascript"></script>
-        <script src="/app/public/js/jquery.dropdown.js" type="text/javascript"></script>
         <script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
-
-        <script type="text/javascript">
-            $(function() {
-                $('.rr-top-menu .dropdown > a').on('click', function(e) {
-                    e.preventDefault();
-
-                    var sign = '+=';
-                    if ($(this).parent('li').hasClass('expanded')) {
-                        sign = '-=';
-                        $(this).parent('li').removeClass('expanded');
-                    } else {
-                        $(this).parent('li').addClass('expanded');
-                    }
-
-                    $(this).siblings('ul').find('li').each(function(index) {
-                        var topOffset = (index + 1) * $(this).outerHeight() + ((index + 1) * 5);
-                        console.log(topOffset);
-                        $(this).animate({
-                            top: sign + topOffset,
-                            boxShadow: '+=' == sign ? '0 0 7px #000' : '0 0 0'
-                        }, 200);
-                    })
-                });
-            });
-        </script>
+        <script src="/app/public/js/script.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="rr-container">
@@ -72,7 +46,10 @@
                 </ul>
                 <div class="rr-main-info">
                     <p>Рады приветствовать вас на сайте-студии студии !</p>
-                    <p>Пока сайт находится в неспешной разработке можете подумать над тем чего бы хорошего сделать в этой жизни. До финальной версии данного сайтоубежища Вы успеете не только подумать но и сделать то чего надумали <span class="smile">=)</span></p>
+                    <p>
+                        Пока сайт находится в неспешной разработке можете подумать над тем чего бы хорошего сделать в этой жизни. До финальной версии данного сайтоубежища Вы успеете не только подумать но и сделать то чего надумали 
+                        <span class="smile">=)</span>
+                    </p>
                 </div>
             </header>
             <section class="rr-content">
