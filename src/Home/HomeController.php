@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 class HomeController
 {
     /**
-     * Render homa page of project
+     * Render home page of project
      * 
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -16,5 +16,16 @@ class HomeController
     public function mainPageAction(Request $request)
     {
         return new Response(include('views/index.php'));
+    }
+
+    /**
+     * Render about page
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function aboutPageAction(Request $request)
+    {
+        return new Response(include('views/about.php'));
     }
 }

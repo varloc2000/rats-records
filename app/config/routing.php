@@ -14,6 +14,9 @@ abstract class RoutingConfig
         $routes->add('home', new Routing\Route('/', array(
             '_worker' => 'Home:Home:mainPage'
         )));
+        $routes->add('about', new Routing\Route('/let_me_tell_about', array(
+            '_worker' => 'Home:Home:aboutPage'
+        )));
 
         /*
          * Lessons part routes

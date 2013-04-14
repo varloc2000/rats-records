@@ -102,6 +102,7 @@ body{
         ul.rr-top-menu > li.dropdown > a::before{
             content: '';
 
+            position: relative;
             display: inline-block;
             margin-right: 10px;
 
@@ -111,14 +112,20 @@ body{
             border-width: 5px 0 5px 8px;
             border-color: transparent transparent transparent rgba(255, 255, 255, .7);
 
-            -webkit-transition: all 0.7s ease;
-            -moz-transition: all 0.7s ease;
-            -o-transition: all 0.7s ease;
-            -ms-transition: all 0.7s ease;
-            transition: all 0.7s ease;
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
         }
         ul.rr-top-menu > li.dropdown.expanded > a::before{
-            -webkit-transform:rotate(810deg);
+            -webkit-transform: rotate(810deg);
+
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
         }
 
         /* MESSAGE FOR PEOPLES */
@@ -164,7 +171,7 @@ body{
     /* Footer main */
     footer.rr-footer{
         position: absolute;
-        background: #F3F3F3 url('../images/main/bg_footer.png') repeat;  
+        background: #F3F3F3 url('../images/main/bg_footer.png') repeat;
         color: #ffffff;
         bottom: 0;
         width: 100%;
@@ -183,8 +190,10 @@ p{
 }    
   
 /*Menu Color Classes*/  
+.dark-green{background:#006600;}  
 .green{background:#6AA63B;}  
 .yellow{background:#FBC700;}  
+.orange{background:#FF6600;}  
 .red{background:#D52100;}  
 .purple{background:#5122B4;}  
 .blue{background:#0292C0;}

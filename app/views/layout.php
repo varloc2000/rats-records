@@ -40,8 +40,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="gray">
-                        <a href="javascript:var%20KICKASSVERSION='2.0';var%20s%20=%20document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);">For Fun!</a>
+                    <li class="dark-green">
+                        <a href="/let_me_tell_about">Кто мы?</a>
                     </li>
                 </ul>
                 <div class="rr-main-info">
@@ -64,4 +64,23 @@
             </footer>
         </div>
     </body>
+    <?php if (isset($_SERVER['HTTP_CLIENT_IP'])
+        || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
+        || !in_array(@$_SERVER['REMOTE_ADDR'], array(
+            '127.0.0.1',
+            '::1',
+        ))) : 
+    ?>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-40140733-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    <?php endif; ?>
 </html>
