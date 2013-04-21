@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Welcome to rats-records subdomains, a you know how enter? :)"
+AuthBasicProvider file
+AuthUserFile /home/ratsreco/etc/passwd/passwords
+Require valid-user
