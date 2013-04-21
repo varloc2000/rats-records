@@ -1,5 +1,6 @@
 nbproject/
 subdomains/
+!subdomains/.htaccess
 
 app/config/database.php
 
