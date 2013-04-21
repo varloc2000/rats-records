@@ -1,3 +1,11 @@
+<Directory /subdomains/*>
+    AuthType Basic
+    AuthName "Welcome to rats-records subdomains, a you know how enter? :)"
+    AuthBasicProvider file
+    AuthUserFile ~/etc/passwd/passwords
+    Require valid-user
+</Directory>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
