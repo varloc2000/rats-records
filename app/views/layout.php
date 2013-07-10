@@ -17,6 +17,20 @@
         <script src="/app/public/js/script.js" type="text/javascript"></script>
     </head>
     <body>
+        <div class="rr-loading-stage">
+            <div class="lights">
+                <div class="light light1"></div>
+                <div class="light light2"></div>
+                <div class="light light3"></div>
+                <div class="conc_group">
+                    <div class="conc light1_conc"></div>
+                    <div class="conc light2_conc"></div>
+                    <div class="conc light3_conc"></div>
+                </div>
+            </div>
+            <div class="rr-welcome">Rats Records</div>
+            <div class="rr-loading-message">Loading...</div>
+        </div>
         <div class="rr-container">
             <header class="rr-header">
                 <div class="rr-logo">

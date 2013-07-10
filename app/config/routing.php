@@ -17,6 +17,9 @@ abstract class RoutingConfig
         $routes->add('about', new Routing\Route('/let_me_tell_about', array(
             '_worker' => 'Home:Home:aboutPage'
         )));
+        $routes->add('scene', new Routing\Route('/ladys_and_gentlemans', array(
+            '_worker' => 'Home:Home:sceenPage'
+        )));
 
         /*
          * Lessons part routes

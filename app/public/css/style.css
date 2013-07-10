@@ -5,6 +5,7 @@
 @import url('http://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('./menu_items_rotation.css');
 @import url('./smile_rotation.css');
+@import url('./loading_stage.css');
 
 @font-face{
     font-family: Capture;
@@ -46,7 +47,7 @@ body{
         }
         .rr-logo > a{
             color: #ffb;
-            font-family: 'Fredericka the Great' Arial;
+            font-family: 'Fredericka the Great', Arial;
             font-weight: bold;
             font-size: 4em;
             line-height: 50px;

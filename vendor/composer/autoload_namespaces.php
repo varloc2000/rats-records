@@ -6,10 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Symfony\\Component\\Routing' => $vendorDir . '/symfony/routing',
-    'Symfony\\Component\\HttpFoundation' => $vendorDir . '/symfony/http-foundation',
-    'Symfony\\Component\\ClassLoader' => $vendorDir . '/symfony/class-loader',
-    'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs',
-    'Varloc\\DatabaseWorker' => $vendorDir . '/../vendor_rats/varloc/database-worker',
-    'Varloc\\Controller' => $vendorDir . '/../vendor_rats/varloc/controller-resolver',
+    'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'Symfony\\Component\\Routing' => array($vendorDir . '/symfony/routing'),
+    'Symfony\\Component\\HttpFoundation' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\ClassLoader' => array($vendorDir . '/symfony/class-loader'),
+    'SessionHandlerInterface' => array($vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs'),
 );

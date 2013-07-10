@@ -19,6 +19,17 @@ class HomeController
     }
 
     /**
+     * Render scene page of project
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function scenePageAction(Request $request)
+    {
+        return new Response(include('views/scene.php'));
+    }
+
+    /**
      * Render about page
      * 
      * @param \Symfony\Component\HttpFoundation\Request $request
