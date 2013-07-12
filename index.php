@@ -13,14 +13,14 @@
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing;
     
-    // Ratsreco vendors
-    use Varloc\Controller\ControllerResolver;
-    use Varloc\DatabaseWorker\Connector;
+    // Own framework stuff
+    use Varloc\Framework\Database\Connector;
+    use Varloc\Framework\Component\ControllerResolver;
     
     // Configuration
     use Configurations\DatabaseConfig;
     use Configurations\RoutingConfig;
-    
+
     Connector::configure(
         DatabaseConfig::getDBName(), 
         DatabaseConfig::getDBUser(), 
@@ -41,13 +41,38 @@
          */
         $request->attributes->add($matcher->match($request->getPathInfo()));
         
+        /** @var $resolver Varloc\Framework\Component\ControllerResolver */
         $resolver = new ControllerResolver();
+
         // Set request attributes from route _worker option
         $resolver->addRequestAttributesFromString($request);
-        
-        $controller = $resolver->getController($request);
-        $arguments = $resolver->getArguments($request, $controller);
-        
+
+        /** @var $controller Varloc\Framework\Controller\Controller */
+        $controller = $resolver->getControllerInstance($request);
+
+        $action = $resolver->getActionName($request);
+
+        $arguments = $resolver->getArguments($request, array($controller, $action));
+
+        // Twig begins
+        $loader = new \Twig_Loader_Filesystem(__DIR__ . '/app/views');
+        $twig = new \Twig_Environment($loader, array(
+            'cache'         => __DIR__ . '/app/cache/twig',
+            'auto_reload'   => true,
+        ));
+
+        $controller->setTemplating($twig);
+
+        $response = call_user_func_array(
+            array(
+                $controller, 
+                $action
+            ), 
+            $arguments
+        );
+
+        $response->send();
+exit;
         ob_start();
         include __DIR__ . '/app/views/layout.php';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Varloc\DatabaseWorker;
+namespace Varloc\Framework\Database;
 
 class Connector
 {

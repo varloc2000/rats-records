@@ -3,6 +3,7 @@ subdomains/*
 !.htaccess
 
 app/config/database.php
+app/cache
 
 vendor/*
 vendor/symfony/

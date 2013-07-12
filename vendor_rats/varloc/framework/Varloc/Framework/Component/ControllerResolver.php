@@ -1,11 +1,16 @@
 <?php
 
-namespace Varloc\Controller;
+namespace Varloc\Framework\Component;
 
 use Symfony\Component\HttpFoundation\Request;
 
-class ControllerResolver {
-
+/**
+ * Controller resolver to work with symfony HttpFoundation request
+ *
+ * @author  varloc2000 <varloc2000@gmail.com>
+ */
+class ControllerResolver
+{
     /**
      * Set into request attributes parsed _worker route parameter,
      * which contain like "Namespace:Controller:action" string
@@ -41,8 +46,7 @@ class ControllerResolver {
     public function getNamespaceName(Request $request)
     {
         if (null === ($namespaceName = $request->get('_namespace', null))) {
-            throw new LogicException(sprintf('"_namespace" parameter not parsed yet for route "%s"', $request->get('_route', null)
-            ));
+            throw new LogicException(sprintf('"_namespace" parameter not parsed yet for route "%s"', $request->get('_route', null)));
         }
 
         return $namespaceName;
@@ -58,11 +62,35 @@ class ControllerResolver {
     public function getControllerName(Request $request)
     {
         if (null === ($controllerNamePrefix = $request->get('_controller', null))) {
-            throw new LogicException(sprintf('"_controller" parameter not parsed yet for route "%s"', $request->get('_route', null)
-            ));
+            throw new LogicException(sprintf('"_controller" parameter not parsed yet for route "%s"', $request->get('_route', null)));
         }
 
         return $controllerNamePrefix . 'Controller';
+    }
+
+    /**
+     * Return full controller namespace
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return string
+     * @throws LogicException
+     */
+    public function getFullControllerName(Request $request)
+    {
+        return $this->getNamespaceName($request) . '\\' . $this->getControllerName($request);
+    }
+
+    /**
+     * Return new controller instance
+     * 
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return Varloc\Framework\Controller\Controller
+     * @throws LogicException
+     */
+    public function getControllerInstance(Request $request)
+    {
+        $controller = $this->getFullControllerName($request);
+        return new $controller;
     }
 
     /**
@@ -75,8 +103,7 @@ class ControllerResolver {
     public function getActionName(Request $request)
     {
         if (null === ($actionNamePrefix = $request->get('_action', null))) {
-            throw new LogicException(sprintf('"_action" parameter not parsed yet for route "%s"', $request->get('_route', null)
-            ));
+            throw new LogicException(sprintf('"_action" parameter not parsed yet for route "%s"', $request->get('_route', null)));
         }
 
         return $actionNamePrefix . 'Action';

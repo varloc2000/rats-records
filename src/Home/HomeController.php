@@ -5,7 +5,9 @@ namespace Home;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeController
+use Varloc\Framework\Controller\Controller as BaseController;
+
+class HomeController extends BaseController
 {
     /**
      * Render home page of project
@@ -15,7 +17,7 @@ class HomeController
      */
     public function mainPageAction(Request $request)
     {
-        return new Response(include('views/index.php'));
+        return $this->render('layout.html.twig');
     }
 
     /**
