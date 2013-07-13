@@ -1,0 +1,21 @@
+<?php
+
+namespace Configurations;
+
+abstract class DatabaseConfig
+{
+    public function getDBName()
+    {
+        return 'ratsreco_storage';
+    }
+
+    public function getDBUser()
+    {
+        return 'root';
+    }
+
+    public function getDBPassword()
+    {
+        return '80177413';
+    }
+}

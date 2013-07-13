@@ -6,11 +6,6 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 
-// Load varloc2000 framework
+// Load varloc2000 framework at first
 $loader->registerNamespace('Varloc\\Framework', __DIR__ . '/vendor_rats/varloc/framework');
-
-$loader->registerNamespace('Cms', __DIR__ . '/src');
-$loader->registerNamespace('Home', __DIR__ . '/src');
-$loader->registerNamespace('Lesson', __DIR__ . '/src');
-
 $loader->register();

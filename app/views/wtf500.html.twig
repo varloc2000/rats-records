@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/app/public/css/wtf_style.css" />
+{% endblock stylesheets %}
+
+{% block main_menu %}
+    {# Dont displey menu #}
+{% endblock main_menu %}
+
+{% block introduction %}
+    {# Dont displey intro #}
+{% endblock introduction %}
+
+{% block content %}
+    <div class="boogie">
+        <span>5</span>
+        <span>0</span>
+        <span>0</span>
+        <div class="rr-main-info">
+            <p>Ужасная ошибка <span class="smile">=(</span></p>
+        </div>
+    </div>
+    <div class="rr-error-message">
+        {{ local == true ? exception.message : '' }}
+    </div>
+{% endblock content %}

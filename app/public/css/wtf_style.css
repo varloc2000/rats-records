@@ -66,6 +66,7 @@ body{
             min-height: 250px;
             left: 50%;
             margin-left: -300px;
+            margin-top: 50px;
         }
         .boogie > span{
             display: inline-block;

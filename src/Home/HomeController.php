@@ -5,9 +5,9 @@ namespace Home;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use Varloc\Framework\Controller\Controller as BaseController;
+use Varloc\Framework\Controller\Controller as FrameworkController;
 
-class HomeController extends BaseController
+class HomeController extends FrameworkController
 {
     /**
      * Render home page of project
@@ -17,7 +17,7 @@ class HomeController extends BaseController
      */
     public function mainPageAction(Request $request)
     {
-        return $this->render('layout.html.twig');
+        return $this->render('index.html.twig');
     }
 
     /**
@@ -26,9 +26,9 @@ class HomeController extends BaseController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function scenePageAction(Request $request)
+    public function sceenPageAction(Request $request)
     {
-        return new Response(include('views/scene.php'));
+        return $this->render('sceen.html.twig');
     }
 
     /**
@@ -39,6 +39,6 @@ class HomeController extends BaseController
      */
     public function aboutPageAction(Request $request)
     {
-        return new Response(include('views/about.php'));
+        return $this->render('about.html.twig');
     }
 }
