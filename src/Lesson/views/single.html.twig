@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% for s, n in lesson %}
+        {{ s }} ===
+        {{ n }}
+    {% endfor %}
+    <div class="lesson">
+        <header>
+            <h3 class="crimson">{{ lesson.title }}</h3>
+        </header>
+        <p class="content">
+            {{ lesson.text }}
+        </p>
+    </div>
+{% endblock content %}

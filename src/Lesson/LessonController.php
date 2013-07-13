@@ -4,9 +4,11 @@ namespace Lesson;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Varloc\DatabaseWorker\Connector;
+use Varloc\Framework\Database\Connector;
 
-class LessonController
+use Varloc\Framework\Controller\Controller as FrameworkController;
+
+class LessonController extends FrameworkController
 {
     /**
      * Show list of marysh lessons
@@ -23,11 +25,9 @@ class LessonController
         };
         
         $query = sprintf('SELECT * FROM marysh_lessons');
-        $lessons = $dbConnector->select($query);
+        $lessons = (array) $dbConnector->select($query);
         
-        if ($lessons) {
-            return new Response(include('views/list.php'));
-        }
+        return $this->render('list.html.twig', array('lessons', $lessons));
     }
     
     /**
@@ -43,16 +43,17 @@ class LessonController
         if (false === $dbConnector->connect()) {
             throw new \Exception($dbConnector->getError());
         };
+
         $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.lesson_number = "%s"',
             $request->get('id', null)
         );
         
-        $lesson = $dbConnector->select($query);
+        $lesson = $dbConnector->selectOne($query);
         
         if ($lesson) {
-            return new Response(include('views/single.php'));
+            return $this->render('single.html.twig', array('lesson', $lesson));
         } else {
-            return new Response(include('views/404.html'));
+            return $this->render('404.html.twig', array('lesson_id', $request->get('id', null)));
         }
     }
 }

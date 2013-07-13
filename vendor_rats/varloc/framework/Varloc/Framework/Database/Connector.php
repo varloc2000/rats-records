@@ -67,6 +67,29 @@ class Connector
     }
 
     /**
+     * Apply select query and return single result
+     * @param string $query
+     * @return boolean | null | array
+     */
+    function selectOne($query)
+    {
+        if (!$res = mysql_query($query, $this->connection)) {
+            $this->error = mysql_error();
+            return false;
+        }
+        if (mysql_num_rows($res) == 0) {
+            return null;
+        }
+        while ($row = mysql_fetch_assoc($res)) {
+            $respounce[] = $row;
+
+            break;
+        }
+        
+        return $respounce;
+    }
+
+    /**
      * Apply any query and return success or not
      * @param string $query
      * @return boolean
