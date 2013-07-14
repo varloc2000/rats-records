@@ -44,16 +44,16 @@ class LessonController extends FrameworkController
             throw new \Exception($dbConnector->getError());
         };
 
-        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.lesson_number = "%s"',
+        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.number = "%s"',
             $request->get('id', null)
         );
         
         $lesson = $dbConnector->selectOne($query);
         
         if ($lesson) {
-            return $this->render('single.html.twig', array('lesson', $lesson));
+            return $this->render('single.html.twig', array('lesson' => $lesson));
         } else {
-            return $this->render('404.html.twig', array('lesson_id', $request->get('id', null)));
+            return $this->render('404.html.twig', array('lesson_id' => $request->get('id', null)));
         }
     }
 }

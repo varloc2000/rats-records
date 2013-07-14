@@ -81,7 +81,7 @@ class Connector
             return null;
         }
         while ($row = mysql_fetch_assoc($res)) {
-            $respounce[] = $row;
+            $respounce = $row;
 
             break;
         }
