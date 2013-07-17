@@ -73,6 +73,11 @@ abstract class Kernel
      */
     abstract public function getNamespacesToLoad();
 
+    /**
+     * Handle Request
+     * @param  Symfony\Component\HttpFoundation\Request $request
+     * @return Symfony\Component\HttpFoundation\Response
+     */
     public function handle(Request $request)
     {
         $templating = $this->configureTemplating();
@@ -116,6 +121,10 @@ abstract class Kernel
         return $response;
     }
 
+    /**
+     * Configure and return twig templating
+     * @return \Twig_Environment
+     */
     protected function configureTemplating()
     {
         $templates = array($this->baseDir . '/app/views');
