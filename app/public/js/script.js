@@ -27,7 +27,7 @@ $(function() {
     /**
      * Add once animation to smiles
      */
-    $('span.smile').parent().on('hover', function() {
+    $('span.smile').parent().on('mouseover', function() {
         $(this).find('.smile').addClass('rotated');
     });
 });
