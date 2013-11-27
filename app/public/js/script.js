@@ -1,33 +1,64 @@
-/* 
- * All scripts to project rats-records
+/**
+ * Global Rats Records namespace
+ * @required jQuery
  */
+var RR = {
+    $container: $('html')
+};
 
-$(function() {
-    $('.rr-top-menu .dropdown > a').on('click', function(e) {
+/**
+ * Single rotate smiles class
+ * @constructor
+ */
+RR.smileSingleRotate = function(selector) {
+    this.selector = selector;
+    this.$smiles = $(this.selector);
+}
+    RR.smileSingleRotate.prototype.init = function() {
+        var _self = this;
+
+        this.$smiles.parent().on('mouseover', function() {
+            _self._onParentHover($(this), _self.$smiles);
+        });
+    }
+    RR.smileSingleRotate.prototype._onParentHover = function(parent, smiles) {
+        parent.find(smiles).addClass('rotated');
+    }
+
+/**
+ * Dropdown menu
+ * @constructor
+ */
+RR.menuDropdown = function(selector) {
+    this.selector =selector;
+}
+    RR.menuDropdown.prototype.init = function() {
+        $('body').on('click', this.selector, this._onDropdownInitiatorClick);
+    }
+    RR.menuDropdown.prototype._onDropdownInitiatorClick = function(e) {
         e.preventDefault();
 
         var sign = '+=';
-        if ($(this).parent('li').hasClass('expanded')) {
+        if ($(this).parent('li').hasClass(RR.menuDropdown.defaultOptions.expandedClass)) {
             sign = '-=';
-            $(this).parent('li').removeClass('expanded');
+            $(this).parent('li').removeClass(RR.menuDropdown.defaultOptions.expandedClass);
         } else {
-            $(this).parent('li').addClass('expanded');
+            $(this).parent('li').addClass(RR.menuDropdown.defaultOptions.expandedClass);
         }
 
         $(this).siblings('ul').find('li').each(function(index) {
             var topOffset = (index + 1) * $(this).outerHeight() + ((index + 1) * 5);
-            console.log(topOffset);
+            
+            console.log('Collapsed menu items top offsets:');
+            console.log($(this).text() + ' : ' + topOffset);
+            
             $(this).animate({
                 top: sign + topOffset,
                 boxShadow: '+=' == sign ? '0 0 7px #000' : '0 0 0'
-            }, 200);
+            }, RR.menuDropdown.defaultOptions.animationTime);
         })
-    });
-
-    /**
-     * Add once animation to smiles
-     */
-    $('span.smile').parent().on('mouseover', function() {
-        $(this).find('.smile').addClass('rotated');
-    });
-});
+    }
+    RR.menuDropdown.defaultOptions = {
+        expandedClass: 'expanded',
+        animationTime: 250
+    }

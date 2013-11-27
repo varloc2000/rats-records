@@ -6,9 +6,6 @@ app/config/database.php
 app/cache
 
 vendor/*
-vendor/symfony/
-vendor/composer/*
-!autoload_namespaces.php
 
 composer.phar
 composer.lock

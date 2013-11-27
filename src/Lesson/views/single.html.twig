@@ -6,7 +6,7 @@
             <h3 class="crimson">Урок {{ lesson.number }} ({{ lesson.title }})</h3>
         </header>
         <p class="content">
-            {{ lesson.text }}
+            {{ lesson.text|raw }}
         </p>
     </div>
 {% endblock content %}
