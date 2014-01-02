@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use Varloc\Framework\Controller\Controller as FrameworkController;
+use Varloc\Framework\Database\Connector;
 
 class HomeController extends FrameworkController
 {
@@ -17,7 +18,12 @@ class HomeController extends FrameworkController
      */
     public function mainPageAction(Request $request)
     {
-        return $this->render('index.html.twig');
+        $connection = Connector::getActiveConnection();
+
+        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.published = 1');
+        $lessons = $connection->select($query);
+
+        return $this->render('index.html.twig', array('lessons' => $lessons));
     }
 
     /**

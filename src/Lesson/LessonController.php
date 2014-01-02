@@ -19,15 +19,12 @@ class LessonController extends FrameworkController
      */
     public function indexAction(Request $request)
     {
-        $dbConnector = new Connector();
-        if (false === $dbConnector->connect()) {
-            throw new \Exception($dbConnector->getError());
-        };
+        $connection = Connector::getActiveConnection();
         
-        $query = sprintf('SELECT * FROM marysh_lessons');
-        $lessons = (array) $dbConnector->select($query);
+        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.published = 1');
+        $lessons = $connection->select($query);
         
-        return $this->render('list.html.twig', array('lessons', $lessons));
+        return $this->render('list.html.twig', array('lessons' => $lessons));
     }
     
     /**
@@ -39,17 +36,14 @@ class LessonController extends FrameworkController
      */
     public function lessonAction(Request $request)
     {
-        $dbConnector = new Connector();
-        if (false === $dbConnector->connect()) {
-            throw new \Exception($dbConnector->getError());
-        };
+        $connection = Connector::getActiveConnection();
 
         $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.number = "%s"',
             $request->get('id', null)
         );
         
-        $lesson = $dbConnector->selectOne($query);
-        
+        $lesson = $connection->selectOne($query);
+
         if ($lesson) {
             return $this->render('single.html.twig', array('lesson' => $lesson));
         } else {

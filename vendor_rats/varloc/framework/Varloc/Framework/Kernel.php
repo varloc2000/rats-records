@@ -141,14 +141,17 @@ abstract class Kernel
         ));
 
         // Global to check is local domain or not
-        $twig->addGlobal('local', (
-            isset($_SERVER['HTTP_CLIENT_IP']) 
-            || isset($_SERVER['HTTP_X_FORWARDED_FOR']) 
-            || in_array(@$_SERVER['REMOTE_ADDR'], array(
-                '127.0.0.1',
-                '::1',
-            ))
-        ) ? true : false );
+        $twig->addGlobal(
+            'local',
+            (
+                isset($_SERVER['HTTP_CLIENT_IP']) 
+                || isset($_SERVER['HTTP_X_FORWARDED_FOR']) 
+                || in_array(@$_SERVER['REMOTE_ADDR'], array(
+                    '127.0.0.1',
+                    '::1',
+                ))
+            ) ? true : false
+        );
 
         return $twig;
     }

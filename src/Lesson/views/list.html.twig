@@ -9,7 +9,7 @@
             <ul>
                 {% for lesson in lessons %}
                     <li>
-                        lesson.title
+                        {{ lesson.title }} <small><a href="/lessons/{{ lesson.lesson_id }}">Познать...</a></small>
                     </li>
                 {% else %}
                     <li>

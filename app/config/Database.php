@@ -11,11 +11,11 @@ abstract class DatabaseConfig
 
     public function getDBUser()
     {
-        return 'root';
+        return 'varloc2000';
     }
 
     public function getDBPassword()
     {
-        return '80177413';
+        return '';
     }
 }

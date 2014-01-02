@@ -4,13 +4,13 @@ namespace Varloc\Framework\Database;
 
 class Connector
 {
+    static private $PDODsn      = 'mysql:host=%s;dbname=%s;unix_socket=/var/lib/stickshift/52b1a5d04382ec1bda0001ed/app-root/data/lib/mysql/socket/mysql.sock';
     static private $DBName      = 'database_name';
     static private $DBUsername  = 'root';
     static private $DBPassword  = 'password';
     static private $DBHostName  = 'localhost';
 
-    private $connection;
-    private $error;
+    static private $connection;
     
     /**
      * Configure class to work with database
@@ -23,92 +23,41 @@ class Connector
         self::$DBName       = $name;
         self::$DBUsername   = $username;
         self::$DBPassword   = $password;
+
+        self::$PDODsn = sprintf(
+            self::$PDODsn,
+            self::$DBHostName,
+            self::$DBName
+        );
     }
 
     /**
      * Set connection with database
      * @return boolean
      */
-    public function connect()
+    public static function connect()
     {
-        if (!$this->connection = mysql_connect(self::$DBHostName, self::$DBUsername, self::$DBPassword)) {
-            $this->error = mysql_error();
-            return false;
-        } else if (!mysql_select_db(self::$DBName, $this->connection)) {
-            $this->error = mysql_error();
-            return false;
-        } if (!mysql_set_charset('utf8', $this->connection)) {
-            $this->error = mysql_error();
-            return false;
-        }
+        $pdo = new \PDO(
+            self::$PDODsn,
+            self::$DBUsername,
+            self::$DBPassword
+        );
 
-        return true;
+        self::$connection = new Connection($pdo);
+        
+        return self::$connection;
     }
 
     /**
-     * Apply select query and return result
-     * @param string $query
-     * @return boolean | null | array
+     * Get connector Connection instance
+     * @return Connection|null
      */
-    function select($query)
+    public static function getActiveConnection()
     {
-        if (!$res = mysql_query($query, $this->connection)) {
-            $this->error = mysql_error();
-            return false;
-        }
-        if (mysql_num_rows($res) == 0) {
-            return null;
-        }
-        while ($row = mysql_fetch_assoc($res)) {
-            $respounce[] = $row;
+        if (!self::$connection instanceof Connection) {
+            return self::connect();
         }
         
-        return $respounce;
-    }
-
-    /**
-     * Apply select query and return single result
-     * @param string $query
-     * @return boolean | null | array
-     */
-    function selectOne($query)
-    {
-        if (!$res = mysql_query($query, $this->connection)) {
-            $this->error = mysql_error();
-            return false;
-        }
-        if (mysql_num_rows($res) == 0) {
-            return null;
-        }
-        while ($row = mysql_fetch_assoc($res)) {
-            $respounce = $row;
-
-            break;
-        }
-        
-        return $respounce;
-    }
-
-    /**
-     * Apply any query and return success or not
-     * @param string $query
-     * @return boolean
-     */
-    function unselect($query)
-    {
-        if (!$res = mysql_query($query, $this->connection)) {
-            $this->error = mysql_error();
-            return false;
-        }
-        return true;
-    }
-    
-    /**
-     * Get error
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->error;
+        return self::$connection;
     }
 }

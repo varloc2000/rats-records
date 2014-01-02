@@ -26,11 +26,16 @@ SET time_zone = "+00:00";
 -- Table structure for table `marysh_lessons`
 --
 
+CREATE DATABASE IF NOT EXISTS `ratsreco_storage` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+use ratsreco_storage;
+
 CREATE TABLE IF NOT EXISTS `marysh_lessons` (
   `lesson_id` int(13) NOT NULL AUTO_INCREMENT,
   `number` int(13) NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `text` mediumtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `published` tinyint NOT NULL DEFAULT '0',
   PRIMARY KEY (`lesson_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
