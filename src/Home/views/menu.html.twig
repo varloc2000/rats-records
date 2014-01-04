@@ -1,0 +1,19 @@
+<ul class="rr-top-menu">
+    <li class="dropdown">
+        <a class="purple" href="/lessons">Радуги?</a>
+        <ul>
+            {% set rainbow = {1: "red", 2: "orange", 3: "yellow", 4: "green", 5: "blue", 6: "purple", 7: "purple"} %}
+            {% for lesson in lessons %}
+                <li class="{{ rainbow[loop.index % 8] }}">
+                    <a href="/lessons/{{ lesson.lesson_id }}">Урок {{ lesson.number }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li>
+        <a href="/let_me_tell_about">Кто мы?</a>
+    </li>
+    <li>
+        <a href="/let_me_show_you">Фотографии</a>
+    </li>
+</ul>

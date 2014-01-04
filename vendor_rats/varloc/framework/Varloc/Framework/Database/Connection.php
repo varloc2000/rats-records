@@ -74,11 +74,7 @@ class Connection
      */
     public function setError($errorCode, $errorMessage)
     {
-        $this->error = sprintf(
-            'Connection last error is: "%s" with code: "%s"',
-            $errorMessage,
-            $errorCode
-        );
+        $this->error = $errorMessage;
     }
 
     /**

@@ -29,7 +29,7 @@ class ControllerResolver
         $attributesArray = array();
         list(
             $attributesArray['_namespace'],
-            $attributesArray['_controller'],
+            $attributesArray['_worker'],
             $attributesArray['_action']
         ) = explode(':', $request->attributes->get('_worker'), 3);
 
@@ -53,7 +53,7 @@ class ControllerResolver
     }
 
     /**
-     * Return _controller parameter from request with Controller postfix
+     * Return _worker parameter from request with Controller postfix
      * 
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return string
@@ -61,8 +61,8 @@ class ControllerResolver
      */
     public function getControllerName(Request $request)
     {
-        if (null === ($controllerNamePrefix = $request->get('_controller', null))) {
-            throw new LogicException(sprintf('"_controller" parameter not parsed yet for route "%s"', $request->get('_route', null)));
+        if (null === ($controllerNamePrefix = $request->get('_worker', null))) {
+            throw new LogicException(sprintf('"_worker" parameter not parsed yet for route "%s"', $request->get('_route', null)));
         }
 
         return $controllerNamePrefix . 'Controller';

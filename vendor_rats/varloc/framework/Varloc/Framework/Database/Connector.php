@@ -4,7 +4,7 @@ namespace Varloc\Framework\Database;
 
 class Connector
 {
-    static private $PDODsn      = 'mysql:host=%s;dbname=%s;unix_socket=/var/lib/stickshift/52b1a5d04382ec1bda0001ed/app-root/data/lib/mysql/socket/mysql.sock';
+    static private $PDODsn      = 'mysql:host=%s;dbname=%s;charset=utf8';
     static private $DBName      = 'database_name';
     static private $DBUsername  = 'root';
     static private $DBPassword  = 'password';

@@ -1,12 +1,9 @@
-@import url('http://fonts.googleapis.com/css?family=Amatic+SC');
+/*@import url('http://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('http://fonts.googleapis.com/css?family=Amatic+SC');
 @import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
-@import url('http://fonts.googleapis.com/css?family=Damion');
+@import url('http://fonts.googleapis.com/css?family=Damion');*/
 @import url('http://fonts.googleapis.com/css?family=Fredericka+the+Great');
-@import url('./menu_items_rotation.css');
-@import url('./smile_rotation.css');
-@import url('./loading_stage.css');
-@import url('./lights.css');
+@import url('http://fonts.googleapis.com/css?family=Oswald');
 
 @font-face{
     font-family: Capture;
@@ -20,155 +17,344 @@
     font-family: LoveHardLive;
     src: url("../fonts/BHLB.ttf") format('truetype');
 }
+@font-face{
+    font-family: Capitalist;
+    src: url("../fonts/capitalist.ttf") format('truetype');
+}
+@font-face{
+    font-family: Durka;
+    src: url("../fonts/Durazky.otf") format('opentype');
+}
+@font-face{
+    font-family: Etud;
+    src: url("../fonts/etud.otf") format('opentype');
+}
+@font-face{
+    font-family: Vetka;
+    src: url("../fonts/Vetka.otf") format('opentype');
+}
 
+
+::selection {
+    background: #E6CE1D; /* Safari */
+    }
+::-moz-selection {
+    background: #E6CE1D; /* Firefox */
+}
+*, *:after, *::before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
 html, body{
     height: 100%;
 }
 body{
-    /*background: #F3F3F3;*/
-    background: #F3F3F3 url('../images/main/bg_pattern.jpg') repeat;
+    background: #000000 url('../images/main/background.jpg') repeat;
     font-family: "Lucida Grande", arial, sans-serif;  
     
     margin: 0;
     padding: 0;
 }
-.rr-container{
+h3 {
+    margin: 20px 0px;
+}
+a {
+    color: #5E383F;
+    text-decoration: none;
+}
+a:visited {
+    color: #5E383F;
+}
+a:hover {
+    color: #ff6c00;
+    border-bottom: 1px #ff6c00 dotted;
+}
+.rr-container {
     min-height: 100%;
     position: relative;
+    overflow: hidden;
 }
     /* Header */
-    header.rr-header{
+    header.rr-header {
         background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
-        height: 250px;
+        height: 360px;
     }
-        /* Rats records logo */
-        .rr-logo{
-            display: inline-block;
-            float: left;
-        }
-        .rr-logo > a{
-            color: #ffb;
-            font-family: 'Fredericka the Great', Arial;
-            font-weight: bold;
-            font-size: 4em;
-            line-height: 50px;
-
-            letter-spacing: -4px;
-            
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-
-        /* Main menu with dropdown items */
-        ul.rr-top-menu{
-            right: 0;
-        }
-        ul.rr-top-menu, 
-        ul.rr-top-menu > li.dropdown > ul {
-            position: absolute;
-            display: block;
-            list-style-type: none;
-
-            top: 0;
-
-            padding: 0;
-            margin: 0;
-        }
-        ul.rr-top-menu > li.dropdown > ul {
-            z-index: 10;
-        }
-        ul.rr-top-menu li{
-            width: 100px;
+        header.rr-header .stick {
+            position: fixed;
+            background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
+            box-shadow: 0 10px 15px 0px #000;
             height: 50px;
-            float: left;
-            color: #191919;  
-            text-align: center;  
-            overflow: hidden;  
-        }
-        ul.rr-top-menu > li.dropdown > ul > li{
-            position: absolute;
-        }
-        ul.rr-top-menu a{
-            position: relative;
-            display: block;
             width: 100%;
-            height: 100%;
-            color: #FFF;  
-            text-decoration: none;
-
-            line-height: 50px;  
+            z-index: 100;
         }
-        ul.rr-top-menu > li.dropdown > a {
-            z-index: 20;
-        }
-        ul.rr-top-menu > li.dropdown > a::before{
-            content: '';
+            /* Rats records logo */
+            .rr-logo {
+                display: inline-block;
+                float: left;
+            }
+            .rr-logo > a {
+                color: #5122B4;
+                font-family: 'Fredericka the Great', Arial;
+                text-shadow: 2px 2px 0px #f0e8db;
+                font-weight: bold;
+                font-size: 4em;
+                line-height: 50px;
 
-            position: relative;
-            display: inline-block;
-            margin-right: 10px;
+                letter-spacing: -4px;
+                
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .rr-logo > a:hover {
+                color: #ff6c00;
+                border: none;
+            }
 
-            width: 0px;
-            height: 0px;
-            border-style: solid;
-            border-width: 5px 0 5px 8px;
-            border-color: transparent transparent transparent rgba(255, 255, 255, .7);
+            /* Main menu with dropdown items */
+            ul.rr-top-menu {
+                right: 0;
+            }
+            ul.rr-top-menu, 
+            ul.rr-top-menu > li.dropdown > ul {
+                position: absolute;
+                display: block;
+                list-style-type: none;
 
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            transition: all 1s ease;
-        }
-        ul.rr-top-menu > li.dropdown.expanded > a::before{
-            -webkit-transform: rotate(810deg);
+                top: 0;
 
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            transition: all 1s ease;
-        }
+                padding: 0;
+                margin: 0;
+            }
+            ul.rr-top-menu > li.dropdown > ul {
+                z-index: 10;
+            }
+            ul.rr-top-menu li {
+                width: 200px;
+                height: 50px;
+                float: left;
+                color: #191919;  
+                text-align: center;  
+                overflow: hidden;  
+            }
+            ul.rr-top-menu > li.dropdown > ul > li {
+                position: absolute;
+            }
+            ul.rr-top-menu a:hover {
+                border: none;
+            }
+            ul.rr-top-menu a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #FFF;
+                text-decoration: none;
+                text-shadow: 0 0 1px rgba(2,2,2,1);
+
+                line-height: 50px;  
+            }
+            ul.rr-top-menu > li.dropdown > a {
+                z-index: 20;
+            }
+            ul.rr-top-menu > li.dropdown:hover > a {
+                /*background: #ff6c00;*/
+            }
+            ul.rr-top-menu > li.dropdown > a::before {
+                content: '';
+
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 5px 0 5px 8px;
+                border-color: transparent transparent transparent rgba(255, 255, 255, .7);
+
+                transition: all 1s ease;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            }
+            ul.rr-top-menu > li.dropdown.expanded > a::before{
+                transform: rotate(810deg);
+                -webkit-transform: rotate(810deg);
+                -moz-transform: rotate(810deg);
+                -ms-transform: rotate(810deg);
+                -o-transform: rotate(810deg);
+
+                transition: all 1s ease;
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+            }
 
         /* MESSAGE FOR PEOPLES */
-        .rr-main-info{
+        .rr-main-info {
             position: relative;
-            width: auto;
-            padding-left: 27px;
+            width: 98%;
+            padding-left: 2%;
             float: left;
+            top: 50px;
         }
-        .rr-main-info p{
+        .rr-main-info a.rr-mail-btn {
+            position: relative;
+            display: block;
+            float: right;
+            right: -64px;
+        }
+        .rr-main-info a.rr-mail-btn:hover {
+            border: none;
+        }
+
+        .rr-main-info pre,
+        .rr-main-info p {
             color: #ffffff;
             font-family: Capture;
             line-height: 25px;
             font-size: 18px;
         }
-        .rr-main-info p:first-child{
+        .rr-main-info pre:first-child,
+        .rr-main-info p:first-child {
             font-size: 30px;
         }
-        .rr-main-info p:first-child:first-letter{
+        .rr-main-info pre:first-child:first-letter,
+        .rr-main-info p:first-child:first-letter {
             font-size: 50px;
             font-weight: bold;
         }
-        .rr-main-info p:nth-child(2n):first-letter{
+        .rr-main-info pre:nth-child(2n):first-letter,
+        .rr-main-info p:nth-child(2n):first-letter {
             font-size: 30px;
             font-weight: bold;
         }
 
     /* Section between header & footer */
-    section.rr-content{
-        padding-bottom: 110px;
+    section.rr-content {
+        padding-bottom: 60px;
     }
         .lesson {
-            margin: 50px;
+            margin: 20px 100px;
             font-family: arial, sans-serif;
             line-height: normal;
             text-align: center;
         }
-        .lesson .content {
-            color: #666666;
+        .lesson p.content {
+            color: #333;
+            font-family: 'Vetka', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+        }
+        .gallery .content {
+            position: relative;
+            width: 500px;
+            left: 100%;
+            margin-left: -540px;
         }
 
+        /* Contact Form */
+        .rr-contact-form {
+            position: relative;
+            width: 600px;
+            left: 50%;
+            margin-left: -300px;
+        }
+        .rr-contact-form .errors .error {
+            display: block;
+            background-color: #F18A1A;
+            height: 25px;
+            margin: 0;
+            padding: 5px 10px;
+            font-style: italic;
+            text-align: start;
+
+            box-shadow: 0px 1px 7px -1px;
+            -webkit-box-shadow: 0px 1px 7px -1px;
+            -moz-box-shadow: 0px 1px 7px -1px;
+            -o-box-shadow: 0px 1px 7px -1px;
+        }
+        .rr-contact-form .errors {
+            position: absolute;
+            width: 100%;
+            height: 25px;
+            top: -19px;
+            margin-left: 13px;
+        }
+        .rr-contact-form .errors:after {
+            content: '';
+
+            position: absolute;
+            display: block;
+            background-color: #9B1E1E;
+            width: 20px;
+            height: 16px;
+            top: 12px;
+            right: -3px;
+            float: right;
+            z-index: -1;
+
+            transform: skew(-10deg);
+            -webkit-transform: rotate(-45deg) skew(-45deg);
+            -moz-transform: rotate(-45deg) skew(-45deg);
+            -o-transform: rotate(-45deg) skew(-45deg);
+        }
+        .rr-contact-form > section {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin: 20px auto 0;
+            padding-top: 10px;
+        }
+        .rr-contact-form > section.textarea {
+            margin-top: 11px;
+        }
+        .rr-contact-form > section.controls {
+            margin: 30px auto 0;
+            padding: 0;
+        }
+        .rr-contact-form > section > label {
+            cursor: pointer;
+            color: #333;
+            font-family: 'Vetka', sans-serif;
+            font-weight: 800;
+            font-size: 30px;
+            display: inline-block;
+            text-align: left;
+            width: 200px;
+        }
+        .rr-contact-form > section > div.field {
+            position: relative;
+            display: inline-block;
+            width: 370px;
+        }
+        .rr-contact-form > section > div.field.error input,
+        .rr-contact-form > section > div.field.error textarea {
+            border-color: #F18A1A;
+        }
+        .rr-contact-form > section input,
+        .rr-contact-form > section textarea {
+            outline: none;
+            color: #5E383F;
+            font-family: 'Vetka', sans-serif;
+            height: 40px;
+            line-height: 30px;
+            font-size: 30px;
+            padding: 5px;
+            width: 370px;
+            max-width: 370px;
+
+            border: 1px #000 dashed;
+            border-radius: 11px;
+        }
+        .rr-contact-form > section textarea {
+            height: 150px;
+            /*margin-top: -7px;*/
+        }
 
     /* Footer main */
     footer.rr-footer{
@@ -177,7 +363,7 @@ body{
         color: #ffffff;
         bottom: 0;
         width: 100%;
-        height: 110px;   /* Height of the footer */
+        height: 60px;
     }
         footer.rr-footer .copyright{
             position: absolute;
@@ -187,19 +373,27 @@ body{
             padding-bottom: 10px;
         }
 
-p{  
-    padding:0px 5px;  
+p {
+    padding: 0px 5px;  
 }    
   
 /*Menu Color Classes*/  
-.dark-green{background:#006600;}  
-.green{background:#6AA63B;}  
-.yellow{background:#FBC700;}  
-.orange{background:#FF6600;}  
-.red{background:#D52100;}  
-.purple{background:#5122B4;}  
-.blue{background:#0292C0;}
+.dark-green {background:#006600;}  
+.green {background:#6AA63B;}  
+.yellow {background:#FBC700;}  
+.orange {background:#FF6600;}  
+.red {background:#D52100;}  
+.purple {background:#5122B4;}  
+.blue {background:#0292C0;}
 .gray {background: #999;}
+.retro {
+    font-family: 'Capitalist', sans-serif;
+    font-size: 50px;
+    color: #5E383F;
+}
+.retro.shade {
+    text-shadow: 2px 2px 0px #f0e8db, 5px 5px 0px #6c5257;
+}
 
 .crimson {
     color: rgb(153, 51, 153);

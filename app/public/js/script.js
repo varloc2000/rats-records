@@ -30,7 +30,7 @@ RR.smileSingleRotate = function(selector) {
  * @constructor
  */
 RR.menuDropdown = function(selector) {
-    this.selector =selector;
+    this.selector = selector;
 }
     RR.menuDropdown.prototype.init = function() {
         $('body').on('click', this.selector, this._onDropdownInitiatorClick);
@@ -47,14 +47,14 @@ RR.menuDropdown = function(selector) {
         }
 
         $(this).siblings('ul').find('li').each(function(index) {
-            var topOffset = (index + 1) * $(this).outerHeight() + ((index + 1) * 5);
+            var topOffset = (index + 1) * $(this).outerHeight() + ((index + 1) * 7);
             
             console.log('Collapsed menu items top offsets:');
             console.log($(this).text() + ' : ' + topOffset);
             
             $(this).animate({
                 top: sign + topOffset,
-                boxShadow: '+=' == sign ? '0 0 7px #000' : '0 0 0'
+                boxShadow: '+=' == sign ? '0 10px 15px 0px #000' : '0 0 0'
             }, RR.menuDropdown.defaultOptions.animationTime);
         })
     }

@@ -34,6 +34,7 @@ $kernel = new Kernel(
     true
 );
 
+// $kernel->setMenu(new Menu());
 $kernel->loadNamespaces();
 
 $request = Request::createFromGlobals();

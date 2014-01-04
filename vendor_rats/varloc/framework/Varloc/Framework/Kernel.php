@@ -11,6 +11,7 @@ use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing;
 
 use Varloc\Framework\Component\ControllerResolver;
+use Varloc\Framework\Twig\FrameworkExtension;
 
 abstract class Kernel
 {
@@ -19,6 +20,12 @@ abstract class Kernel
      * @var service
      */
     protected $loader;
+
+    /**
+     * Templating
+     * @var 
+     */
+    protected $templating;
 
     /**
      * Project routes
@@ -53,11 +60,22 @@ abstract class Kernel
      */
     protected $debug;
 
-    /**$resolver
+    /**
      * Create new Kernel instance
+     * 
+     * @param UniversalClassLoader $loader
+     * @param array $routes
+     * @param ControllerResolver $controllerResolver
+     * @param string $baseDir
+     * @param boolean $debug
      */
-    public function __construct(UniversalClassLoader $loader, $routes, $controllerResolver, $baseDir, $debug)
-    {
+    public function __construct(
+        UniversalClassLoader $loader,
+        $routes,
+        ControllerResolver $controllerResolver,
+        $baseDir,
+        $debug
+    ) {
         $this
             ->setClassLoader($loader)
             ->setRoutes($routes)
@@ -65,6 +83,8 @@ abstract class Kernel
 
         $this->baseDir = $baseDir;
         $this->debug = $debug;
+
+        $this->templating = $this->configureTemplating();
     }
 
     /**
@@ -80,9 +100,7 @@ abstract class Kernel
      */
     public function handle(Request $request)
     {
-        $templating = $this->configureTemplating();
-
-        try {   
+        try {
             /**
              * Add all attributes getted from url, to $request->attributes 
              * With help of symfony routing matcher
@@ -99,7 +117,7 @@ abstract class Kernel
 
             $arguments = $this->getControllerResolver()->getArguments($request, array($controller, $action));
 
-            $controller->setTemplating($templating);
+            $controller->setTemplating($this->templating);
 
             $response = call_user_func_array(
                 array(
@@ -113,9 +131,9 @@ abstract class Kernel
                 throw new \LogicException(sprintf('Controller must return Response "%s" given!', $response));
             }
         } catch (Routing\Exception\ResourceNotFoundException $e) {
-            $response = new Response($templating->render('wtf404.html.twig', array('exception' => $e)), 404);
+            $response = new Response($this->templating->render('wtf404.html.twig', array('exception' => $e)), 404);
         } catch (\Exception $e) {
-            $response = new Response($templating->render('wtf500.html.twig', array('exception' => $e)), 500);
+            $response = new Response($this->templating->render('wtf500.html.twig', array('exception' => $e)), 500);
         }
 
         return $response;
@@ -138,7 +156,12 @@ abstract class Kernel
         $twig = new \Twig_Environment($loader, array(
             'cache'         => $this->baseDir . '/app/cache/twig',
             'auto_reload'   => $this->debug,
+            'debug'         => $this->debug,
         ));
+
+        if (true === $this->debug) {
+            $twig->addExtension(new \Twig_Extension_Debug());
+        }
 
         // Global to check is local domain or not
         $twig->addGlobal(
@@ -151,6 +174,14 @@ abstract class Kernel
                     '::1',
                 ))
             ) ? true : false
+        );
+
+        // Add global framework extension with usefull twig functionality
+        $twig->addExtension(
+            new FrameworkExtension(
+                $this->getControllerResolver(),
+                $twig
+            )
         );
 
         return $twig;

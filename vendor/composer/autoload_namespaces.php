@@ -7,8 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
-    'Symfony\\Component\\Routing' => array($vendorDir . '/symfony/routing'),
-    'Symfony\\Component\\HttpFoundation' => array($vendorDir . '/symfony/http-foundation'),
-    'Symfony\\Component\\ClassLoader' => array($vendorDir . '/symfony/class-loader'),
-    'SessionHandlerInterface' => array($vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs'),
+    'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
+    'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\ClassLoader\\' => array($vendorDir . '/symfony/class-loader'),
 );

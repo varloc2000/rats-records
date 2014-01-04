@@ -1,28 +1,11 @@
 {% extends 'layout.html.twig' %}
 
-{% block main_menu %}
-    <ul class="rr-top-menu">
-        <li class="dropdown">
-            <a class="green" href="/lessons">oO</a>
-            <ul>
-                {% set colors = {1: "yellow", 2: "red", 3: "blue", 4: "purple"} %}
-                {% for lesson in lessons %}
-                    <li class="{{ colors[loop.index % 5] }}">
-                        <a href="/lessons/{{ lesson.lesson_id }}">Урок {{ lesson.number }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </li>
-        <li class="dark-green">
-            <a href="/let_me_tell_about">Кто мы?</a>
-        </li>
-    </ul>
-{% endblock main_menu %}
-
 {% block content %}
     <div class="lesson">
         <header>
-            <h3 class="crimson">Добро пожаловать! Сайт сейчас в процессе... с   о      з        д          а    а  а а  ...</h3>
+            <h3 class="retro shade">
+                Рады вас видеть! Но не всех
+            </h3>
         </header>
         <p class="content">
             <img src="app/public/images/main/ratty_velvet.png" title="Приветик">
