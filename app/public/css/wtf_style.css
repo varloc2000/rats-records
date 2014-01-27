@@ -1,3 +1,6 @@
+body{
+    background: #000000 url('../images/main/pattern-origami.png') repeat;
+}
 /* Header */
 header.rr-header {
     background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;

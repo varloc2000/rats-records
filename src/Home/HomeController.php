@@ -16,12 +16,7 @@ class HomeController extends FrameworkController
      */
     public function mainPageAction(Request $request)
     {
-        $connection = Connector::getActiveConnection();
-
-        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.published = 1');
-        $lessons = $connection->select($query);
-
-        return $this->render('index.html.twig', array('lessons' => $lessons));
+        return $this->render('index.html.twig');
     }
 
     /**
@@ -30,10 +25,10 @@ class HomeController extends FrameworkController
      */
     public function menuBlockAction(Request $request)
     {
-        $connection = Connector::getActiveConnection();
+        // $connection = Connector::getActiveConnection();
 
-        $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.published = 1');
-        $lessons = $connection->select($query);
+        // $query = sprintf('SELECT * FROM marysh_lessons WHERE marysh_lessons.published = 1');
+        // $lessons = $connection->select($query);
 
         $lessons = array();
         return $this->render('menu.html.twig', array('lessons' => $lessons));
@@ -222,7 +217,7 @@ class HomeController extends FrameworkController
             }
         }
 
-        return $this->render('mail_block.html.twig', array(
+        return $this->render('block_mail.html.twig', array(
             'page_title' => 'Email us!',
             'errors' => $errors,
             'data' => $data,
