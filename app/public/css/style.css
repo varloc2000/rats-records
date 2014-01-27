@@ -88,18 +88,20 @@ a:visited {
     color: #5E383F;
 }
 a:hover {
-    color: #ff6c00;
-    border-bottom: 1px #ff6c00 dotted;
+    color: #fff;
+    border-bottom: 1px #fff dotted;
 }
 .rr-container {
-    min-height: 100%;
+    min-height: 720px;
     position: relative;
     overflow: hidden;
 }
     .rr-container hr {
         margin: 0;
         padding: 0;
-        border-color: #333;
+        border-color: #333333;
+        background-color: #333333;
+        color: #333333;
     }
     /* Header */
     header.rr-header {
@@ -118,6 +120,14 @@ a:hover {
             .rr-logo {
                 display: inline-block;
                 float: left;
+            }
+            .rr-logo > a > span:after {
+                content: 'rats records'
+            }
+            @media (max-width: 720px) {
+                .rr-logo > a > span:after {
+                    content: 'rr'
+                }
             }
             .rr-logo > a {
                 color: #503587;
@@ -272,14 +282,14 @@ a:hover {
             margin: 0;
             font-family: arial, sans-serif;
             line-height: normal;
-            float: left;
+            /*float: left;*/
             background-color: rgba(0, 0, 0, 0);
             background-image: url('../images/main/pattern-origami.png');
             background-repeat: repeat;
             background-attachment: fixed!important;
         }
         .rainbow-section .section-content {
-            position: absolute;
+            /*position: absolute;*/
             display: inline-block;
             width: 100%;
             padding: 10% 20px;
@@ -303,9 +313,6 @@ a:hover {
             position: relative;
         }
 
-        .fotorama {
-            cursor: pointer!important;
-        }
         .rr-gallery-holder {
             position: relative;
             overflow: visible!important;
