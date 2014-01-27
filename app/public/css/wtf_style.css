@@ -58,12 +58,12 @@ header.rr-header .stick {
 .rr-error-message  {
     background-color: #F18A1A;
     position: relative;
-    display: block;
+    display: inline-block;
     width: 1240px;
     padding: 30px 50px;
     left: 50%;
     margin: 10px;
-    margin-top: 50px;
+    margin-top: 0;
     margin-left: -620px;
     border: 1px #9B1E1E dashed;
     border-radius: 10px;

@@ -12,6 +12,7 @@
 
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
+            <link rel="stylesheet" type="text/css" href="/app/public/vendor/fotorama-4.4.9/fotorama.css" />
             <!-- <link rel="stylesheet" type="text/css" href="/app/public/css/loading_stage.css" /> -->
             <link rel="stylesheet" type="text/css" href="/app/public/css/smile_rotation.css" />
             <link rel="stylesheet" type="text/css" href="/app/public/css/menu_items_rotation.css" />
@@ -23,15 +24,21 @@
             <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
             <script src="/app/public/js/jquery.min.js" type="text/javascript"></script>
             <script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
+            <script src="/app/public/vendor/fotorama-4.4.9/fotorama.js" type="text/javascript"></script>
             <script src="/app/public/js/utils.js" type="text/javascript"></script>
             <script src="/app/public/js/script.js" type="text/javascript"></script>
             <script>
                 $(function() {
                     var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
                     menuMain.init();
-                    
+
                     var smiles = new RR.smileSingleRotate('span.smile');
                     smiles.init();
+
+                    var scroller = new RR.pageScroller();
+                    scroller.init();
+
+                    $('#rr-gallery').fotorama();
                 });
             </script>
         {% endblock javascripts %}
@@ -64,15 +71,10 @@
                 </div>
                 {% block introduction %}
                     <div class="rr-main-info">
-                        <p></p>
-                        <pre>Добро пожаловать ! Сайт сейчас в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
-                        <p>
-                            ... Когда будет готов, здесь можно будет послушать работы студии, посмотреть как мы живем, и возможно, немного пропитаться нашей философией.
+                        <pre><span class="capital-small">Д</span>обро пожаловать <span class="capital-small">!</span> <span class="capital-small">С</span>айт сейчас в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
+                        <p>... Когда будет готов, здесь можно будет послушать работы студии, посмотреть как мы живем, и возможно, немного пропитаться нашей философией
                             <span class="smile">=)</span>
                         </p>
-                        <a class="rr-mail-btn" href="/mail_us">
-                            <img src="/app/public/images/main/mail.png" title="Написать нам">
-                        </a>
                     </div>
                 {% endblock introduction %}
             </header>
@@ -81,9 +83,14 @@
             </section>
             <footer class="rr-footer">
                 <div class="copyright">
-                    <small>Hello Peoples!</small>
-                    <br />
-                    <small>varloc2000@gmail.com 2013 &copy;</small>
+                    <small>
+                        <a href="#red" class="red rr-scroller">v</a>
+                        <a href="#orange" class="orange rr-scroller">a</a>
+                        <a href="#yellow" class="yellow rr-scroller">r</a>
+                        <a href="#green" class="green rr-scroller">l</a>
+                        <a href="#blue" class="blue rr-scroller">o</a>
+                        <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
+                        <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;</small>
                 </div>
             </footer>
         </div>

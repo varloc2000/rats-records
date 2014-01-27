@@ -86,68 +86,11 @@ class FrameworkExtension extends \Twig_Extension
         } catch (Routing\Exception\ResourceNotFoundException $e) {
             $response = new Response('', 404);
         } catch (\Exception $e) {
+            throw $e;
             $response = new Response('', 500);
         }
 
         return $response->getContent();
-    }
-
-    /**
-     * createSubRequest - stolen from Symfony\Component\HttpKernel\Fragment\InlineFragmentRenderer
-     * @param string $uri
-     * @param Request $request
-     * @return Request
-     */
-    protected function createSubRequest($uri, Request $request)
-    {
-        $cookies = $request->cookies->all();
-        $server = $request->server->all();
-
-        // Override the arguments to emulate a sub-request.
-        // Sub-request object will point to localhost as client ip and real client ip
-        // will be included into trusted header for client ip
-        try {
-            $trustedHeaderName = Request::getTrustedHeaderName(Request::HEADER_CLIENT_IP);
-            $currentXForwardedFor = $request->headers->get($trustedHeaderName, '');
-
-            $server['HTTP_'.$trustedHeaderName] = ($currentXForwardedFor ? $currentXForwardedFor.', ' : '').$request->getClientIp();
-        } catch (\InvalidArgumentException $e) {
-            // Do nothing
-        }
-
-        $server['REMOTE_ADDR'] = '127.0.0.1';
-
-        $subRequest = $request::create($uri, 'get', array(), $cookies, array(), $server);
-        if ($request->headers->has('Surrogate-Capability')) {
-            $subRequest->headers->set('Surrogate-Capability', $request->headers->get('Surrogate-Capability'));
-        }
-
-        if ($session = $request->getSession()) {
-            $subRequest->setSession($session);
-        }
-
-        return $subRequest;
-    }
-
-    /**
-     * Generates a fragment URI for a given controller.
-     *
-     * @param ControllerReference  $reference A ControllerReference instance
-     * @param Request              $request    A Request instance
-     *
-     * @return string A fragment URI
-     */
-    protected function generateFragmentUri(ControllerReference $reference, Request $request)
-    {
-        if (!isset($reference->attributes['_format'])) {
-            $reference->attributes['_format'] = $request->getRequestFormat();
-        }
-
-        $reference->attributes['_controller'] = $reference->controller;
-
-        $reference->query['_path'] = http_build_query($reference->attributes, '', '&');
-
-        return $request->getUriForPath($this->fragmentPath.'?'.http_build_query($reference->query, '', '&'));
     }
 
     /**

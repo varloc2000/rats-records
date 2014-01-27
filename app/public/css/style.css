@@ -6,6 +6,14 @@
 @import url('http://fonts.googleapis.com/css?family=Oswald');
 
 @font-face{
+    font-family: 'Glyphicons Halflings';
+    src: url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot');
+    src: url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
+}
+@font-face{
     font-family: Capture;
     src: url("../fonts/capture.ttf") format('truetype');
 }
@@ -24,6 +32,18 @@
 @font-face{
     font-family: Durka;
     src: url("../fonts/Durazky.otf") format('opentype');
+}
+@font-face{
+    font-family: Gaslight;
+    src: url("../fonts/Gaslight - MNSTRLine.otf") format('opentype');
+}
+@font-face{
+    font-family: Znikomit;
+    src: url("../fonts/ZnikomitNo25.otf") format('opentype');
+}
+@font-face{
+    font-family: Stiff;
+    src: url("../fonts/Stiff Staff.otf") format('opentype');
 }
 @font-face{
     font-family: Etud;
@@ -51,7 +71,7 @@ html, body{
     height: 100%;
 }
 body{
-    background: #000000 url('../images/main/background.jpg') repeat;
+    /*background: #000000 url('../images/main/background.jpg') repeat;*/
     font-family: "Lucida Grande", arial, sans-serif;  
     
     margin: 0;
@@ -76,15 +96,20 @@ a:hover {
     position: relative;
     overflow: hidden;
 }
+    .rr-container hr {
+        margin: 0;
+        padding: 0;
+        border-color: #333;
+    }
     /* Header */
     header.rr-header {
         background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
-        height: 360px;
+        height: 300px;
     }
         header.rr-header .stick {
             position: fixed;
             background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
-            box-shadow: 0 10px 15px 0px #000;
+            box-shadow: 0 5px 13px 0px #000;
             height: 50px;
             width: 100%;
             z-index: 100;
@@ -95,9 +120,9 @@ a:hover {
                 float: left;
             }
             .rr-logo > a {
-                color: #5122B4;
+                color: #503587;
                 font-family: 'Fredericka the Great', Arial;
-                text-shadow: 2px 2px 0px #f0e8db;
+                text-shadow: 2px 2px 0px #ffffff;
                 font-weight: bold;
                 font-size: 4em;
                 line-height: 50px;
@@ -114,7 +139,7 @@ a:hover {
 
             /* Main menu with dropdown items */
             ul.rr-top-menu {
-                right: 0;
+                right: 20px;
             }
             ul.rr-top-menu, 
             ul.rr-top-menu > li.dropdown > ul {
@@ -131,10 +156,9 @@ a:hover {
                 z-index: 10;
             }
             ul.rr-top-menu li {
-                width: 200px;
+                width: 160px;
                 height: 50px;
                 float: left;
-                color: #191919;  
                 text-align: center;  
                 overflow: hidden;  
             }
@@ -144,14 +168,20 @@ a:hover {
             ul.rr-top-menu a:hover {
                 border: none;
             }
+            ul.rr-top-menu > li:not(.dropdown) a:hover {
+                /*background-color: rgba(0, 0, 0, 0.5);*/
+                background-color: rgba(129, 85, 218, 0.5);
+            }
             ul.rr-top-menu a {
                 position: relative;
+                font-family: 'Stiff';
+                letter-spacing: 1px;
                 display: block;
                 width: 100%;
                 height: 100%;
                 color: #FFF;
                 text-decoration: none;
-                text-shadow: 0 0 1px rgba(2,2,2,1);
+                /*text-shadow: 0 0 1px rgba(2,2,2,1);*/
 
                 line-height: 50px;  
             }
@@ -198,18 +228,9 @@ a:hover {
         .rr-main-info {
             position: relative;
             width: 98%;
-            padding-left: 2%;
+            padding: 30px;
             float: left;
             top: 50px;
-        }
-        .rr-main-info a.rr-mail-btn {
-            position: relative;
-            display: block;
-            float: right;
-            right: -64px;
-        }
-        .rr-main-info a.rr-mail-btn:hover {
-            border: none;
         }
 
         .rr-main-info pre,
@@ -219,19 +240,11 @@ a:hover {
             line-height: 25px;
             font-size: 18px;
         }
-        .rr-main-info pre:first-child,
-        .rr-main-info p:first-child {
+        span.capital-small {
             font-size: 30px;
         }
-        .rr-main-info pre:first-child:first-letter,
-        .rr-main-info p:first-child:first-letter {
+        span.capital {
             font-size: 50px;
-            font-weight: bold;
-        }
-        .rr-main-info pre:nth-child(2n):first-letter,
-        .rr-main-info p:nth-child(2n):first-letter {
-            font-size: 30px;
-            font-weight: bold;
         }
 
     /* Section between header & footer */
@@ -246,23 +259,109 @@ a:hover {
         }
         .lesson p.content {
             color: #333;
-            font-family: 'Vetka', sans-serif;
+            font-family: 'Znikomit', 'Vetka', sans-serif;
             font-weight: 800;
-            font-size: 30px;
+            font-size: 25px;
         }
+
+        .rainbow-section {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            min-height: 700px;
+            margin: 0;
+            font-family: arial, sans-serif;
+            line-height: normal;
+            float: left;
+            background-color: rgba(0, 0, 0, 0);
+            background-image: url('../images/main/pattern-origami.png');
+            background-repeat: repeat;
+            background-attachment: fixed!important;
+        }
+        .rainbow-section .section-content {
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            padding: 10% 20px;
+            height: auto;
+            text-align: center;
+        }
+        .rainbow-section.full .section-content {
+            padding: 0;
+        }
+        .rainbow-section.email .section-content {
+            padding-top: 50px;
+        }
+        .rainbow-section p.content {
+            color: #fff!important;
+            font-family: 'Znikomit', 'Vetka', sans-serif;
+            font-weight: 800;
+            font-size: 25px;
+        }
+
         .gallery .content {
             position: relative;
-            width: 500px;
-            left: 100%;
-            margin-left: -540px;
         }
+
+        .fotorama {
+            cursor: pointer!important;
+        }
+        .rr-gallery-holder {
+            position: relative;
+            overflow: visible!important;
+        }
+
+        /* Fotorama customization */
+        .fotorama__active .fotorama__dot {
+            background: #A5CBD6!important;
+        }
+        .fotorama__dot {
+            background: #69A5B6!important;
+            width: 12px!important;
+            height: 12px!important;
+            border-radius: 50%!important;
+            border: 1px solid #69A5B6!important;
+        }
+        .fotorama__arr {
+            background: #ff6c00!important;
+            box-shadow: 0px 0px 10px 0px #000;
+            text-align: center;
+            font-size: 16px;
+            line-height: 80px;
+            width: 80px!important;
+            height: 80px!important;
+            border-radius: 50%;
+        }
+        .fotorama__arr:hover {
+            background: #ff6c00!important;
+        }
+        .fotorama__arr:before {
+            font-family: 'Glyphicons Halflings';
+            -webkit-font-smoothing: antialiased;
+        }
+        .fotorama__arr.fotorama__arr--next {
+            margin-right: -40px!important;
+            text-indent: -33px;
+        }
+        .fotorama__arr.fotorama__arr--next:before {
+            content: "\e080";
+        }
+        .fotorama__arr.fotorama__arr--prev {
+            margin-left: -40px!important;
+            text-indent: 33px;
+        }
+        .fotorama__arr.fotorama__arr--prev:before {
+            content: "\e079";
+        }
+        /* End fotorama customization */
 
         /* Contact Form */
         .rr-contact-form {
             position: relative;
-            width: 600px;
+            width: 880px;
             left: 50%;
-            margin-left: -300px;
+            margin-left: -440px;
+            text-align: left;
         }
         .rr-contact-form .errors .error {
             display: block;
@@ -320,9 +419,9 @@ a:hover {
         .rr-contact-form > section > label {
             cursor: pointer;
             color: #333;
-            font-family: 'Vetka', sans-serif;
+            font-family: 'Znikomit', 'Vetka', sans-serif;
             font-weight: 800;
-            font-size: 30px;
+            font-size: 20px;
             display: inline-block;
             text-align: left;
             width: 200px;
@@ -330,7 +429,6 @@ a:hover {
         .rr-contact-form > section > div.field {
             position: relative;
             display: inline-block;
-            width: 370px;
         }
         .rr-contact-form > section > div.field.error input,
         .rr-contact-form > section > div.field.error textarea {
@@ -340,20 +438,34 @@ a:hover {
         .rr-contact-form > section textarea {
             outline: none;
             color: #5E383F;
-            font-family: 'Vetka', sans-serif;
+            font-family: 'Znikomit', 'Vetka', sans-serif;
             height: 40px;
             line-height: 30px;
-            font-size: 30px;
-            padding: 5px;
-            width: 370px;
-            max-width: 370px;
+            font-size: 23px;
+            font-weight: 800;
+            padding: 5px 10px;
+            width: 460px;
+            max-width: 580px;
 
-            border: 1px #000 dashed;
+            border: 1px #CACACA solid;
             border-radius: 11px;
         }
         .rr-contact-form > section textarea {
             height: 150px;
-            /*margin-top: -7px;*/
+        }
+        .rr-contact-form button {
+            border: 1px #333 dashed;
+            color: #000;
+            background: rgba(0, 0, 0, 0);
+            position: absolute;
+            left: 50%;
+            height: 52px;
+            top: 8px;
+            margin-left: -80px;
+        }
+        .rr-contact-form button:hover {
+            background: rgba(0, 0, 0, 0.5);
+            color: #FBC700;
         }
 
     /* Footer main */
@@ -367,34 +479,85 @@ a:hover {
     }
         footer.rr-footer .copyright{
             position: absolute;
-            width: 100%;
+            width: 400px;
             bottom: 0;
             text-align: center;
-            padding-bottom: 10px;
+            padding-bottom: 19px;
+            right: 0;
+            letter-spacing: 3px;
+            font-size: 15px;
+        }
+        footer.rr-footer .copyright a {
+            width: 11px;
+            display: inline-block;
+            text-align: right;
+            position: relative;
+            color: #fff;
+        }
+        footer.rr-footer .copyright a:hover {
+            border: none!important;
+        }
+        footer.rr-footer .copyright a.number {
+            width: 44px;
         }
 
 p {
     padding: 0px 5px;  
-}    
-  
-/*Menu Color Classes*/  
-.dark-green {background:#006600;}  
-.green {background:#6AA63B;}  
-.yellow {background:#FBC700;}  
-.orange {background:#FF6600;}  
-.red {background:#D52100;}  
-.purple {background:#5122B4;}  
-.blue {background:#0292C0;}
-.gray {background: #999;}
-.retro {
-    font-family: 'Capitalist', sans-serif;
-    font-size: 50px;
-    color: #5E383F;
-}
-.retro.shade {
-    text-shadow: 2px 2px 0px #f0e8db, 5px 5px 0px #6c5257;
 }
 
-.crimson {
-    color: rgb(153, 51, 153);
+.btn-submit {
+    width: 160px;
+    height: 40px;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 7px 13px;
+    border: none;
+    /*border-radius: 6px;*/
+    color: #fff;
+}
+  
+/* Background color classes*/  
+.red {background-color: #D52100;}  
+.orange {background-color: #FF6600;}  
+.yellow {background-color: #FBC700;}  
+.green {background-color: #6AA63B;}  
+.dark-green {background-color: #006600;}
+.blue {background-color: #0292C0;}
+.blue-main {background-color: #503587;}  
+.blue-dark {background-color: #0229ff;}  
+.purple {background-color: #5122B4;}  
+.gray {background-color: #999;}
+
+/*.rainbow-section.red {background: #D52100 url('../images/main/pattern-1n54.png') repeat;}  */
+.rainbow-section.red {background: #D52100 url('../images/main/pattern-red.png') repeat;}  
+/*.rainbow-section.red .section-content{background-color: rgba(213, 33, 0, 0.5);}  */
+/*.rainbow-section.orange {background: #FF6600 url('../images/main/pattern-4phc.png') repeat;}  */
+.rainbow-section.orange {background: #FF6600 url('../images/main/pattern-orange.png') repeat;}  
+/*.rainbow-section.orange {background-color: rgba(255, 102, 0, 0.5);}  */
+/*.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-9kim.png') repeat;}  */
+/*.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-9vlr.png') repeat;}  */
+.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-yellow.png') repeat;}  
+/*.rainbow-section.yellow {background-color: rgba(251, 199, 0, 0.5);}*/
+.rainbow-section.green {background: #6AA63B url('../images/main/pattern-green.png') repeat;}  
+/*.rainbow-section.green {background-color: rgba(106, 166, 59, 0.5);}  */
+.rainbow-section.blue {background: #0292C0 url('../images/main/pattern-blue.png') repeat;}  
+/*.rainbow-section.blue {background-color: rgba(2, 146, 192, 0.5);}*/
+.rainbow-section.blue-dark {background: #0229ff url('../images/main/pattern-blue-dark.png') repeat;}  
+/*.rainbow-section.blue-dark {background-color: rgba(2, 41, 255, 0.5);}*/
+.rainbow-section.purple {background: #5122B4 url('../images/main/pattern-purple.png') repeat;}  
+/*.rainbow-section.purple {background-color: rgba(81, 34, 180, 0.5);}*/
+
+
+
+.crimson {color: rgb(153, 51, 153);}
+.retro {
+    font-family: 'Znikomit', sans-serif;
+    font-size: 40px;
+    color: #333;
+}
+.gallery .retro {
+    color: #fff;
+}
+.retro.shade {
+    text-shadow: 1px 1px 0px #f0e8db, 3px 3px 0px #6c5257;
 }

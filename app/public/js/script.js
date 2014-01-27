@@ -33,7 +33,11 @@ RR.menuDropdown = function(selector) {
     this.selector = selector;
 }
     RR.menuDropdown.prototype.init = function() {
-        $('body').on('click', this.selector, this._onDropdownInitiatorClick);
+        $('body').on(
+            'click',
+            this.selector,
+            this._onDropdownInitiatorClick
+        );
     }
     RR.menuDropdown.prototype._onDropdownInitiatorClick = function(e) {
         e.preventDefault();
@@ -61,4 +65,34 @@ RR.menuDropdown = function(selector) {
     RR.menuDropdown.defaultOptions = {
         expandedClass: 'expanded',
         animationTime: 250
+    }
+
+/**
+ * Scroller
+ * @constructor
+ */
+RR.pageScroller = function() {
+}
+    RR.pageScroller.prototype.init = function() {
+        $('body').on(
+            'click',
+            '.' + RR.pageScroller.defaultOptions.scrollersClass,
+            this._onScrollerClick
+        );
+    }
+    RR.pageScroller.prototype._onScrollerClick = function(e) {
+        e.preventDefault();
+
+        var scrollTo = $(this).attr('href'); 
+
+        history.pushState({}, "", scrollTo);
+
+        $('html, body').animate({
+            scrollTop: $(scrollTo).offset().top - 50
+        }, RR.pageScroller.defaultOptions.animationTime);
+
+    }
+    RR.pageScroller.defaultOptions = {
+        scrollersClass: 'rr-scroller',
+        animationTime: 500
     }

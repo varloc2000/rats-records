@@ -23,12 +23,14 @@
         </header>
         <div class="content">
             <div id="rr-gallery"
+                data-width="880"
+                data-height="600"
                 data-allowfullscreen="native"
-                data-arrows="false"
+                data-arrows="true"
                 data-click="true"
                 data-swipe="true"
                 data-keyboard="true"
-                data-nav="thumbs"
+                data-nav="dots"
             >
                 {% set gallery_image_pattern = 'app/public/images/gallery/' %}
                 {% for number in range(1, 11) %}

@@ -1,19 +1,44 @@
 <ul class="rr-top-menu">
-    <li class="dropdown">
-        <a class="purple" href="/lessons">Радуги?</a>
-        <ul>
-            {% set rainbow = {1: "red", 2: "orange", 3: "yellow", 4: "green", 5: "blue", 6: "purple", 7: "purple"} %}
-            {% for lesson in lessons %}
-                <li class="{{ rainbow[loop.index % 8] }}">
-                    <a href="/lessons/{{ lesson.lesson_id }}">Урок {{ lesson.number }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    </li>
-    <li>
+    {# <li>
         <a href="/let_me_tell_about">Кто мы?</a>
     </li>
     <li>
+        <a href="/mail_us">Написать</a>
+    </li> #}
+    {% if lessons|length > 0 %}
+        <li class="dropdown">
+            <a class="blue-main" href="/lessons">Радуги?</a>
+            <ul>
+                {% set rainbow = {1: "red", 2: "orange", 3: "yellow", 4: "green", 5: "blue", 6: "purple", 7: "purple"} %}
+                {% for lesson in lessons %}
+                    <li class="{{ rainbow[loop.index % 8] }}">
+                        <a href="/lessons/{{ lesson.lesson_id }}">Урок {{ lesson.number }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li class="dropdown">
+            <a class="blue-main" href="#">Радуги?</a>
+            <ul>
+                {% set rainbow = {
+                    "red": 'Каждый',
+                    "orange": 'Охотник',
+                    "yellow": 'Желает',
+                    "green": 'Знать',
+                    "blue": 'Где',
+                    "blue-dark": 'Сидит',
+                    "purple": 'Фазан'
+                } %}
+                {% for class, name in rainbow %}
+                    <li class="{{ class }}">
+                        <a href="#{{ class }}" class="rr-scroller">{{ name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
+    {# <li>
         <a href="/let_me_show_you">Фотографии</a>
-    </li>
+    </li> #}
 </ul>
