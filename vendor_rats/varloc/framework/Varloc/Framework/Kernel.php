@@ -5,6 +5,7 @@ namespace Varloc\Framework;
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
@@ -101,6 +102,16 @@ abstract class Kernel
     public function handle(Request $request)
     {
         try {
+            $session = new Session();
+            $session->start();
+
+            $request->setSession($session);
+
+            $this->templating->addGlobal(
+                'request',
+                $request
+            );
+
             /**
              * Add all attributes getted from url, to $request->attributes 
              * With help of symfony routing matcher

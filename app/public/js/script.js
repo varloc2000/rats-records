@@ -3,7 +3,16 @@
  * @required jQuery
  */
 var RR = {
-    $container: $('html')
+    $container: $('html'),
+    rainbow: [
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue',
+        'blue-dark',
+        'purple',
+    ]
 };
 
 /**
@@ -95,4 +104,48 @@ RR.pageScroller = function() {
     RR.pageScroller.defaultOptions = {
         scrollersClass: 'rr-scroller',
         animationTime: 500
+    }
+
+/**
+ * Scroller
+ * @constructor
+ */
+RR.flasher = function() {
+    this.messages = [];
+    this.count = 0;
+}
+    RR.flasher.prototype.init = function() {
+
+        for (var index in this.messages) {
+            var $section = getElementById(this.messages[index].section);
+            var $message = getElementById(RR.flasher.defaultOptions.noticePrototypeId)
+                .clone()
+                .attr('id', this.messages[index].message)
+                .prepend(this.messages[index].message)
+                .addClass(this.messages[index].level);
+
+            console.log($section);
+            console.log($message);
+            $message.on('click', '.dismiss', this._onMessageDismiss);
+
+            $section.find('header').prepend(
+                $message.fadeIn(
+                    RR.flasher.defaultOptions.animationTime
+                )
+            );
+        }
+    }
+    RR.flasher.prototype.addMessage = function(section, level, message) {
+        this.messages.push({section: section, level: level, message: message});
+        this.count++;
+    }
+    RR.flasher.prototype._onMessageDismiss = function(e) {
+        e.preventDefault();
+
+        $(this).parents('.' + $(this).data('dismiss')).remove();
+    }
+    RR.flasher.defaultOptions = {
+        noticePrototypeId: 'rr-flash-notice-prototype',
+        translationsHolderClass: 'rr-notice-translations',
+        animationTime: 2000
     }

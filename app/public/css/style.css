@@ -3,7 +3,7 @@
 @import url('http://fonts.googleapis.com/css?family=Cabin+Sketch');
 @import url('http://fonts.googleapis.com/css?family=Damion');*/
 @import url('http://fonts.googleapis.com/css?family=Fredericka+the+Great');
-@import url('http://fonts.googleapis.com/css?family=Oswald');
+/*@import url('http://fonts.googleapis.com/css?family=Oswald');*/
 
 @font-face{
     font-family: 'Glyphicons Halflings';
@@ -14,7 +14,7 @@
     url('http://netdna.bootstrapcdn.com/bootstrap/3.0.0/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
 }
 @font-face{
-    font-family: Capture;
+    font-family: Cyrillic_Grunge;
     src: url("../fonts/capture.ttf") format('truetype');
 }
 @font-face{
@@ -71,9 +71,6 @@ html, body{
     height: 100%;
 }
 body{
-    /*background: #000000 url('../images/main/background.jpg') repeat;*/
-    font-family: "Lucida Grande", arial, sans-serif;  
-    
     margin: 0;
     padding: 0;
 }
@@ -91,6 +88,89 @@ a:hover {
     color: #fff;
     border-bottom: 1px #fff dotted;
 }
+.rr-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.rr-icon.remove-circle:before {
+    content: "\e088";
+}
+.rr-icon:empty {
+    width: 1em;
+}
+
+/* Notice style */
+.rr-flash-notice {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Znikomit', sans-serif;
+    font-weight: 800;
+    padding: 15px;
+    width: 98%;
+    margin: 0 1%;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+}
+    .rr-flash-notice .rr-icon {
+        position: absolute;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        margin-top: -15px;
+        line-height: 30px;
+        right: 0;
+    }
+    .rr-flash-notice .rr-icon:hover {
+        border: none;
+        cursor: pointer;
+        color: #fff!important;
+    }
+
+    .rr-flash-notice.success {
+        background-color: #6AA63B;
+        border-color: #006600;
+        color: #006600;
+    }
+    .rr-flash-notice.success .rr-icon {
+        color: #006600;
+    }
+    .rr-flash-notice.error {
+        background-color: #FF9F8E;
+        border-color: #D52100;
+        color: #D52100;
+    }
+    .rr-flash-notice.error .rr-icon {
+        color: #D52100;
+    }
+    .rr-flash-notice.warning {
+        background-color: #FFB17C;
+        border-color: #FF6600;
+        color: #FF6600;
+    }
+    .rr-flash-notice.warning .rr-icon {
+        color: #FF6600;
+    }
+    .rr-flash-notice.info {
+        background-color: #6EDCFF;
+        border-color: #0292C0;
+        color: #0292C0;
+    }
+    .rr-flash-notice.info .rr-icon {
+        color: #0292C0;
+    }
+/* End notice style */
+
 .rr-container {
     min-height: 720px;
     position: relative;
@@ -244,11 +324,19 @@ a:hover {
         }
 
         .rr-main-info pre,
-        .rr-main-info p {
+        .rr-main-info p,
+        .rr-main-info ul {
             color: #ffffff;
-            font-family: Capture;
+            font-family: Cyrillic_Grunge;
             line-height: 25px;
             font-size: 18px;
+        }
+        .rr-main-info ul {
+            list-style: none;
+            display: inline-block;
+        }
+        .rr-main-info ul li {
+            display: inline-block;
         }
         span.capital-small {
             font-size: 30px;

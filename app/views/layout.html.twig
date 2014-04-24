@@ -12,23 +12,53 @@
 
         {% block stylesheets %}
             <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
-            <link rel="stylesheet" type="text/css" href="/app/public/vendor/fotorama-4.4.9/fotorama.css" />
-            <!-- <link rel="stylesheet" type="text/css" href="/app/public/css/loading_stage.css" /> -->
+            <link rel="stylesheet" type="text/css" href="/app/public/css/loading_stage.css" />
             <link rel="stylesheet" type="text/css" href="/app/public/css/smile_rotation.css" />
             <link rel="stylesheet" type="text/css" href="/app/public/css/menu_items_rotation.css" />
+            <link rel="stylesheet" type="text/css" href="/app/public/vendor/fotorama-4.4.9/fotorama.css" />
             <link rel="stylesheet" type="text/css" href="/app/public/css/normalize.css" />
             <!-- <link rel="stylesheet" type="text/css" href="/app/public/css/lights.css" /> -->
+
+            {% set circlePlayerCssPath = '/app/public/vendor/circleplayer-master/circle.skin/' %}
+            <link rel="stylesheet" type="text/css" href="{{ circlePlayerCssPath }}circle.player.css" />
         {% endblock stylesheets %}
 
         {% block javascripts %}
-            <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+            <!-- jQuery -->
             <script src="/app/public/js/jquery.min.js" type="text/javascript"></script>
+
+            <!-- Animate shadow jquery plugin  -->
             <script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
+
+            <!-- Fotorama jquery plugin for gallery -->
             <script src="/app/public/vendor/fotorama-4.4.9/fotorama.js" type="text/javascript"></script>
+
+            <!-- Audio player jquery plugin and stuff for it -->
+            {% set circlePlayerJsPath = '/app/public/vendor/circleplayer-master/js/' %}
+            <script src="{{ circlePlayerJsPath }}jquery.jplayer.js" type="text/javascript"></script>
+            <script src="{{ circlePlayerJsPath }}jquery.transform2d.js" type="text/javascript"></script>
+            <script src="{{ circlePlayerJsPath }}jquery.grab.js" type="text/javascript"></script>
+            <script src="{{ circlePlayerJsPath }}mod.csstransforms.min.js" type="text/javascript"></script>
+            <script src="{{ circlePlayerJsPath }}circle.player.js" type="text/javascript"></script>
+
+            <!-- Project scripts -->
             <script src="/app/public/js/utils.js" type="text/javascript"></script>
             <script src="/app/public/js/script.js" type="text/javascript"></script>
             <script>
                 $(function() {
+                    // $('.rr-loading-stage').fadeOut(100);
+
+                    var rrCirclePlayer = new CirclePlayer("#rr-player",
+                    {
+                        oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+                    }, {
+                        cssSelectorAncestor: "#rr-player-container",
+                        swfPath: "../js",
+                        // swfPath: "/app/public/vendor/jQuery.jPlayer.2.5.0/jplayer.swf",
+                        wmode: "window",
+                        keyEnabled: true
+                    });
+
                     var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
                     menuMain.init();
 
@@ -39,12 +69,24 @@
                     scroller.init();
 
                     $('#rr-gallery').fotorama();
+
+                    var flasher = new RR.flasher();
+
+                    {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
+                        {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
+                            {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
+                                flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
+                            {% endfor %}
+                        {% endfor %}
+                    {% endfor %}
+
+                    flasher.init();
                 });
             </script>
         {% endblock javascripts %}
     </head>
     <body>
-        {#<div class="rr-loading-stage">
+        <!-- <div class="rr-loading-stage">
             <div class="spotlights">
                 <div class="spotlight light1"></div>
                 <div class="spotlight light2"></div>
@@ -57,15 +99,15 @@
             </div>
             <div class="rr-welcome">Rats Records</div>
             <div class="rr-loading-message">Loading...</div>
-            {{ include('lights.html.twig') }}
-        </div>#}
+            {#{ include('lights.html.twig') }#}
+        </div> -->
         <div class="rr-container">
             <header class="rr-header">
                 <div class="stick">
                     <div class="rr-logo">
                         <a href="/">
                             <span></span>
-                            {# rats records #}
+                            {# Here logo with css #}
                         </a>
                     </div>
                     {% block main_menu %}
@@ -74,14 +116,21 @@
                 </div>
                 {% block introduction %}
                     <div class="rr-main-info">
-                        <pre><span class="capital-small">Д</span>обро пожаловать <span class="capital-small">!</span> <span class="capital-small">С</span>айт сейчас в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
-                        <p>... Когда будет готов, здесь можно будет послушать работы студии, посмотреть как мы живем, и возможно, немного пропитаться нашей философией
-                            <span class="smile">=)</span>
+                        <pre><span class="capital-small">Д</span>обро пожаловать <span class="capital-small">!</span> <span class="capital-small">С</span>айт в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
+                        <pre> .  .  .   И  всегда будет  !</pre>
+                        <p>
+                            <span class="capital-small">З</span>десь можно найти :  _что думаем _что делаем _редкую хронику _выпить _смысл жизни _повод для критики
+                            <br>
+                            <span class="capital-small">Т</span>ут нельзя найти : _трезвенников _потраченное зря время _идиотов
                         </p>
                     </div>
                 {% endblock introduction %}
             </header>
             <section class="rr-content">
+                <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
+                    {# Flash message here #}
+                    <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
+                </div>
                 {% block content %}{% endblock content %}
             </section>
             <footer class="rr-footer">

@@ -32,6 +32,24 @@ function getClassName(obj) {
 	return c.substring(c.indexOf('function ')+9, c.indexOf('('));
 }
 
+/**
+ * getElementByClass - help get jQuery dom element by class name
+ * @param string elementClass
+ * @return object
+ */
+function getElementByClass(elementClass) {
+    return $('.' + elementClass);
+}
+
+/**
+ * getElementById - help get jQuery dom element by id
+ * @param string elementId
+ * @return object
+ */
+function getElementById(elementId) {
+    return $('#' + elementId);
+}
+
 /*
  Modification to $.unique() that preserves it's existing functionality
  while making it work on arrays containing anything (instead of just arrays containing DOM elements).

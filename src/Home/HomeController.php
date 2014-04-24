@@ -16,6 +16,22 @@ class HomeController extends FrameworkController
      */
     public function mainPageAction(Request $request)
     {
+        // $request->getSession()->getFlashBag()->add(
+        //     'rr.red.success',
+        //     'rr.flash.mail_form.success'
+        // );
+        // $request->getSession()->getFlashBag()->add(
+        //     'rr.yellow.error',
+        //     'rr.flash.mail_form.error'
+        // );
+        // $request->getSession()->getFlashBag()->add(
+        //     'rr.orange.error',
+        //     'rr.flash.mail_form.error'
+        // );
+        // $request->getSession()->getFlashBag()->add(
+        //     'rr.orange.error',
+        //     'rr.flash.mail_form.asdfsadf'
+        // );
         return $this->render('index.html.twig');
     }
 
@@ -214,6 +230,16 @@ class HomeController extends FrameworkController
 
             if (empty($errors)) {
                 $this->sendEmailToMe($data);
+
+                $request->getSession()->getFlashBag()->add(
+                    'rr.yellow.success',
+                    'rr.flash.mail_form.success'
+                );
+            } else {
+                $request->getSession()->getFlashBag()->add(
+                    'rr.yellow.error',
+                    'rr.flash.mail_form.error'
+                );
             }
         }
 
@@ -276,6 +302,17 @@ class HomeController extends FrameworkController
     {
         return $this->render('block_gallery.html.twig', array(
             'page_title' => 'Photos!'
+        ));
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function recordsBlockAction(Request $request)
+    {
+        return $this->render('block_records.html.twig', array(
+            'page_title' => 'Records!'
         ));
     }
 }

@@ -46,7 +46,18 @@ class FrameworkExtension extends \Twig_Extension
      */
     public function render($controller)
     {
-        $subrequest = Request::createFromGlobals();
+        $globals = $this->templating->getGlobals();
+
+        if (array_key_exists('request', $globals) && $globals['request'] instanceof Request) {
+            $subrequest = clone $globals['request'];
+
+            if ($globals['request']->hasPreviousSession()) {
+                $subrequest->setSession($globals['request']->getSession());
+            }
+        } else {
+            $subrequest = Request::createFromGlobals();
+        }
+
         $subrequest->attributes->set('_worker', $controller);
 
         return $this->handleSubrequest($subrequest);

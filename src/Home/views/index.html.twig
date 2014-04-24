@@ -4,38 +4,45 @@
     <hr/>
     <div id="red" class="rainbow-section red">
         <div class="section-content">
-            <header>
-                <h3 class="retro">
-                    Рады вас видеть! Но не всех
-                </h3>
-            </header>
             <p class="content">
                 <img src="app/public/images/main/ratty_velvet.png" title="RR">
             </p>
+            <header>
+                <h3 class="retro shade">
+                    Рады вас видеть! Но не всех
+                </h3>
+            </header>
         </div>
     </div>
+    <hr>
     <div id="orange" class="rainbow-section orange">
         <div class="section-content">
             {{ include('about.html.twig') }}
         </div>
     </div>
+    <hr>
     <div id="yellow" class="rainbow-section yellow email">
+        <div class="section-content">
+            {{ render('Home:Home:recordsBlock') }}
+        </div>
+    </div>
+    <hr>
+    <div id="green" class="rainbow-section green">
         <div class="section-content">
             {{ render('Home:Home:mailBlock') }}
         </div>
     </div>
-    <div id="green" class="rainbow-section green">
-        <div class="section-content">
-        </div>
-    </div>
+    <hr>
     <div id="blue" class="rainbow-section blue">
         <div class="section-content">
         </div>
     </div>
+    <hr>
     <div id="blue-dark" class="rainbow-section blue-dark">
         <div class="section-content">
         </div>
     </div>
+    <hr>
     <div id="purple" class="rainbow-section purple full">
         <div class="section-content">
             {{ render('Home:Home:galleryBlock') }}
