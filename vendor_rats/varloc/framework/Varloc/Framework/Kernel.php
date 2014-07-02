@@ -178,13 +178,10 @@ abstract class Kernel
         $twig->addGlobal(
             'local',
             (
-                isset($_SERVER['HTTP_CLIENT_IP']) 
-                || isset($_SERVER['HTTP_X_FORWARDED_FOR']) 
-                || in_array(@$_SERVER['REMOTE_ADDR'], array(
-                    '127.0.0.1',
-                    '::1',
-                ))
-            ) ? true : false
+               isset($_SERVER['HTTP_CLIENT_IP'])
+               || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
+               || !in_array(@$_SERVER['REMOTE_ADDR'], array('93.85.95.12', '127.0.0.1', 'fe80::1', '::1'))
+            ) ? false : true
         );
 
         // Add global framework extension with usefull twig functionality
