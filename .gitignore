@@ -6,6 +6,7 @@ app/config/database.php
 app/cache
 
 vendor/*
+.c9
 
 composer.phar
 composer.lock
