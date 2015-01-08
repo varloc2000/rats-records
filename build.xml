@@ -1,0 +1,21 @@
+<project name="rr" default="assets">
+    <target name="assets">
+        <property name="resources_path" value="app/public" />
+
+        <!-- Compile less styles to single compressed css -->
+        <exec command="lessc -x ${resources_path}/css/style.less > ${resources_path}/css/style.css" checkreturn="true" logoutput="true" />
+    </target>
+
+    <target name="create_config_local">
+        <property name="config_path" value="app/config" />
+
+        <!-- Copy dist php config to config -->
+        <exec command="cp -rf ${config_path}/Database.php.local ${config_path}/Database.php" checkreturn="true" logoutput="true" />
+    </target>
+    <target name="create_config_prod">
+        <property name="config_path" value="app/config" />
+
+        <!-- Copy dist php config to config -->
+        <exec command="cp -rf ${config_path}/Database.php.prod ${config_path}/Database.php" checkreturn="true" logoutput="true" />
+    </target>
+</project>

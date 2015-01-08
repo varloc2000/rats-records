@@ -7,12 +7,15 @@ use Symfony\Component\HttpFoundation\Request;
 
 abstract class RoutingConfig
 {
-    static public function getProjectRoutes()
+    public static function getProjectRoutes()
     {
         $routes = new Routing\RouteCollection();
 
         $routes->add('home', new Routing\Route('/', array(
             '_worker' => 'Home:Home:mainPage'
+        )));
+        $routes->add('home_content', new Routing\Route('/home_content', array(
+            '_worker' => 'Home:Home:mainPageContent'
         )));
         $routes->add('about', new Routing\Route('/let_me_tell_about', array(
             '_worker' => 'Home:Home:aboutPage'

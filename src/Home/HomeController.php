@@ -4,6 +4,7 @@ namespace Home;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Varloc\Framework\Controller\Controller as FrameworkController;
 use Varloc\Framework\Database\Connector;
@@ -15,6 +16,15 @@ class HomeController extends FrameworkController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function mainPageAction(Request $request)
+    {
+        return $this->render('loading.html.twig');
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function mainPageContentAction()
     {
         // $request->getSession()->getFlashBag()->add(
         //     'rr.red.success',
@@ -32,7 +42,13 @@ class HomeController extends FrameworkController
         //     'rr.orange.error',
         //     'rr.flash.mail_form.asdfsadf'
         // );
-        return $this->render('index.html.twig');
+        
+        $response = new JsonResponse();
+
+        return $response->setData(array(
+            'success' => true,
+            'content' => $this->render('index.html.twig')->getContent(),
+        ));
     }
 
     /**
@@ -130,7 +146,6 @@ class HomeController extends FrameworkController
 
         if ('POST' == $request->getMethod()) {
             foreach ($request->request->all() as $fieldName => $value) {
-
                 if (!array_key_exists($fieldName, $validation)) {
                     $errors['form'][] = sprintf('Unrecognized extra field is submitted "%s"', $fieldName);
 
@@ -214,7 +229,6 @@ class HomeController extends FrameworkController
 
         if ('POST' == $request->getMethod()) {
             foreach ($request->request->all() as $fieldName => $value) {
-
                 if (!array_key_exists($fieldName, $validation)) {
                     $errors['form'][] = sprintf('Unrecognized extra field is submitted "%s"', $fieldName);
 
@@ -260,7 +274,7 @@ class HomeController extends FrameworkController
         $transport = \Swift_MailTransport::newInstance();
         $mailer = \Swift_Mailer::newInstance($transport);
 
-        $fromEmail = $data['email'] ? $data['email'] : 'prikritie@gmail.com';
+        $fromEmail = isset($data['email']) ? $data['email'] : 'prikritie@gmail.com';
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Rats records email')

@@ -11,14 +11,18 @@
   top: 47%;
   left: 11%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 17s light5 linear infinite;
   -webkit-animation: 17s light5 linear infinite;
   -moz-animation: 17s light5 linear infinite;
   -ms-animation: 17s light5 linear infinite;
   -o-animation: 17s light5 linear infinite;
-  animation: 17s light5 linear infinite;
 }
 
 .light:nth-child(2) {
@@ -27,14 +31,18 @@
   top: 14%;
   left: 33%;
   background: #2f8a27;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 14s light1 linear infinite;
   -webkit-animation: 14s light1 linear infinite;
   -moz-animation: 14s light1 linear infinite;
   -ms-animation: 14s light1 linear infinite;
   -o-animation: 14s light1 linear infinite;
-  animation: 14s light1 linear infinite;
 }
 
 .light:nth-child(3) {
@@ -43,14 +51,18 @@
   top: 41%;
   left: 66%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light2 linear infinite;
   -webkit-animation: 31s light2 linear infinite;
   -moz-animation: 31s light2 linear infinite;
   -ms-animation: 31s light2 linear infinite;
   -o-animation: 31s light2 linear infinite;
-  animation: 31s light2 linear infinite;
 }
 
 .light:nth-child(4) {
@@ -59,14 +71,18 @@
   top: 32%;
   left: 2%;
   background: #fe0016;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 29s light1 linear infinite;
   -webkit-animation: 29s light1 linear infinite;
   -moz-animation: 29s light1 linear infinite;
   -ms-animation: 29s light1 linear infinite;
   -o-animation: 29s light1 linear infinite;
-  animation: 29s light1 linear infinite;
 }
 
 .light:nth-child(5) {
@@ -75,14 +91,18 @@
   top: 56%;
   left: 41%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 32s light4 linear infinite;
   -webkit-animation: 32s light4 linear infinite;
   -moz-animation: 32s light4 linear infinite;
   -ms-animation: 32s light4 linear infinite;
   -o-animation: 32s light4 linear infinite;
-  animation: 32s light4 linear infinite;
 }
 
 .light:nth-child(6) {
@@ -91,14 +111,18 @@
   top: 88%;
   left: 32%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light2 linear infinite;
   -webkit-animation: 31s light2 linear infinite;
   -moz-animation: 31s light2 linear infinite;
   -ms-animation: 31s light2 linear infinite;
   -o-animation: 31s light2 linear infinite;
-  animation: 31s light2 linear infinite;
 }
 
 .light:nth-child(7) {
@@ -107,14 +131,18 @@
   top: 57%;
   left: 63%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 15s light1 linear infinite;
   -webkit-animation: 15s light1 linear infinite;
   -moz-animation: 15s light1 linear infinite;
   -ms-animation: 15s light1 linear infinite;
   -o-animation: 15s light1 linear infinite;
-  animation: 15s light1 linear infinite;
 }
 
 .light:nth-child(8) {
@@ -123,14 +151,18 @@
   top: 84%;
   left: 37%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 25s light3 linear infinite;
   -webkit-animation: 25s light3 linear infinite;
   -moz-animation: 25s light3 linear infinite;
   -ms-animation: 25s light3 linear infinite;
   -o-animation: 25s light3 linear infinite;
-  animation: 25s light3 linear infinite;
 }
 
 .light:nth-child(9) {
@@ -139,14 +171,18 @@
   top: 15%;
   left: 40%;
   background: #db1913;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 24s light5 linear infinite;
   -webkit-animation: 24s light5 linear infinite;
   -moz-animation: 24s light5 linear infinite;
   -ms-animation: 24s light5 linear infinite;
   -o-animation: 24s light5 linear infinite;
-  animation: 24s light5 linear infinite;
 }
 
 .light:nth-child(10) {
@@ -155,14 +191,18 @@
   top: 97%;
   left: 18%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 15s light2 linear infinite;
   -webkit-animation: 15s light2 linear infinite;
   -moz-animation: 15s light2 linear infinite;
   -ms-animation: 15s light2 linear infinite;
   -o-animation: 15s light2 linear infinite;
-  animation: 15s light2 linear infinite;
 }
 
 .light:nth-child(11) {
@@ -171,14 +211,18 @@
   top: 67%;
   left: 4%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 12s light1 linear infinite;
   -webkit-animation: 12s light1 linear infinite;
   -moz-animation: 12s light1 linear infinite;
   -ms-animation: 12s light1 linear infinite;
   -o-animation: 12s light1 linear infinite;
-  animation: 12s light1 linear infinite;
 }
 
 .light:nth-child(12) {
@@ -187,14 +231,18 @@
   top: 90%;
   left: 23%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 27s light2 linear infinite;
   -webkit-animation: 27s light2 linear infinite;
   -moz-animation: 27s light2 linear infinite;
   -ms-animation: 27s light2 linear infinite;
   -o-animation: 27s light2 linear infinite;
-  animation: 27s light2 linear infinite;
 }
 
 .light:nth-child(13) {
@@ -203,14 +251,18 @@
   top: 58%;
   left: 59%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light5 linear infinite;
   -webkit-animation: 31s light5 linear infinite;
   -moz-animation: 31s light5 linear infinite;
   -ms-animation: 31s light5 linear infinite;
   -o-animation: 31s light5 linear infinite;
-  animation: 31s light5 linear infinite;
 }
 
 .light:nth-child(14) {
@@ -219,14 +271,18 @@
   top: 59%;
   left: 82%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 27s light1 linear infinite;
   -webkit-animation: 27s light1 linear infinite;
   -moz-animation: 27s light1 linear infinite;
   -ms-animation: 27s light1 linear infinite;
   -o-animation: 27s light1 linear infinite;
-  animation: 27s light1 linear infinite;
 }
 
 .light:nth-child(15) {
@@ -235,14 +291,18 @@
   top: 45%;
   left: 9%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 26s light5 linear infinite;
   -webkit-animation: 26s light5 linear infinite;
   -moz-animation: 26s light5 linear infinite;
   -ms-animation: 26s light5 linear infinite;
   -o-animation: 26s light5 linear infinite;
-  animation: 26s light5 linear infinite;
 }
 
 .light:nth-child(16) {
@@ -251,14 +311,18 @@
   top: 33%;
   left: 59%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 27s light3 linear infinite;
   -webkit-animation: 27s light3 linear infinite;
   -moz-animation: 27s light3 linear infinite;
   -ms-animation: 27s light3 linear infinite;
   -o-animation: 27s light3 linear infinite;
-  animation: 27s light3 linear infinite;
 }
 
 .light:nth-child(17) {
@@ -267,14 +331,18 @@
   top: 17%;
   left: 64%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 20s light5 linear infinite;
   -webkit-animation: 20s light5 linear infinite;
   -moz-animation: 20s light5 linear infinite;
   -ms-animation: 20s light5 linear infinite;
   -o-animation: 20s light5 linear infinite;
-  animation: 20s light5 linear infinite;
 }
 
 .light:nth-child(18) {
@@ -283,14 +351,18 @@
   top: 68%;
   left: 24%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light2 linear infinite;
   -webkit-animation: 26s light2 linear infinite;
   -moz-animation: 26s light2 linear infinite;
   -ms-animation: 26s light2 linear infinite;
   -o-animation: 26s light2 linear infinite;
-  animation: 26s light2 linear infinite;
 }
 
 .light:nth-child(19) {
@@ -299,14 +371,18 @@
   top: 64%;
   left: 99%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 12s light3 linear infinite;
   -webkit-animation: 12s light3 linear infinite;
   -moz-animation: 12s light3 linear infinite;
   -ms-animation: 12s light3 linear infinite;
   -o-animation: 12s light3 linear infinite;
-  animation: 12s light3 linear infinite;
 }
 
 .light:nth-child(20) {
@@ -315,14 +391,18 @@
   top: 94%;
   left: 33%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light2 linear infinite;
   -webkit-animation: 29s light2 linear infinite;
   -moz-animation: 29s light2 linear infinite;
   -ms-animation: 29s light2 linear infinite;
   -o-animation: 29s light2 linear infinite;
-  animation: 29s light2 linear infinite;
 }
 
 .light:nth-child(21) {
@@ -331,14 +411,18 @@
   top: 38%;
   left: 52%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 28s light3 linear infinite;
   -webkit-animation: 28s light3 linear infinite;
   -moz-animation: 28s light3 linear infinite;
   -ms-animation: 28s light3 linear infinite;
   -o-animation: 28s light3 linear infinite;
-  animation: 28s light3 linear infinite;
 }
 
 .light:nth-child(22) {
@@ -347,14 +431,18 @@
   top: 81%;
   left: 11%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light2 linear infinite;
   -webkit-animation: 33s light2 linear infinite;
   -moz-animation: 33s light2 linear infinite;
   -ms-animation: 33s light2 linear infinite;
   -o-animation: 33s light2 linear infinite;
-  animation: 33s light2 linear infinite;
 }
 
 .light:nth-child(23) {
@@ -363,14 +451,18 @@
   top: 51%;
   left: 53%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light2 linear infinite;
   -webkit-animation: 31s light2 linear infinite;
   -moz-animation: 31s light2 linear infinite;
   -ms-animation: 31s light2 linear infinite;
   -o-animation: 31s light2 linear infinite;
-  animation: 31s light2 linear infinite;
 }
 
 .light:nth-child(24) {
@@ -379,14 +471,18 @@
   top: 55%;
   left: 80%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light2 linear infinite;
   -webkit-animation: 33s light2 linear infinite;
   -moz-animation: 33s light2 linear infinite;
   -ms-animation: 33s light2 linear infinite;
   -o-animation: 33s light2 linear infinite;
-  animation: 33s light2 linear infinite;
 }
 
 .light:nth-child(25) {
@@ -395,14 +491,18 @@
   top: 72%;
   left: 76%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 24s light4 linear infinite;
   -webkit-animation: 24s light4 linear infinite;
   -moz-animation: 24s light4 linear infinite;
   -ms-animation: 24s light4 linear infinite;
   -o-animation: 24s light4 linear infinite;
-  animation: 24s light4 linear infinite;
 }
 
 .light:nth-child(26) {
@@ -411,14 +511,18 @@
   top: 36%;
   left: 54%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light3 linear infinite;
   -webkit-animation: 29s light3 linear infinite;
   -moz-animation: 29s light3 linear infinite;
   -ms-animation: 29s light3 linear infinite;
   -o-animation: 29s light3 linear infinite;
-  animation: 29s light3 linear infinite;
 }
 
 .light:nth-child(27) {
@@ -427,14 +531,18 @@
   top: 93%;
   left: 25%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 27s light3 linear infinite;
   -webkit-animation: 27s light3 linear infinite;
   -moz-animation: 27s light3 linear infinite;
   -ms-animation: 27s light3 linear infinite;
   -o-animation: 27s light3 linear infinite;
-  animation: 27s light3 linear infinite;
 }
 
 .light:nth-child(28) {
@@ -443,14 +551,18 @@
   top: 9%;
   left: 83%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 14s light3 linear infinite;
   -webkit-animation: 14s light3 linear infinite;
   -moz-animation: 14s light3 linear infinite;
   -ms-animation: 14s light3 linear infinite;
   -o-animation: 14s light3 linear infinite;
-  animation: 14s light3 linear infinite;
 }
 
 .light:nth-child(29) {
@@ -459,14 +571,18 @@
   top: 64%;
   left: 35%;
   background: #fe0016;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light5 linear infinite;
   -webkit-animation: 33s light5 linear infinite;
   -moz-animation: 33s light5 linear infinite;
   -ms-animation: 33s light5 linear infinite;
   -o-animation: 33s light5 linear infinite;
-  animation: 33s light5 linear infinite;
 }
 
 .light:nth-child(30) {
@@ -475,14 +591,18 @@
   top: 70%;
   left: 61%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 13s light5 linear infinite;
   -webkit-animation: 13s light5 linear infinite;
   -moz-animation: 13s light5 linear infinite;
   -ms-animation: 13s light5 linear infinite;
   -o-animation: 13s light5 linear infinite;
-  animation: 13s light5 linear infinite;
 }
 
 .light:nth-child(31) {
@@ -491,14 +611,18 @@
   top: 13%;
   left: 49%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 34s light5 linear infinite;
   -webkit-animation: 34s light5 linear infinite;
   -moz-animation: 34s light5 linear infinite;
   -ms-animation: 34s light5 linear infinite;
   -o-animation: 34s light5 linear infinite;
-  animation: 34s light5 linear infinite;
 }
 
 .light:nth-child(32) {
@@ -507,14 +631,18 @@
   top: 56%;
   left: 49%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 16s light5 linear infinite;
   -webkit-animation: 16s light5 linear infinite;
   -moz-animation: 16s light5 linear infinite;
   -ms-animation: 16s light5 linear infinite;
   -o-animation: 16s light5 linear infinite;
-  animation: 16s light5 linear infinite;
 }
 
 .light:nth-child(33) {
@@ -523,14 +651,18 @@
   top: 33%;
   left: 97%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 10s light5 linear infinite;
   -webkit-animation: 10s light5 linear infinite;
   -moz-animation: 10s light5 linear infinite;
   -ms-animation: 10s light5 linear infinite;
   -o-animation: 10s light5 linear infinite;
-  animation: 10s light5 linear infinite;
 }
 
 .light:nth-child(34) {
@@ -539,14 +671,18 @@
   top: 93%;
   left: 27%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light1 linear infinite;
   -webkit-animation: 26s light1 linear infinite;
   -moz-animation: 26s light1 linear infinite;
   -ms-animation: 26s light1 linear infinite;
   -o-animation: 26s light1 linear infinite;
-  animation: 26s light1 linear infinite;
 }
 
 .light:nth-child(35) {
@@ -555,14 +691,18 @@
   top: 41%;
   left: 11%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 25s light3 linear infinite;
   -webkit-animation: 25s light3 linear infinite;
   -moz-animation: 25s light3 linear infinite;
   -ms-animation: 25s light3 linear infinite;
   -o-animation: 25s light3 linear infinite;
-  animation: 25s light3 linear infinite;
 }
 
 .light:nth-child(36) {
@@ -571,14 +711,18 @@
   top: 60%;
   left: 60%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 32s light3 linear infinite;
   -webkit-animation: 32s light3 linear infinite;
   -moz-animation: 32s light3 linear infinite;
   -ms-animation: 32s light3 linear infinite;
   -o-animation: 32s light3 linear infinite;
-  animation: 32s light3 linear infinite;
 }
 
 .light:nth-child(37) {
@@ -587,14 +731,18 @@
   top: 72%;
   left: 28%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 21s light4 linear infinite;
   -webkit-animation: 21s light4 linear infinite;
   -moz-animation: 21s light4 linear infinite;
   -ms-animation: 21s light4 linear infinite;
   -o-animation: 21s light4 linear infinite;
-  animation: 21s light4 linear infinite;
 }
 
 .light:nth-child(38) {
@@ -603,14 +751,18 @@
   top: 54%;
   left: 60%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light3 linear infinite;
   -webkit-animation: 26s light3 linear infinite;
   -moz-animation: 26s light3 linear infinite;
   -ms-animation: 26s light3 linear infinite;
   -o-animation: 26s light3 linear infinite;
-  animation: 26s light3 linear infinite;
 }
 
 .light:nth-child(39) {
@@ -619,14 +771,18 @@
   top: 90%;
   left: 88%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 24s light4 linear infinite;
   -webkit-animation: 24s light4 linear infinite;
   -moz-animation: 24s light4 linear infinite;
   -ms-animation: 24s light4 linear infinite;
   -o-animation: 24s light4 linear infinite;
-  animation: 24s light4 linear infinite;
 }
 
 .light:nth-child(40) {
@@ -635,14 +791,18 @@
   top: 45%;
   left: 8%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light2 linear infinite;
   -webkit-animation: 29s light2 linear infinite;
   -moz-animation: 29s light2 linear infinite;
   -ms-animation: 29s light2 linear infinite;
   -o-animation: 29s light2 linear infinite;
-  animation: 29s light2 linear infinite;
 }
 
 .light:nth-child(41) {
@@ -651,14 +811,18 @@
   top: 17%;
   left: 12%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 19s light4 linear infinite;
   -webkit-animation: 19s light4 linear infinite;
   -moz-animation: 19s light4 linear infinite;
   -ms-animation: 19s light4 linear infinite;
   -o-animation: 19s light4 linear infinite;
-  animation: 19s light4 linear infinite;
 }
 
 .light:nth-child(42) {
@@ -667,14 +831,18 @@
   top: 96%;
   left: 80%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 29s light1 linear infinite;
   -webkit-animation: 29s light1 linear infinite;
   -moz-animation: 29s light1 linear infinite;
   -ms-animation: 29s light1 linear infinite;
   -o-animation: 29s light1 linear infinite;
-  animation: 29s light1 linear infinite;
 }
 
 .light:nth-child(43) {
@@ -683,14 +851,18 @@
   top: 94%;
   left: 75%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 16s light2 linear infinite;
   -webkit-animation: 16s light2 linear infinite;
   -moz-animation: 16s light2 linear infinite;
   -ms-animation: 16s light2 linear infinite;
   -o-animation: 16s light2 linear infinite;
-  animation: 16s light2 linear infinite;
 }
 
 .light:nth-child(44) {
@@ -699,14 +871,18 @@
   top: 34%;
   left: 41%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 29s light4 linear infinite;
   -webkit-animation: 29s light4 linear infinite;
   -moz-animation: 29s light4 linear infinite;
   -ms-animation: 29s light4 linear infinite;
   -o-animation: 29s light4 linear infinite;
-  animation: 29s light4 linear infinite;
 }
 
 .light:nth-child(45) {
@@ -715,14 +891,18 @@
   top: 75%;
   left: 93%;
   background: #fe0016;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 30s light1 linear infinite;
   -webkit-animation: 30s light1 linear infinite;
   -moz-animation: 30s light1 linear infinite;
   -ms-animation: 30s light1 linear infinite;
   -o-animation: 30s light1 linear infinite;
-  animation: 30s light1 linear infinite;
 }
 
 .light:nth-child(46) {
@@ -731,14 +911,18 @@
   top: 27%;
   left: 30%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 12s light2 linear infinite;
   -webkit-animation: 12s light2 linear infinite;
   -moz-animation: 12s light2 linear infinite;
   -ms-animation: 12s light2 linear infinite;
   -o-animation: 12s light2 linear infinite;
-  animation: 12s light2 linear infinite;
 }
 
 .light:nth-child(47) {
@@ -747,14 +931,18 @@
   top: 45%;
   left: 95%;
   background: #db1913;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 24s light1 linear infinite;
   -webkit-animation: 24s light1 linear infinite;
   -moz-animation: 24s light1 linear infinite;
   -ms-animation: 24s light1 linear infinite;
   -o-animation: 24s light1 linear infinite;
-  animation: 24s light1 linear infinite;
 }
 
 .light:nth-child(48) {
@@ -763,14 +951,18 @@
   top: 36%;
   left: 57%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 27s light3 linear infinite;
   -webkit-animation: 27s light3 linear infinite;
   -moz-animation: 27s light3 linear infinite;
   -ms-animation: 27s light3 linear infinite;
   -o-animation: 27s light3 linear infinite;
-  animation: 27s light3 linear infinite;
 }
 
 .light:nth-child(49) {
@@ -779,14 +971,18 @@
   top: 86%;
   left: 86%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 20s light3 linear infinite;
   -webkit-animation: 20s light3 linear infinite;
   -moz-animation: 20s light3 linear infinite;
   -ms-animation: 20s light3 linear infinite;
   -o-animation: 20s light3 linear infinite;
-  animation: 20s light3 linear infinite;
 }
 
 .light:nth-child(50) {
@@ -795,14 +991,18 @@
   top: 86%;
   left: 34%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 23s light4 linear infinite;
   -webkit-animation: 23s light4 linear infinite;
   -moz-animation: 23s light4 linear infinite;
   -ms-animation: 23s light4 linear infinite;
   -o-animation: 23s light4 linear infinite;
-  animation: 23s light4 linear infinite;
 }
 
 .light:nth-child(51) {
@@ -811,14 +1011,18 @@
   top: 41%;
   left: 85%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 22s light2 linear infinite;
   -webkit-animation: 22s light2 linear infinite;
   -moz-animation: 22s light2 linear infinite;
   -ms-animation: 22s light2 linear infinite;
   -o-animation: 22s light2 linear infinite;
-  animation: 22s light2 linear infinite;
 }
 
 .light:nth-child(52) {
@@ -827,14 +1031,18 @@
   top: 1%;
   left: 15%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 21s light5 linear infinite;
   -webkit-animation: 21s light5 linear infinite;
   -moz-animation: 21s light5 linear infinite;
   -ms-animation: 21s light5 linear infinite;
   -o-animation: 21s light5 linear infinite;
-  animation: 21s light5 linear infinite;
 }
 
 .light:nth-child(53) {
@@ -843,14 +1051,18 @@
   top: 6%;
   left: 50%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 23s light5 linear infinite;
   -webkit-animation: 23s light5 linear infinite;
   -moz-animation: 23s light5 linear infinite;
   -ms-animation: 23s light5 linear infinite;
   -o-animation: 23s light5 linear infinite;
-  animation: 23s light5 linear infinite;
 }
 
 .light:nth-child(54) {
@@ -859,14 +1071,18 @@
   top: 81%;
   left: 26%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 29s light2 linear infinite;
   -webkit-animation: 29s light2 linear infinite;
   -moz-animation: 29s light2 linear infinite;
   -ms-animation: 29s light2 linear infinite;
   -o-animation: 29s light2 linear infinite;
-  animation: 29s light2 linear infinite;
 }
 
 .light:nth-child(55) {
@@ -875,14 +1091,18 @@
   top: 27%;
   left: 27%;
   background: #fee34a;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light2 linear infinite;
   -webkit-animation: 29s light2 linear infinite;
   -moz-animation: 29s light2 linear infinite;
   -ms-animation: 29s light2 linear infinite;
   -o-animation: 29s light2 linear infinite;
-  animation: 29s light2 linear infinite;
 }
 
 .light:nth-child(56) {
@@ -891,14 +1111,18 @@
   top: 9%;
   left: 19%;
   background: #db1913;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 17s light5 linear infinite;
   -webkit-animation: 17s light5 linear infinite;
   -moz-animation: 17s light5 linear infinite;
   -ms-animation: 17s light5 linear infinite;
   -o-animation: 17s light5 linear infinite;
-  animation: 17s light5 linear infinite;
 }
 
 .light:nth-child(57) {
@@ -907,14 +1131,18 @@
   top: 45%;
   left: 6%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 12s light3 linear infinite;
   -webkit-animation: 12s light3 linear infinite;
   -moz-animation: 12s light3 linear infinite;
   -ms-animation: 12s light3 linear infinite;
   -o-animation: 12s light3 linear infinite;
-  animation: 12s light3 linear infinite;
 }
 
 .light:nth-child(58) {
@@ -923,14 +1151,18 @@
   top: 31%;
   left: 42%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 24s light5 linear infinite;
   -webkit-animation: 24s light5 linear infinite;
   -moz-animation: 24s light5 linear infinite;
   -ms-animation: 24s light5 linear infinite;
   -o-animation: 24s light5 linear infinite;
-  animation: 24s light5 linear infinite;
 }
 
 .light:nth-child(59) {
@@ -939,14 +1171,18 @@
   top: 85%;
   left: 38%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 14s light1 linear infinite;
   -webkit-animation: 14s light1 linear infinite;
   -moz-animation: 14s light1 linear infinite;
   -ms-animation: 14s light1 linear infinite;
   -o-animation: 14s light1 linear infinite;
-  animation: 14s light1 linear infinite;
 }
 
 .light:nth-child(60) {
@@ -955,14 +1191,18 @@
   top: 10%;
   left: 46%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 10s light3 linear infinite;
   -webkit-animation: 10s light3 linear infinite;
   -moz-animation: 10s light3 linear infinite;
   -ms-animation: 10s light3 linear infinite;
   -o-animation: 10s light3 linear infinite;
-  animation: 10s light3 linear infinite;
 }
 
 .light:nth-child(61) {
@@ -971,14 +1211,18 @@
   top: 44%;
   left: 34%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 17s light3 linear infinite;
   -webkit-animation: 17s light3 linear infinite;
   -moz-animation: 17s light3 linear infinite;
   -ms-animation: 17s light3 linear infinite;
   -o-animation: 17s light3 linear infinite;
-  animation: 17s light3 linear infinite;
 }
 
 .light:nth-child(62) {
@@ -987,14 +1231,18 @@
   top: 63%;
   left: 18%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 14s light4 linear infinite;
   -webkit-animation: 14s light4 linear infinite;
   -moz-animation: 14s light4 linear infinite;
   -ms-animation: 14s light4 linear infinite;
   -o-animation: 14s light4 linear infinite;
-  animation: 14s light4 linear infinite;
 }
 
 .light:nth-child(63) {
@@ -1003,14 +1251,18 @@
   top: 36%;
   left: 39%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light4 linear infinite;
   -webkit-animation: 31s light4 linear infinite;
   -moz-animation: 31s light4 linear infinite;
   -ms-animation: 31s light4 linear infinite;
   -o-animation: 31s light4 linear infinite;
-  animation: 31s light4 linear infinite;
 }
 
 .light:nth-child(64) {
@@ -1019,14 +1271,18 @@
   top: 49%;
   left: 13%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 33s light5 linear infinite;
   -webkit-animation: 33s light5 linear infinite;
   -moz-animation: 33s light5 linear infinite;
   -ms-animation: 33s light5 linear infinite;
   -o-animation: 33s light5 linear infinite;
-  animation: 33s light5 linear infinite;
 }
 
 .light:nth-child(65) {
@@ -1035,14 +1291,18 @@
   top: 31%;
   left: 95%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 17s light3 linear infinite;
   -webkit-animation: 17s light3 linear infinite;
   -moz-animation: 17s light3 linear infinite;
   -ms-animation: 17s light3 linear infinite;
   -o-animation: 17s light3 linear infinite;
-  animation: 17s light3 linear infinite;
 }
 
 .light:nth-child(66) {
@@ -1051,14 +1311,18 @@
   top: 80%;
   left: 27%;
   background: #2f8a27;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light4 linear infinite;
   -webkit-animation: 33s light4 linear infinite;
   -moz-animation: 33s light4 linear infinite;
   -ms-animation: 33s light4 linear infinite;
   -o-animation: 33s light4 linear infinite;
-  animation: 33s light4 linear infinite;
 }
 
 .light:nth-child(67) {
@@ -1067,14 +1331,18 @@
   top: 2%;
   left: 99%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 25s light5 linear infinite;
   -webkit-animation: 25s light5 linear infinite;
   -moz-animation: 25s light5 linear infinite;
   -ms-animation: 25s light5 linear infinite;
   -o-animation: 25s light5 linear infinite;
-  animation: 25s light5 linear infinite;
 }
 
 .light:nth-child(68) {
@@ -1083,14 +1351,18 @@
   top: 93%;
   left: 61%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 13s light1 linear infinite;
   -webkit-animation: 13s light1 linear infinite;
   -moz-animation: 13s light1 linear infinite;
   -ms-animation: 13s light1 linear infinite;
   -o-animation: 13s light1 linear infinite;
-  animation: 13s light1 linear infinite;
 }
 
 .light:nth-child(69) {
@@ -1099,14 +1371,18 @@
   top: 47%;
   left: 59%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 16s light5 linear infinite;
   -webkit-animation: 16s light5 linear infinite;
   -moz-animation: 16s light5 linear infinite;
   -ms-animation: 16s light5 linear infinite;
   -o-animation: 16s light5 linear infinite;
-  animation: 16s light5 linear infinite;
 }
 
 .light:nth-child(70) {
@@ -1115,14 +1391,18 @@
   top: 34%;
   left: 0%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 17s light3 linear infinite;
   -webkit-animation: 17s light3 linear infinite;
   -moz-animation: 17s light3 linear infinite;
   -ms-animation: 17s light3 linear infinite;
   -o-animation: 17s light3 linear infinite;
-  animation: 17s light3 linear infinite;
 }
 
 .light:nth-child(71) {
@@ -1131,14 +1411,18 @@
   top: 98%;
   left: 86%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 13s light1 linear infinite;
   -webkit-animation: 13s light1 linear infinite;
   -moz-animation: 13s light1 linear infinite;
   -ms-animation: 13s light1 linear infinite;
   -o-animation: 13s light1 linear infinite;
-  animation: 13s light1 linear infinite;
 }
 
 .light:nth-child(72) {
@@ -1147,14 +1431,18 @@
   top: 75%;
   left: 82%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light1 linear infinite;
   -webkit-animation: 26s light1 linear infinite;
   -moz-animation: 26s light1 linear infinite;
   -ms-animation: 26s light1 linear infinite;
   -o-animation: 26s light1 linear infinite;
-  animation: 26s light1 linear infinite;
 }
 
 .light:nth-child(73) {
@@ -1163,14 +1451,18 @@
   top: 39%;
   left: 63%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 19s light2 linear infinite;
   -webkit-animation: 19s light2 linear infinite;
   -moz-animation: 19s light2 linear infinite;
   -ms-animation: 19s light2 linear infinite;
   -o-animation: 19s light2 linear infinite;
-  animation: 19s light2 linear infinite;
 }
 
 .light:nth-child(74) {
@@ -1179,14 +1471,18 @@
   top: 54%;
   left: 54%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 34s light1 linear infinite;
   -webkit-animation: 34s light1 linear infinite;
   -moz-animation: 34s light1 linear infinite;
   -ms-animation: 34s light1 linear infinite;
   -o-animation: 34s light1 linear infinite;
-  animation: 34s light1 linear infinite;
 }
 
 .light:nth-child(75) {
@@ -1195,14 +1491,18 @@
   top: 16%;
   left: 99%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light2 linear infinite;
   -webkit-animation: 33s light2 linear infinite;
   -moz-animation: 33s light2 linear infinite;
   -ms-animation: 33s light2 linear infinite;
   -o-animation: 33s light2 linear infinite;
-  animation: 33s light2 linear infinite;
 }
 
 .light:nth-child(76) {
@@ -1211,14 +1511,18 @@
   top: 33%;
   left: 45%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light3 linear infinite;
   -webkit-animation: 33s light3 linear infinite;
   -moz-animation: 33s light3 linear infinite;
   -ms-animation: 33s light3 linear infinite;
   -o-animation: 33s light3 linear infinite;
-  animation: 33s light3 linear infinite;
 }
 
 .light:nth-child(77) {
@@ -1227,14 +1531,18 @@
   top: 95%;
   left: 34%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 20s light5 linear infinite;
   -webkit-animation: 20s light5 linear infinite;
   -moz-animation: 20s light5 linear infinite;
   -ms-animation: 20s light5 linear infinite;
   -o-animation: 20s light5 linear infinite;
-  animation: 20s light5 linear infinite;
 }
 
 .light:nth-child(78) {
@@ -1243,14 +1551,18 @@
   top: 5%;
   left: 85%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light1 linear infinite;
   -webkit-animation: 26s light1 linear infinite;
   -moz-animation: 26s light1 linear infinite;
   -ms-animation: 26s light1 linear infinite;
   -o-animation: 26s light1 linear infinite;
-  animation: 26s light1 linear infinite;
 }
 
 .light:nth-child(79) {
@@ -1259,14 +1571,18 @@
   top: 86%;
   left: 12%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 12s light2 linear infinite;
   -webkit-animation: 12s light2 linear infinite;
   -moz-animation: 12s light2 linear infinite;
   -ms-animation: 12s light2 linear infinite;
   -o-animation: 12s light2 linear infinite;
-  animation: 12s light2 linear infinite;
 }
 
 .light:nth-child(80) {
@@ -1275,14 +1591,18 @@
   top: 50%;
   left: 81%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 30s light4 linear infinite;
   -webkit-animation: 30s light4 linear infinite;
   -moz-animation: 30s light4 linear infinite;
   -ms-animation: 30s light4 linear infinite;
   -o-animation: 30s light4 linear infinite;
-  animation: 30s light4 linear infinite;
 }
 
 .light:nth-child(81) {
@@ -1291,14 +1611,18 @@
   top: 63%;
   left: 58%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 18s light1 linear infinite;
   -webkit-animation: 18s light1 linear infinite;
   -moz-animation: 18s light1 linear infinite;
   -ms-animation: 18s light1 linear infinite;
   -o-animation: 18s light1 linear infinite;
-  animation: 18s light1 linear infinite;
 }
 
 .light:nth-child(82) {
@@ -1307,14 +1631,18 @@
   top: 55%;
   left: 98%;
   background: #fee34a;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 23s light4 linear infinite;
   -webkit-animation: 23s light4 linear infinite;
   -moz-animation: 23s light4 linear infinite;
   -ms-animation: 23s light4 linear infinite;
   -o-animation: 23s light4 linear infinite;
-  animation: 23s light4 linear infinite;
 }
 
 .light:nth-child(83) {
@@ -1323,14 +1651,18 @@
   top: 32%;
   left: 30%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 34s light4 linear infinite;
   -webkit-animation: 34s light4 linear infinite;
   -moz-animation: 34s light4 linear infinite;
   -ms-animation: 34s light4 linear infinite;
   -o-animation: 34s light4 linear infinite;
-  animation: 34s light4 linear infinite;
 }
 
 .light:nth-child(84) {
@@ -1339,14 +1671,18 @@
   top: 54%;
   left: 6%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 11s light2 linear infinite;
   -webkit-animation: 11s light2 linear infinite;
   -moz-animation: 11s light2 linear infinite;
   -ms-animation: 11s light2 linear infinite;
   -o-animation: 11s light2 linear infinite;
-  animation: 11s light2 linear infinite;
 }
 
 .light:nth-child(85) {
@@ -1355,14 +1691,18 @@
   top: 27%;
   left: 6%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light5 linear infinite;
   -webkit-animation: 31s light5 linear infinite;
   -moz-animation: 31s light5 linear infinite;
   -ms-animation: 31s light5 linear infinite;
   -o-animation: 31s light5 linear infinite;
-  animation: 31s light5 linear infinite;
 }
 
 .light:nth-child(86) {
@@ -1371,14 +1711,18 @@
   top: 41%;
   left: 48%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 34s light1 linear infinite;
   -webkit-animation: 34s light1 linear infinite;
   -moz-animation: 34s light1 linear infinite;
   -ms-animation: 34s light1 linear infinite;
   -o-animation: 34s light1 linear infinite;
-  animation: 34s light1 linear infinite;
 }
 
 .light:nth-child(87) {
@@ -1387,14 +1731,18 @@
   top: 2%;
   left: 61%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 25s light5 linear infinite;
   -webkit-animation: 25s light5 linear infinite;
   -moz-animation: 25s light5 linear infinite;
   -ms-animation: 25s light5 linear infinite;
   -o-animation: 25s light5 linear infinite;
-  animation: 25s light5 linear infinite;
 }
 
 .light:nth-child(88) {
@@ -1403,14 +1751,18 @@
   top: 10%;
   left: 43%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 25s light2 linear infinite;
   -webkit-animation: 25s light2 linear infinite;
   -moz-animation: 25s light2 linear infinite;
   -ms-animation: 25s light2 linear infinite;
   -o-animation: 25s light2 linear infinite;
-  animation: 25s light2 linear infinite;
 }
 
 .light:nth-child(89) {
@@ -1419,14 +1771,18 @@
   top: 25%;
   left: 16%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 26s light4 linear infinite;
   -webkit-animation: 26s light4 linear infinite;
   -moz-animation: 26s light4 linear infinite;
   -ms-animation: 26s light4 linear infinite;
   -o-animation: 26s light4 linear infinite;
-  animation: 26s light4 linear infinite;
 }
 
 .light:nth-child(90) {
@@ -1435,14 +1791,18 @@
   top: 81%;
   left: 71%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 34s light3 linear infinite;
   -webkit-animation: 34s light3 linear infinite;
   -moz-animation: 34s light3 linear infinite;
   -ms-animation: 34s light3 linear infinite;
   -o-animation: 34s light3 linear infinite;
-  animation: 34s light3 linear infinite;
 }
 
 .light:nth-child(91) {
@@ -1451,14 +1811,18 @@
   top: 87%;
   left: 0%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light3 linear infinite;
   -webkit-animation: 33s light3 linear infinite;
   -moz-animation: 33s light3 linear infinite;
   -ms-animation: 33s light3 linear infinite;
   -o-animation: 33s light3 linear infinite;
-  animation: 33s light3 linear infinite;
 }
 
 .light:nth-child(92) {
@@ -1467,14 +1831,18 @@
   top: 56%;
   left: 77%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 22s light3 linear infinite;
   -webkit-animation: 22s light3 linear infinite;
   -moz-animation: 22s light3 linear infinite;
   -ms-animation: 22s light3 linear infinite;
   -o-animation: 22s light3 linear infinite;
-  animation: 22s light3 linear infinite;
 }
 
 .light:nth-child(93) {
@@ -1483,14 +1851,18 @@
   top: 83%;
   left: 25%;
   background: #db1913;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 22s light5 linear infinite;
   -webkit-animation: 22s light5 linear infinite;
   -moz-animation: 22s light5 linear infinite;
   -ms-animation: 22s light5 linear infinite;
   -o-animation: 22s light5 linear infinite;
-  animation: 22s light5 linear infinite;
 }
 
 .light:nth-child(94) {
@@ -1499,14 +1871,18 @@
   top: 7%;
   left: 25%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 16s light3 linear infinite;
   -webkit-animation: 16s light3 linear infinite;
   -moz-animation: 16s light3 linear infinite;
   -ms-animation: 16s light3 linear infinite;
   -o-animation: 16s light3 linear infinite;
-  animation: 16s light3 linear infinite;
 }
 
 .light:nth-child(95) {
@@ -1515,14 +1891,18 @@
   top: 6%;
   left: 93%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 15s light5 linear infinite;
   -webkit-animation: 15s light5 linear infinite;
   -moz-animation: 15s light5 linear infinite;
   -ms-animation: 15s light5 linear infinite;
   -o-animation: 15s light5 linear infinite;
-  animation: 15s light5 linear infinite;
 }
 
 .light:nth-child(96) {
@@ -1531,14 +1911,18 @@
   top: 40%;
   left: 41%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 13s light5 linear infinite;
   -webkit-animation: 13s light5 linear infinite;
   -moz-animation: 13s light5 linear infinite;
   -ms-animation: 13s light5 linear infinite;
   -o-animation: 13s light5 linear infinite;
-  animation: 13s light5 linear infinite;
 }
 
 .light:nth-child(97) {
@@ -1547,14 +1931,18 @@
   top: 66%;
   left: 73%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 26s light2 linear infinite;
   -webkit-animation: 26s light2 linear infinite;
   -moz-animation: 26s light2 linear infinite;
   -ms-animation: 26s light2 linear infinite;
   -o-animation: 26s light2 linear infinite;
-  animation: 26s light2 linear infinite;
 }
 
 .light:nth-child(98) {
@@ -1563,14 +1951,18 @@
   top: 30%;
   left: 32%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light5 linear infinite;
   -webkit-animation: 29s light5 linear infinite;
   -moz-animation: 29s light5 linear infinite;
   -ms-animation: 29s light5 linear infinite;
   -o-animation: 29s light5 linear infinite;
-  animation: 29s light5 linear infinite;
 }
 
 .light:nth-child(99) {
@@ -1579,14 +1971,18 @@
   top: 23%;
   left: 17%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light1 linear infinite;
   -webkit-animation: 33s light1 linear infinite;
   -moz-animation: 33s light1 linear infinite;
   -ms-animation: 33s light1 linear infinite;
   -o-animation: 33s light1 linear infinite;
-  animation: 33s light1 linear infinite;
 }
 
 .light:nth-child(100) {
@@ -1595,14 +1991,18 @@
   top: 98%;
   left: 80%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 24s light5 linear infinite;
   -webkit-animation: 24s light5 linear infinite;
   -moz-animation: 24s light5 linear infinite;
   -ms-animation: 24s light5 linear infinite;
   -o-animation: 24s light5 linear infinite;
-  animation: 24s light5 linear infinite;
 }
 
 .light:nth-child(101) {
@@ -1611,14 +2011,18 @@
   top: 27%;
   left: 44%;
   background: #fee34a;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 27s light3 linear infinite;
   -webkit-animation: 27s light3 linear infinite;
   -moz-animation: 27s light3 linear infinite;
   -ms-animation: 27s light3 linear infinite;
   -o-animation: 27s light3 linear infinite;
-  animation: 27s light3 linear infinite;
 }
 
 .light:nth-child(102) {
@@ -1627,14 +2031,18 @@
   top: 6%;
   left: 23%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 17s light5 linear infinite;
   -webkit-animation: 17s light5 linear infinite;
   -moz-animation: 17s light5 linear infinite;
   -ms-animation: 17s light5 linear infinite;
   -o-animation: 17s light5 linear infinite;
-  animation: 17s light5 linear infinite;
 }
 
 .light:nth-child(103) {
@@ -1643,14 +2051,18 @@
   top: 23%;
   left: 44%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 30s light2 linear infinite;
   -webkit-animation: 30s light2 linear infinite;
   -moz-animation: 30s light2 linear infinite;
   -ms-animation: 30s light2 linear infinite;
   -o-animation: 30s light2 linear infinite;
-  animation: 30s light2 linear infinite;
 }
 
 .light:nth-child(104) {
@@ -1659,14 +2071,18 @@
   top: 13%;
   left: 65%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 14s light4 linear infinite;
   -webkit-animation: 14s light4 linear infinite;
   -moz-animation: 14s light4 linear infinite;
   -ms-animation: 14s light4 linear infinite;
   -o-animation: 14s light4 linear infinite;
-  animation: 14s light4 linear infinite;
 }
 
 .light:nth-child(105) {
@@ -1675,14 +2091,18 @@
   top: 35%;
   left: 85%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 30s light3 linear infinite;
   -webkit-animation: 30s light3 linear infinite;
   -moz-animation: 30s light3 linear infinite;
   -ms-animation: 30s light3 linear infinite;
   -o-animation: 30s light3 linear infinite;
-  animation: 30s light3 linear infinite;
 }
 
 .light:nth-child(106) {
@@ -1691,14 +2111,18 @@
   top: 20%;
   left: 13%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 14s light1 linear infinite;
   -webkit-animation: 14s light1 linear infinite;
   -moz-animation: 14s light1 linear infinite;
   -ms-animation: 14s light1 linear infinite;
   -o-animation: 14s light1 linear infinite;
-  animation: 14s light1 linear infinite;
 }
 
 .light:nth-child(107) {
@@ -1707,14 +2131,18 @@
   top: 76%;
   left: 46%;
   background: #fe0016;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 29s light3 linear infinite;
   -webkit-animation: 29s light3 linear infinite;
   -moz-animation: 29s light3 linear infinite;
   -ms-animation: 29s light3 linear infinite;
   -o-animation: 29s light3 linear infinite;
-  animation: 29s light3 linear infinite;
 }
 
 .light:nth-child(108) {
@@ -1723,14 +2151,18 @@
   top: 13%;
   left: 40%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 28s light1 linear infinite;
   -webkit-animation: 28s light1 linear infinite;
   -moz-animation: 28s light1 linear infinite;
   -ms-animation: 28s light1 linear infinite;
   -o-animation: 28s light1 linear infinite;
-  animation: 28s light1 linear infinite;
 }
 
 .light:nth-child(109) {
@@ -1739,14 +2171,18 @@
   top: 35%;
   left: 57%;
   background: #fee34a;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 13s light3 linear infinite;
   -webkit-animation: 13s light3 linear infinite;
   -moz-animation: 13s light3 linear infinite;
   -ms-animation: 13s light3 linear infinite;
   -o-animation: 13s light3 linear infinite;
-  animation: 13s light3 linear infinite;
 }
 
 .light:nth-child(110) {
@@ -1755,14 +2191,18 @@
   top: 67%;
   left: 62%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 21s light4 linear infinite;
   -webkit-animation: 21s light4 linear infinite;
   -moz-animation: 21s light4 linear infinite;
   -ms-animation: 21s light4 linear infinite;
   -o-animation: 21s light4 linear infinite;
-  animation: 21s light4 linear infinite;
 }
 
 .light:nth-child(111) {
@@ -1771,14 +2211,18 @@
   top: 1%;
   left: 66%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 16s light1 linear infinite;
   -webkit-animation: 16s light1 linear infinite;
   -moz-animation: 16s light1 linear infinite;
   -ms-animation: 16s light1 linear infinite;
   -o-animation: 16s light1 linear infinite;
-  animation: 16s light1 linear infinite;
 }
 
 .light:nth-child(112) {
@@ -1787,14 +2231,18 @@
   top: 52%;
   left: 58%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 20s light2 linear infinite;
   -webkit-animation: 20s light2 linear infinite;
   -moz-animation: 20s light2 linear infinite;
   -ms-animation: 20s light2 linear infinite;
   -o-animation: 20s light2 linear infinite;
-  animation: 20s light2 linear infinite;
 }
 
 .light:nth-child(113) {
@@ -1803,14 +2251,18 @@
   top: 41%;
   left: 33%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 10s light5 linear infinite;
   -webkit-animation: 10s light5 linear infinite;
   -moz-animation: 10s light5 linear infinite;
   -ms-animation: 10s light5 linear infinite;
   -o-animation: 10s light5 linear infinite;
-  animation: 10s light5 linear infinite;
 }
 
 .light:nth-child(114) {
@@ -1819,14 +2271,18 @@
   top: 90%;
   left: 44%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 19s light1 linear infinite;
   -webkit-animation: 19s light1 linear infinite;
   -moz-animation: 19s light1 linear infinite;
   -ms-animation: 19s light1 linear infinite;
   -o-animation: 19s light1 linear infinite;
-  animation: 19s light1 linear infinite;
 }
 
 .light:nth-child(115) {
@@ -1835,14 +2291,18 @@
   top: 26%;
   left: 22%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 18s light2 linear infinite;
   -webkit-animation: 18s light2 linear infinite;
   -moz-animation: 18s light2 linear infinite;
   -ms-animation: 18s light2 linear infinite;
   -o-animation: 18s light2 linear infinite;
-  animation: 18s light2 linear infinite;
 }
 
 .light:nth-child(116) {
@@ -1851,14 +2311,18 @@
   top: 35%;
   left: 18%;
   background: #63c13b;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light1 linear infinite;
   -webkit-animation: 33s light1 linear infinite;
   -moz-animation: 33s light1 linear infinite;
   -ms-animation: 33s light1 linear infinite;
   -o-animation: 33s light1 linear infinite;
-  animation: 33s light1 linear infinite;
 }
 
 .light:nth-child(117) {
@@ -1867,14 +2331,18 @@
   top: 91%;
   left: 25%;
   background: #fee34a;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 30s light3 linear infinite;
   -webkit-animation: 30s light3 linear infinite;
   -moz-animation: 30s light3 linear infinite;
   -ms-animation: 30s light3 linear infinite;
   -o-animation: 30s light3 linear infinite;
-  animation: 30s light3 linear infinite;
 }
 
 .light:nth-child(118) {
@@ -1883,14 +2351,18 @@
   top: 14%;
   left: 55%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 31s light2 linear infinite;
   -webkit-animation: 31s light2 linear infinite;
   -moz-animation: 31s light2 linear infinite;
   -ms-animation: 31s light2 linear infinite;
   -o-animation: 31s light2 linear infinite;
-  animation: 31s light2 linear infinite;
 }
 
 .light:nth-child(119) {
@@ -1899,14 +2371,18 @@
   top: 94%;
   left: 39%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light4 linear infinite;
   -webkit-animation: 26s light4 linear infinite;
   -moz-animation: 26s light4 linear infinite;
   -ms-animation: 26s light4 linear infinite;
   -o-animation: 26s light4 linear infinite;
-  animation: 26s light4 linear infinite;
 }
 
 .light:nth-child(120) {
@@ -1915,14 +2391,18 @@
   top: 92%;
   left: 61%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 17s light5 linear infinite;
   -webkit-animation: 17s light5 linear infinite;
   -moz-animation: 17s light5 linear infinite;
   -ms-animation: 17s light5 linear infinite;
   -o-animation: 17s light5 linear infinite;
-  animation: 17s light5 linear infinite;
 }
 
 .light:nth-child(121) {
@@ -1931,14 +2411,18 @@
   top: 59%;
   left: 93%;
   background: #2f8a27;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 23s light5 linear infinite;
   -webkit-animation: 23s light5 linear infinite;
   -moz-animation: 23s light5 linear infinite;
   -ms-animation: 23s light5 linear infinite;
   -o-animation: 23s light5 linear infinite;
-  animation: 23s light5 linear infinite;
 }
 
 .light:nth-child(122) {
@@ -1947,14 +2431,18 @@
   top: 56%;
   left: 11%;
   background: #7d0006;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 30s light2 linear infinite;
   -webkit-animation: 30s light2 linear infinite;
   -moz-animation: 30s light2 linear infinite;
   -ms-animation: 30s light2 linear infinite;
   -o-animation: 30s light2 linear infinite;
-  animation: 30s light2 linear infinite;
 }
 
 .light:nth-child(123) {
@@ -1963,14 +2451,18 @@
   top: 63%;
   left: 38%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 14s light4 linear infinite;
   -webkit-animation: 14s light4 linear infinite;
   -moz-animation: 14s light4 linear infinite;
   -ms-animation: 14s light4 linear infinite;
   -o-animation: 14s light4 linear infinite;
-  animation: 14s light4 linear infinite;
 }
 
 .light:nth-child(124) {
@@ -1979,14 +2471,18 @@
   top: 81%;
   left: 53%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 11s light3 linear infinite;
   -webkit-animation: 11s light3 linear infinite;
   -moz-animation: 11s light3 linear infinite;
   -ms-animation: 11s light3 linear infinite;
   -o-animation: 11s light3 linear infinite;
-  animation: 11s light3 linear infinite;
 }
 
 .light:nth-child(125) {
@@ -1995,14 +2491,18 @@
   top: 40%;
   left: 83%;
   background: #7d0006;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 24s light4 linear infinite;
   -webkit-animation: 24s light4 linear infinite;
   -moz-animation: 24s light4 linear infinite;
   -ms-animation: 24s light4 linear infinite;
   -o-animation: 24s light4 linear infinite;
-  animation: 24s light4 linear infinite;
 }
 
 .light:nth-child(126) {
@@ -2011,14 +2511,18 @@
   top: 58%;
   left: 33%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 15s light2 linear infinite;
   -webkit-animation: 15s light2 linear infinite;
   -moz-animation: 15s light2 linear infinite;
   -ms-animation: 15s light2 linear infinite;
   -o-animation: 15s light2 linear infinite;
-  animation: 15s light2 linear infinite;
 }
 
 .light:nth-child(127) {
@@ -2027,14 +2531,18 @@
   top: 41%;
   left: 51%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 19s light1 linear infinite;
   -webkit-animation: 19s light1 linear infinite;
   -moz-animation: 19s light1 linear infinite;
   -ms-animation: 19s light1 linear infinite;
   -o-animation: 19s light1 linear infinite;
-  animation: 19s light1 linear infinite;
 }
 
 .light:nth-child(128) {
@@ -2043,14 +2551,18 @@
   top: 46%;
   left: 35%;
   background: #6b0d05;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 22s light2 linear infinite;
   -webkit-animation: 22s light2 linear infinite;
   -moz-animation: 22s light2 linear infinite;
   -ms-animation: 22s light2 linear infinite;
   -o-animation: 22s light2 linear infinite;
-  animation: 22s light2 linear infinite;
 }
 
 .light:nth-child(129) {
@@ -2059,14 +2571,18 @@
   top: 20%;
   left: 55%;
   background: #2f8a27;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 27s light5 linear infinite;
   -webkit-animation: 27s light5 linear infinite;
   -moz-animation: 27s light5 linear infinite;
   -ms-animation: 27s light5 linear infinite;
   -o-animation: 27s light5 linear infinite;
-  animation: 27s light5 linear infinite;
 }
 
 .light:nth-child(130) {
@@ -2075,14 +2591,18 @@
   top: 49%;
   left: 46%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 15s light2 linear infinite;
   -webkit-animation: 15s light2 linear infinite;
   -moz-animation: 15s light2 linear infinite;
   -ms-animation: 15s light2 linear infinite;
   -o-animation: 15s light2 linear infinite;
-  animation: 15s light2 linear infinite;
 }
 
 .light:nth-child(131) {
@@ -2091,14 +2611,18 @@
   top: 32%;
   left: 66%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 18s light3 linear infinite;
   -webkit-animation: 18s light3 linear infinite;
   -moz-animation: 18s light3 linear infinite;
   -ms-animation: 18s light3 linear infinite;
   -o-animation: 18s light3 linear infinite;
-  animation: 18s light3 linear infinite;
 }
 
 .light:nth-child(132) {
@@ -2107,14 +2631,18 @@
   top: 8%;
   left: 16%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 20s light2 linear infinite;
   -webkit-animation: 20s light2 linear infinite;
   -moz-animation: 20s light2 linear infinite;
   -ms-animation: 20s light2 linear infinite;
   -o-animation: 20s light2 linear infinite;
-  animation: 20s light2 linear infinite;
 }
 
 .light:nth-child(133) {
@@ -2123,14 +2651,18 @@
   top: 76%;
   left: 43%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 29s light2 linear infinite;
   -webkit-animation: 29s light2 linear infinite;
   -moz-animation: 29s light2 linear infinite;
   -ms-animation: 29s light2 linear infinite;
   -o-animation: 29s light2 linear infinite;
-  animation: 29s light2 linear infinite;
 }
 
 .light:nth-child(134) {
@@ -2139,14 +2671,18 @@
   top: 91%;
   left: 67%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 19s light3 linear infinite;
   -webkit-animation: 19s light3 linear infinite;
   -moz-animation: 19s light3 linear infinite;
   -ms-animation: 19s light3 linear infinite;
   -o-animation: 19s light3 linear infinite;
-  animation: 19s light3 linear infinite;
 }
 
 .light:nth-child(135) {
@@ -2155,14 +2691,18 @@
   top: 47%;
   left: 55%;
   background: #6b0d05;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 22s light1 linear infinite;
   -webkit-animation: 22s light1 linear infinite;
   -moz-animation: 22s light1 linear infinite;
   -ms-animation: 22s light1 linear infinite;
   -o-animation: 22s light1 linear infinite;
-  animation: 22s light1 linear infinite;
 }
 
 .light:nth-child(136) {
@@ -2171,14 +2711,18 @@
   top: 3%;
   left: 69%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 22s light3 linear infinite;
   -webkit-animation: 22s light3 linear infinite;
   -moz-animation: 22s light3 linear infinite;
   -ms-animation: 22s light3 linear infinite;
   -o-animation: 22s light3 linear infinite;
-  animation: 22s light3 linear infinite;
 }
 
 .light:nth-child(137) {
@@ -2187,14 +2731,18 @@
   top: 71%;
   left: 84%;
   background: #5c6c94;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 15s light5 linear infinite;
   -webkit-animation: 15s light5 linear infinite;
   -moz-animation: 15s light5 linear infinite;
   -ms-animation: 15s light5 linear infinite;
   -o-animation: 15s light5 linear infinite;
-  animation: 15s light5 linear infinite;
 }
 
 .light:nth-child(138) {
@@ -2203,14 +2751,18 @@
   top: 89%;
   left: 31%;
   background: #63c13b;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 32s light2 linear infinite;
   -webkit-animation: 32s light2 linear infinite;
   -moz-animation: 32s light2 linear infinite;
   -ms-animation: 32s light2 linear infinite;
   -o-animation: 32s light2 linear infinite;
-  animation: 32s light2 linear infinite;
 }
 
 .light:nth-child(139) {
@@ -2219,14 +2771,18 @@
   top: 55%;
   left: 73%;
   background: #d00010;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 24s light4 linear infinite;
   -webkit-animation: 24s light4 linear infinite;
   -moz-animation: 24s light4 linear infinite;
   -ms-animation: 24s light4 linear infinite;
   -o-animation: 24s light4 linear infinite;
-  animation: 24s light4 linear infinite;
 }
 
 .light:nth-child(140) {
@@ -2235,14 +2791,18 @@
   top: 2%;
   left: 91%;
   background: #fec641;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 26s light4 linear infinite;
   -webkit-animation: 26s light4 linear infinite;
   -moz-animation: 26s light4 linear infinite;
   -ms-animation: 26s light4 linear infinite;
   -o-animation: 26s light4 linear infinite;
-  animation: 26s light4 linear infinite;
 }
 
 .light:nth-child(141) {
@@ -2251,14 +2811,18 @@
   top: 22%;
   left: 54%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 13s light3 linear infinite;
   -webkit-animation: 13s light3 linear infinite;
   -moz-animation: 13s light3 linear infinite;
   -ms-animation: 13s light3 linear infinite;
   -o-animation: 13s light3 linear infinite;
-  animation: 13s light3 linear infinite;
 }
 
 .light:nth-child(142) {
@@ -2267,14 +2831,18 @@
   top: 60%;
   left: 23%;
   background: #d00010;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 15s light3 linear infinite;
   -webkit-animation: 15s light3 linear infinite;
   -moz-animation: 15s light3 linear infinite;
   -ms-animation: 15s light3 linear infinite;
   -o-animation: 15s light3 linear infinite;
-  animation: 15s light3 linear infinite;
 }
 
 .light:nth-child(143) {
@@ -2283,14 +2851,18 @@
   top: 69%;
   left: 58%;
   background: #fec641;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 23s light1 linear infinite;
   -webkit-animation: 23s light1 linear infinite;
   -moz-animation: 23s light1 linear infinite;
   -ms-animation: 23s light1 linear infinite;
   -o-animation: 23s light1 linear infinite;
-  animation: 23s light1 linear infinite;
 }
 
 .light:nth-child(144) {
@@ -2299,14 +2871,18 @@
   top: 37%;
   left: 33%;
   background: #db1913;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 33s light1 linear infinite;
   -webkit-animation: 33s light1 linear infinite;
   -moz-animation: 33s light1 linear infinite;
   -ms-animation: 33s light1 linear infinite;
   -o-animation: 33s light1 linear infinite;
-  animation: 33s light1 linear infinite;
 }
 
 .light:nth-child(145) {
@@ -2315,14 +2891,18 @@
   top: 56%;
   left: 37%;
   background: #5c6c94;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 34s light2 linear infinite;
   -webkit-animation: 34s light2 linear infinite;
   -moz-animation: 34s light2 linear infinite;
   -ms-animation: 34s light2 linear infinite;
   -o-animation: 34s light2 linear infinite;
-  animation: 34s light2 linear infinite;
 }
 
 .light:nth-child(146) {
@@ -2331,14 +2911,18 @@
   top: 57%;
   left: 31%;
   background: #fe0016;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 15s light1 linear infinite;
   -webkit-animation: 15s light1 linear infinite;
   -moz-animation: 15s light1 linear infinite;
   -ms-animation: 15s light1 linear infinite;
   -o-animation: 15s light1 linear infinite;
-  animation: 15s light1 linear infinite;
 }
 
 .light:nth-child(147) {
@@ -2347,14 +2931,18 @@
   top: 13%;
   left: 39%;
   background: #fee34a;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 33s light3 linear infinite;
   -webkit-animation: 33s light3 linear infinite;
   -moz-animation: 33s light3 linear infinite;
   -ms-animation: 33s light3 linear infinite;
   -o-animation: 33s light3 linear infinite;
-  animation: 33s light3 linear infinite;
 }
 
 .light:nth-child(148) {
@@ -2363,14 +2951,18 @@
   top: 45%;
   left: 36%;
   background: #2f8a27;
+
+  filter: blur(2px);
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
-  filter: blur(2px);
+  -ms-filter: blur(2px);
+  -o-filter: blur(2px);
+
+  animation: 26s light5 linear infinite;
   -webkit-animation: 26s light5 linear infinite;
   -moz-animation: 26s light5 linear infinite;
   -ms-animation: 26s light5 linear infinite;
   -o-animation: 26s light5 linear infinite;
-  animation: 26s light5 linear infinite;
 }
 
 .light:nth-child(149) {
@@ -2379,14 +2971,18 @@
   top: 99%;
   left: 44%;
   background: #db1913;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 27s light3 linear infinite;
   -webkit-animation: 27s light3 linear infinite;
   -moz-animation: 27s light3 linear infinite;
   -ms-animation: 27s light3 linear infinite;
   -o-animation: 27s light3 linear infinite;
-  animation: 27s light3 linear infinite;
 }
 
 .light:nth-child(150) {
@@ -2395,14 +2991,18 @@
   top: 44%;
   left: 34%;
   background: #fe0016;
+
+  filter: blur(3px);
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
-  filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+
+  animation: 20s light2 linear infinite;
   -webkit-animation: 20s light2 linear infinite;
   -moz-animation: 20s light2 linear infinite;
   -ms-animation: 20s light2 linear infinite;
   -o-animation: 20s light2 linear infinite;
-  animation: 20s light2 linear infinite;
 }
 
 @-webkit-keyframes light1 {

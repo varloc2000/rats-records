@@ -16,6 +16,52 @@ var RR = {
 };
 
 /**
+ * Full content loader
+ * @constructor
+ */
+RR.contentLoader = function(url) {
+    this.url = url;
+    this.$content = $('.rr-container');
+    this.$loadingMessage = this.$content.find('.rr-loading-message');
+    this.messageTime = 1000;
+    this.messages = [
+        'Loading textures...',
+        'Create good advices...',
+        'Collectiong Rat King parameters...',
+        'Compiling Rat King...',
+        'Smoking...',
+        'Drinking...',
+        'Done.'
+    ];
+}
+    RR.contentLoader.prototype.init = function() {
+        var _self = this;
+
+        $.get(
+            this.url,
+            function(data) {
+                if (true == data.success) {
+                    var i = 0;
+                    var messagesInterval = setInterval(function() {
+                            if (i <=_self.messages.length) {
+                                _self.$loadingMessage.html(_self.messages[i]);
+                                i++;
+                            } else {
+                                clearInterval(messagesInterval);
+                                _self.$content.html(data.content);
+                            }
+                        },
+                        _self.messageTime
+                    );
+                } else {
+                    _self.$loadingMessage.html('Sorry but content unavaliable due to some problems.');
+                }
+            },
+            'json'
+        );
+    }
+
+/**
  * Single rotate smiles class
  * @constructor
  */
