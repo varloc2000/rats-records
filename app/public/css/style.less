@@ -134,12 +134,13 @@ a:hover {
     /* Header */
     header.rr-header {
         background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
-        height: 300px;
+        /*height: 300px;*/
+        height: 50px;
     }
         header.rr-header .stick {
             position: fixed;
             background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -17px;
-            box-shadow: 0 5px 13px 0px #000;
+            box-shadow: 0 5px 20px -5px #000;
             height: 50px;
             width: 100%;
             z-index: 100;
@@ -158,7 +159,7 @@ a:hover {
                 }
             }
             .rr-logo > a {
-                color: #21A824;
+                color: #5831AA;
                 font-family: 'Fredericka the Great', Arial;
                 text-shadow: 2px 2px 0px #ffffff;
                 font-weight: bold;
@@ -325,26 +326,37 @@ a:hover {
             /*background-image: url('../images/main/pattern-purple.png');*/
             background-repeat: repeat;
             background-attachment: fixed!important;
-        }
-        .rainbow-section .section-content {
-            /*position: absolute;*/
-            display: inline-block;
-            width: 100%;
-            padding: 10% 20px;
-            height: auto;
-            text-align: center;
-        }
-        .rainbow-section.full .section-content {
-            padding: 0;
-        }
-        .rainbow-section.email .section-content {
-            padding-top: 50px;
-        }
-        .rainbow-section p.content {
-            color: #fff!important;
-            font-family: 'Znikomit', 'Vetka', sans-serif;
-            font-weight: 800;
-            font-size: 25px;
+
+            &.breaker {
+                background: #F3F3F3 url('../images/main/bg_header.png') repeat 0 -70px;
+                background-attachment: initial!important;
+                min-height: 70px;
+                border-top: 1px;
+                border-bottom: 1px;
+                border-left: 0;
+                border-right: 0;
+                border-color: #333333;
+            }
+            &.full .section-content {
+                padding: 0;
+            }
+            &.email .section-content {
+                padding-top: 50px;
+            }
+            .section-content {
+                /*position: absolute;*/
+                display: inline-block;
+                width: 100%;
+                padding: 10% 20px;
+                height: auto;
+                text-align: center;
+            }
+            p.content {
+                color: #fff!important;
+                font-family: 'Znikomit', 'Vetka', sans-serif;
+                font-weight: 800;
+                font-size: 25px;
+            }
         }
 
         .gallery .content {
@@ -535,9 +547,11 @@ a:hover {
         footer.rr-footer .copyright a {
             width: 11px;
             display: inline-block;
-            text-align: right;
+            text-align: center;
             position: relative;
             color: #fff;
+            margin-left: 4px;
+            padding-left: 2px;
         }
         footer.rr-footer .copyright a:hover {
             border: none!important;
@@ -574,20 +588,20 @@ p {
 .gray {background-color: #999;}
 
 /*.rainbow-section.red {background: #D52100 url('../images/main/pattern-1n54.png') repeat;}  */
-/*.rainbow-section.red {background: #D52100 url('../images/main/pattern-red.png') repeat;}  */
+.rainbow-section.red {background: #D52100 url('../images/main/pattern-red.png') repeat;}  
 /*.rainbow-section.red .section-content{background-color: rgba(213, 33, 0, 0.5);}  */
 /*.rainbow-section.orange {background: #FF6600 url('../images/main/pattern-4phc.png') repeat;}  */
-/*.rainbow-section.orange {background: #FF6600 url('../images/main/pattern-orange.png') repeat;}  */
+.rainbow-section.orange {background: #FF6600 url('../images/main/pattern-orange.png') repeat;}  
 /*.rainbow-section.orange {background-color: rgba(255, 102, 0, 0.5);}  */
 /*.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-9kim.png') repeat;}  */
 /*.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-9vlr.png') repeat;}  */
-/*.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-yellow.png') repeat;}  */
+.rainbow-section.yellow {background: #FBC700 url('../images/main/pattern-yellow.png') repeat;}  
 /*.rainbow-section.yellow {background-color: rgba(251, 199, 0, 0.5);}*/
-/*.rainbow-section.green {background: #6AA63B url('../images/main/pattern-green.png') repeat;}  */
+.rainbow-section.green {background: #6AA63B url('../images/main/pattern-green.png') repeat;}  
 /*.rainbow-section.green {background-color: rgba(106, 166, 59, 0.5);}  */
-/*.rainbow-section.blue {background: #0292C0 url('../images/main/pattern-blue.png') repeat;}  */
+.rainbow-section.blue {background: #0292C0 url('../images/main/pattern-blue.png') repeat;}  
 /*.rainbow-section.blue {background-color: rgba(2, 146, 192, 0.5);}*/
-/*.rainbow-section.blue-dark {background: #0229ff url('../images/main/pattern-blue-dark.png') repeat;}  */
+.rainbow-section.blue-dark {background: #0229ff url('../images/main/pattern-blue-dark.png') repeat;}  
 /*.rainbow-section.blue-dark {background-color: rgba(2, 41, 255, 0.5);}*/
 .rainbow-section.purple {background: #5122B4 url('../images/main/pattern-purple.png') repeat;}  
 /*.rainbow-section.purple {background-color: rgba(81, 34, 180, 0.5);}*/
@@ -605,4 +619,23 @@ p {
 }
 .retro.shade {
     text-shadow: 1px 1px 0px #f0e8db, 3px 3px 0px #6c5257;
+}
+img.rr-promo {
+    /*box-shadow: 6px 6px 107px 1px #000;*/
+    border-radius: 50%;
+    background-color: #360E52;
+
+    filter: grayscale(90%);
+    -webkit-filter: grayscale(90%);
+    -moz-filter: grayscale(90%);
+    -ms-filter: grayscale(90%);
+    -o-filter: grayscale(90%);
+
+    &:hover {
+        filter: none;
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        -o-filter: none;
+    }
 }

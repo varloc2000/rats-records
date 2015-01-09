@@ -26,11 +26,11 @@ RR.contentLoader = function(url) {
     this.messageTime = 1000;
     this.messages = [
         'Loading textures...',
-        'Create good advices...',
-        'Collectiong Rat King parameters...',
-        'Compiling Rat King...',
-        'Smoking...',
-        'Drinking...',
+        // 'Create good advices...',
+        // 'Collectiong Rat King parameters...',
+        // 'Compiling Rat King...',
+        // 'Smoking...',
+        // 'Drinking...',
         'Done.'
     ];
 }

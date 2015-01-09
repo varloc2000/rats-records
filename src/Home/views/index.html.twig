@@ -45,7 +45,7 @@
         {% endblock main_menu %}
     </div>
     {% block introduction %}
-        <div class="rr-main-info">
+        {# <div class="rr-main-info">
             <pre><span class="capital-small">Д</span>обро пожаловать <span class="capital-small">!</span> <span class="capital-small">С</span>айт в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
             <pre> .  .  .   И  всегда будет  !</pre>
             <p>
@@ -53,7 +53,7 @@
                 <br>
                 <span class="capital-small">Т</span>ут нельзя найти : _трезвенников _потраченное зря время _идиотов
             </p>
-        </div>
+        </div> #}
     {% endblock introduction %}
 </header>
 
@@ -63,10 +63,10 @@
         <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
     </div>
 
-    <div id="red" class="rainbow-section red">
+    <div id="red" class="rainbow-section">
         <div class="section-content">
             <p class="content">
-                <img src="app/public/images/main/ratty_velvet.png" title="RR">
+                <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="170px">
             </p>
             <header>
                 <h3 class="retro shade">
@@ -75,33 +75,37 @@
             </header>
         </div>
     </div>
-    <div id="orange" class="rainbow-section orange">
+    <div id="purple" class="rainbow-section purple full">
+        <div class="section-content">
+            {{ render('Home:Home:galleryBlock') }}
+        </div>
+    </div>
+    <hr>
+    <div class="rainbow-section breaker">
+    </div>
+    <hr>
+    <div id="orange" class="rainbow-section purple">
         <div class="section-content">
             {{ include('about.html.twig') }}
         </div>
     </div>
-    <div id="yellow" class="rainbow-section yellow email">
+    {# <div id="yellow" class="rainbow-section yellow email">
         <div class="section-content">
         </div>
-    </div>
-    <div id="green" class="rainbow-section green">
+    </div> #}
+    <div id="green" class="rainbow-section purple">
         <div class="section-content">
             {{ render('Home:Home:mailBlock') }}
         </div>
     </div>
-    <div id="blue" class="rainbow-section blue">
+    {# <div id="blue" class="rainbow-section blue">
         <div class="section-content">
         </div>
     </div>
     <div id="blue-dark" class="rainbow-section blue-dark">
         <div class="section-content">
         </div>
-    </div>
-    <div id="purple" class="rainbow-section purple full">
-        <div class="section-content">
-            {{ render('Home:Home:galleryBlock') }}
-        </div>
-    </div>
+    </div> #}
 </section>
 
 <footer class="rr-footer">
