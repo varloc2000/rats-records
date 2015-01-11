@@ -1,0 +1,60 @@
+.rr-flash-notice {
+    position: relative;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-family: 'Znikomit', sans-serif;
+    font-weight: 800;
+    padding: 15px;
+    width: 98%;
+    margin: 0 1%;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+
+    .rr-icon {
+        position: absolute;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        margin-top: -15px;
+        line-height: 30px;
+        right: 0;
+
+        &:hover {
+            border: none;
+            cursor: pointer;
+            color: #fff!important;
+        }
+    }
+
+    &.success {
+        background-color: #6AA63B;
+        border-color: #006600;
+        color: #006600;
+
+        .rr-icon {color: #006600;}
+    }
+    &.error {
+        background-color: #FF9F8E;
+        border-color: #D52100;
+        color: #D52100;
+
+        .rr-icon {color: #D52100;}
+    }
+    
+    &.warning {
+        background-color: #FFB17C;
+        border-color: #FF6600;
+        color: #FF6600;
+
+        .rr-icon {color: #FF6600;}
+    }
+    &.info {
+        background-color: #6EDCFF;
+        border-color: #0292C0;
+        color: #0292C0;
+
+        .rr-icon {color: #0292C0;}
+    }
+}

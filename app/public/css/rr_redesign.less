@@ -1,0 +1,80 @@
+/* Components */
+@import "./../components/bootstrap/less/bootstrap";
+@import "./../components/font-awesome/less/font-awesome";
+@import "./../components/fotorama/fotorama.css";
+@import "./../components/normalize.css/normalize.css";
+
+/** Custom styles */
+@import "variables";
+@import "fotorama";
+@import "flashes";
+
+*, *:after, *::before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+html, body{height: 100%;}
+body{
+    margin: 0;
+    padding: 0;
+}
+h3 {margin: 20px 0px;}
+a {text-decoration: none;}
+
+.rr-header {
+    background-image: url('../images/main/bg_header.png');
+    background-position: 0 -17px;
+}
+/* Rats records logo */
+.rr-logo {
+    display: inline-block;
+    float: left;
+}
+.rr-logo > a > span:after {
+    content: 'rats records'
+}
+@media (max-width: 720px) {
+    .rr-logo > a > span:after {
+        content: 'rr'
+    }
+}
+.rr-logo > a {
+    color: #5831AA;
+    font-family: 'Fredericka the Great', Arial;
+    text-shadow: 2px 2px 0px #ffffff;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 50px;
+
+    letter-spacing: -4px;
+    
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.rr-logo > a:hover {
+    color: #ff6c00;
+    border: none;
+}
+
+/* Icons */
+.rr-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.rr-icon.remove-circle:before {
+    content: "\e088";
+}
+.rr-icon:empty {
+    width: 1em;
+}
+/* End Icons */

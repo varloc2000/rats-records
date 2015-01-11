@@ -23,14 +23,14 @@ RR.contentLoader = function(url) {
     this.url = url;
     this.$content = $('.rr-container');
     this.$loadingMessage = this.$content.find('.rr-loading-message');
-    this.messageTime = 1000;
+    this.messageTime = 10;
     this.messages = [
-        'Loading textures...',
-        // 'Create good advices...',
-        // 'Collectiong Rat King parameters...',
-        // 'Compiling Rat King...',
-        // 'Smoking...',
-        // 'Drinking...',
+        'Collecting textures...',
+        'Create good advices...',
+        'Collectiong Rat King parameters...',
+        'Compiling Rat King...',
+        'Smoking...',
+        'Drinking...',
         'Done.'
     ];
 }

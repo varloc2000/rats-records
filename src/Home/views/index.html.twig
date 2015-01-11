@@ -3,15 +3,15 @@
 <script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
 
 <!-- Fotorama jquery plugin for gallery -->
-<script src="/app/public/vendor/fotorama-4.4.9/fotorama.js" type="text/javascript"></script>
+<script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
 
 <script>
     $(function() {
-        var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
-        menuMain.init();
+        // var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
+        // menuMain.init();
 
-        var smiles = new RR.smileSingleRotate('span.smile');
-        smiles.init();
+        // var smiles = new RR.smileSingleRotate('span.smile');
+        // smiles.init();
 
         var scroller = new RR.pageScroller();
         scroller.init();
@@ -31,31 +31,6 @@
         flasher.init();
     });
 </script>
-
-<header class="rr-header">
-    <div class="stick">
-        <div class="rr-logo">
-            <a href="/">
-                <span></span>
-                {# Here logo with css #}
-            </a>
-        </div>
-        {% block main_menu %}
-            {# {{ render('Home:Home:menuBlock') }} #}
-        {% endblock main_menu %}
-    </div>
-    {% block introduction %}
-        {# <div class="rr-main-info">
-            <pre><span class="capital-small">Д</span>обро пожаловать <span class="capital-small">!</span> <span class="capital-small">С</span>айт в процессе   с  о    з    д      а        а          а           а  .  .  .</pre>
-            <pre> .  .  .   И  всегда будет  !</pre>
-            <p>
-                <span class="capital-small">З</span>десь можно найти :  _что думаем _что делаем _редкую хронику _выпить _смысл жизни _повод для критики
-                <br>
-                <span class="capital-small">Т</span>ут нельзя найти : _трезвенников _потраченное зря время _идиотов
-            </p>
-        </div> #}
-    {% endblock introduction %}
-</header>
 
 <section class="rr-content">
     <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">

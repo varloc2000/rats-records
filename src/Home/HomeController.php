@@ -24,12 +24,12 @@ class HomeController extends FrameworkController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function mainPageContentAction()
+    public function mainPageContentAction(Request $request)
     {
-        // $request->getSession()->getFlashBag()->add(
-        //     'rr.red.success',
-        //     'rr.flash.mail_form.success'
-        // );
+        $request->getSession()->getFlashBag()->add(
+            'rr.red.success',
+            'rr.flash.mail_form.success'
+        );
         // $request->getSession()->getFlashBag()->add(
         //     'rr.yellow.error',
         //     'rr.flash.mail_form.error'
