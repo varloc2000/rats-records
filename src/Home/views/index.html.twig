@@ -1,83 +1,98 @@
 {% spaceless %}
-<!-- Animate shadow jquery plugin  -->
-<script src="/app/public/js/jquery.animate-shadow-min.js" type="text/javascript"></script>
+{# Inbody scripts #}
+    <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
+    <script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
 
-<!-- Fotorama jquery plugin for gallery -->
-<script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            // var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
+            // menuMain.init();
 
-<script>
-    $(function() {
-        // var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
-        // menuMain.init();
+            // var smiles = new RR.smileSingleRotate('span.smile');
+            // smiles.init();
 
-        // var smiles = new RR.smileSingleRotate('span.smile');
-        // smiles.init();
+            var scroller = new RR.pageScroller();
+            scroller.init();
 
-        var scroller = new RR.pageScroller();
-        scroller.init();
+            $('#rr-gallery').fotorama();
 
-        $('#rr-gallery').fotorama();
+            var flasher = new RR.flasher();
 
-        var flasher = new RR.flasher();
-
-        {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
-            {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
-                {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
-                    flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
+            {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
+                {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
+                    {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
+                        flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
+                    {% endfor %}
                 {% endfor %}
             {% endfor %}
-        {% endfor %}
 
-        flasher.init();
-    });
-</script>
-
-<section class="rr-content row">
-    <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
-        {# Flash message here #}
-        <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
-    </div>
-
-    <div id="red" class="rainbow-section">
-        <div class="section-content">
+            flasher.init();
+        });
+    </script>
+{# End Inbody scripts #}
+    <div id="first" class="rr-section">
+        <div class="rr-section-content text-center">
             <p class="content">
-                <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="170px">
+                <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px">
             </p>
             <header>
                 <h3 class="retro shade">
-                    Рады вас видеть! Но не всех
+                    Рады Вас видеть! Но не всех.
                 </h3>
             </header>
         </div>
     </div>
-    <div id="purple" class="rainbow-section">
-        <div class="section-content wide">
+
+    <nav class="rr-header navbar navbar-default">
+        <div class="navbar-header">
+            <div class="rr-logo">
+                <a href="/" title="Rats Records">
+                    <span></span>
+                    {# Here logo with css #}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="second" class="rr-section">
+        <div class="rr-section-content wide">
             {{ render('Home:Home:galleryBlock') }}
         </div>
     </div>
-    <div class="rainbow-section blue">
+
+    {#<div class="rr-section blue">#}
+    {#</div>#}
+
+    {#<div id="orange" class="rr-section">#}
+        {#<div class="rr-section-content">#}
+            {#{{ include('about.html.twig') }}#}
+        {#</div>#}
+    {#</div>#}
+
+    {#<div id="green" class="rr-section">#}
+        {#<div class="rr-section-content">#}
+            {#{{ render('Home:Home:mailBlock') }}#}
+        {#</div>#}
+    {#</div>#}
+
+    <footer class="rr-footer">
+        <div class="copyright">
+            <small>
+                <a href="#first" class="red rr-scroller">v</a>
+                <a href="#orange" class="orange rr-scroller">a</a>
+                <a href="#yellow" class="yellow rr-scroller">r</a>
+                <a href="#green" class="green rr-scroller">l</a>
+                <a href="#blue" class="blue rr-scroller">o</a>
+                <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
+                <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
+            </small>
+        </div>
+    </footer>
+
+{# Hidden flashes prototype #}
+    <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
+        {# Flash message here #}
+        <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
     </div>
-    <div id="orange" class="rainbow-section">
-        <div class="section-content">
-            {{ include('about.html.twig') }}
-        </div>
-    </div>
-    {# <div id="yellow" class="rainbow-section yellow email">
-        <div class="section-content">
-        </div>
-    </div> #}
-    <div id="green" class="rainbow-section">
-        <div class="section-content">
-            {{ render('Home:Home:mailBlock') }}
-        </div>
-    </div>
-    {# <div id="blue" class="rainbow-section blue">
-        <div class="section-content">
-        </div>
-    </div>
-    <div id="blue-dark" class="rainbow-section blue-dark">
-        <div class="section-content">
-        </div>
-    </div> #}
-</section>
+{# End Hidden flashes prototype #}
 {% endspaceless %}

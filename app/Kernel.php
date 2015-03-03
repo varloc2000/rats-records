@@ -10,7 +10,6 @@ class Kernel extends FrameworkKernel
     public function getNamespacesToLoad()
     {
         return array(
-            'Cms'       => __DIR__ . '/../src',
             'Home'      => __DIR__ . '/../src',
             'Lesson'    => __DIR__ . '/../src',
         );

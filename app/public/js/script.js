@@ -11,7 +11,7 @@ var RR = {
         'green',
         'blue',
         'blue-dark',
-        'purple',
+        'purple'
     ]
 };
 
@@ -21,9 +21,10 @@ var RR = {
  */
 RR.contentLoader = function(url) {
     this.url = url;
-    this.$content = $('.rr-container');
-    this.$loadingMessage = this.$content.find('.rr-loading-message');
-    this.messageTime = 10;
+    this.$content = $('#rr-container');
+    this.$loading = $('.rr-loading-stage');
+    this.$loadingMessage = this.$loading.find('.rr-loading-message');
+    this.messageTime = 500;
     this.messages = [
         'Collecting textures...',
         'Create good advices...',
@@ -33,7 +34,7 @@ RR.contentLoader = function(url) {
         'Drinking...',
         'Done.'
     ];
-}
+};
     RR.contentLoader.prototype.init = function() {
         var _self = this;
 
@@ -49,17 +50,22 @@ RR.contentLoader = function(url) {
                             } else {
                                 clearInterval(messagesInterval);
                                 _self.$content.html(data.content);
+                                _self.$loading.fadeOut({
+                                    duration: 800,
+                                    easing: 'linear'
+                                });
                             }
                         },
                         _self.messageTime
                     );
                 } else {
-                    _self.$loadingMessage.html('Sorry but content unavaliable due to some problems.');
+                    _self.$loadingMessage.html('Sorry but content unavailable due to some problems.');
+                    _self.$loading.fadeOut(500);
                 }
             },
             'json'
         );
-    }
+    };
 
 /**
  * Single rotate smiles class
@@ -68,17 +74,17 @@ RR.contentLoader = function(url) {
 RR.smileSingleRotate = function(selector) {
     this.selector = selector;
     this.$smiles = $(this.selector);
-}
+};
     RR.smileSingleRotate.prototype.init = function() {
         var _self = this;
 
         this.$smiles.parent().on('mouseover', function() {
             _self._onParentHover($(this), _self.$smiles);
         });
-    }
+    };
     RR.smileSingleRotate.prototype._onParentHover = function(parent, smiles) {
         parent.find(smiles).addClass('rotated');
-    }
+    };
 
 /**
  * Dropdown menu
@@ -86,14 +92,14 @@ RR.smileSingleRotate = function(selector) {
  */
 RR.menuDropdown = function(selector) {
     this.selector = selector;
-}
+};
     RR.menuDropdown.prototype.init = function() {
         $('body').on(
             'click',
             this.selector,
             this._onDropdownInitiatorClick
         );
-    }
+    };
     RR.menuDropdown.prototype._onDropdownInitiatorClick = function(e) {
         e.preventDefault();
 
@@ -116,25 +122,52 @@ RR.menuDropdown = function(selector) {
                 boxShadow: '+=' == sign ? '0 10px 15px 0px #000' : '0 0 0'
             }, RR.menuDropdown.defaultOptions.animationTime);
         })
-    }
+    };
     RR.menuDropdown.defaultOptions = {
         expandedClass: 'expanded',
         animationTime: 250
-    }
+    };
 
 /**
  * Scroller
  * @constructor
  */
 RR.pageScroller = function() {
-}
+};
     RR.pageScroller.prototype.init = function() {
+        // Fast scrolling
         $('body').on(
             'click',
             '.' + RR.pageScroller.defaultOptions.scrollersClass,
             this._onScrollerClick
         );
-    }
+
+        // Parallax
+        $(window).scroll(function() {
+            $('[data-type="background"], [data-type="content"]').each(function(){
+
+                var $obj  = $(this),
+                    $window = $(window),
+                    yPos    = ($window.scrollTop() / $obj.data('speed')),
+                    direction = (undefined == $obj.data('direction'))
+                        ? '+'
+                        : $obj.data('direction')
+                    ;
+
+                if ('background' === $obj.data('type')) {
+                    // Move the background
+                    $obj.css({backgroundPosition: '50% '+ direction + yPos + '%'});
+                } else if ('content' === $obj.data('type')) {
+                    // Move the content and fade to black
+                    $obj.css({top: yPos * 4 + 'px'});
+
+                    if ($obj.hasClass('n-fade')) {
+                        $obj.fadeTo(10, (1 / yPos * 10));
+                    }
+                }
+            });
+        });
+    };
     RR.pageScroller.prototype._onScrollerClick = function(e) {
         e.preventDefault();
 
@@ -146,11 +179,11 @@ RR.pageScroller = function() {
             scrollTop: $(scrollTo).offset().top - 50
         }, RR.pageScroller.defaultOptions.animationTime);
 
-    }
+    };
     RR.pageScroller.defaultOptions = {
         scrollersClass: 'rr-scroller',
         animationTime: 500
-    }
+    };
 
 /**
  * Scroller
@@ -159,7 +192,7 @@ RR.pageScroller = function() {
 RR.flasher = function() {
     this.messages = [];
     this.count = 0;
-}
+};
     RR.flasher.prototype.init = function() {
 
         for (var index in this.messages) {
@@ -180,18 +213,18 @@ RR.flasher = function() {
                 )
             );
         }
-    }
+    };
     RR.flasher.prototype.addMessage = function(section, level, message) {
         this.messages.push({section: section, level: level, message: message});
         this.count++;
-    }
+    };
     RR.flasher.prototype._onMessageDismiss = function(e) {
         e.preventDefault();
 
         $(this).parents('.' + $(this).data('dismiss')).remove();
-    }
+    };
     RR.flasher.defaultOptions = {
         noticePrototypeId: 'rr-flash-notice-prototype',
         translationsHolderClass: 'rr-notice-translations',
         animationTime: 2000
-    }
+    };

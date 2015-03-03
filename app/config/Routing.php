@@ -17,21 +17,6 @@ abstract class RoutingConfig
         $routes->add('home_content', new Routing\Route('/home_content', array(
             '_worker' => 'Home:Home:mainPageContent'
         )));
-        $routes->add('about', new Routing\Route('/let_me_tell_about', array(
-            '_worker' => 'Home:Home:aboutPage'
-        )));
-        $routes->add('mail_us', new Routing\Route('/mail_us', array(
-            '_worker' => 'Home:Home:mailPage'
-        )));
-        $routes->add('contacts', new Routing\Route('/contacts', array(
-            '_worker' => 'Home:Home:contactPage'
-        )));
-        $routes->add('gallery', new Routing\Route('/let_me_show_you', array(
-            '_worker' => 'Home:Home:galleryPage'
-        )));
-        $routes->add('scene', new Routing\Route('/ladys_and_gentlemans', array(
-            '_worker' => 'Home:Home:sceenPage'
-        )));
 
         /*
          * Lessons part routes

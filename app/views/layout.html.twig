@@ -1,89 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {% block meta %}
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta http-equiv="Content-Style-Type" content="text/css">
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        {% endblock meta %}
+<head>
+    {% block meta %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    {% endblock meta %}
 
-        {% block title %}
-            <title>{{ "Rats Records | %s"|format(page_title|default("Welcome")) }}</title>
-        {% endblock title %}
+    {% block title %}
+        <title>{{ "Rats Records | %s"|format(page_title|default("Welcome")) }}</title>
+    {% endblock title %}
 
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-        {% block stylesheets %}
-            <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
-        {% endblock stylesheets %}
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
+    {% endblock stylesheets %}
 
-        {% block javascripts_head %}{% endblock javascripts_head %}
-    </head>
+    {% block javascripts_head %}{% endblock javascripts_head %}
+</head>
 
-    <body>
-        <nav class="rr-header navbar navbar-default navbar-fixed-top container-fluid">
-            <div class="row">
-                <div class="col-xs-15">
-                    <div class="rr-logo">
-                        <a href="/" title="Rats Records">
-                            <span></span>
-                            {# Here logo with css #}
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<body>
+    <div class="content" id="rr-container">
+        {% block container %}{% endblock container %}
+    </div>
+    {% include('loading.html.twig') %}
+</body>
 
-        <div class="rr-container">
-            {% block container %}{% endblock container %}
-        </div>
+{% block javascripts %}
+    <!-- jQuery -->
+    <script src="/app/public/components/jquery/jquery.min.js" type="text/javascript"></script>
 
-        <footer class="rr-footer container-fluid">
-            <div class="copyright">
-                <small>
-                    <a href="#red" class="red rr-scroller">v</a>
-                    <a href="#orange" class="orange rr-scroller">a</a>
-                    <a href="#yellow" class="yellow rr-scroller">r</a>
-                    <a href="#green" class="green rr-scroller">l</a>
-                    <a href="#blue" class="blue rr-scroller">o</a>
-                    <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
-                    <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
-                </small>
-            </div>
-        </footer>
-    </body>
+    <!-- Project scripts -->
+    <script src="/app/public/js/utils.js" type="text/javascript"></script>
+    <script src="/app/public/js/script.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            var contentLoader = new RR.contentLoader('/home_content');
+            contentLoader.init();
+        });
+    </script>
+{% endblock javascripts %}
 
-    {% block javascripts %}
-        <!-- jQuery -->
-        <script src="/app/public/components/jquery/jquery.min.js" type="text/javascript"></script>
+{% block javascripts_analytics %}
+    {% if local == false %}
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-40140733-1']);
+            _gaq.push(['_trackPageview']);
 
-        <!-- Project scripts -->
-        <script src="/app/public/js/utils.js" type="text/javascript"></script>
-        <script src="/app/public/js/script.js" type="text/javascript"></script>
-        <script>
-            $(function() {
-                var contentLoader = new RR.contentLoader('/home_content');
-                contentLoader.init();
-            });
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
         </script>
-    {% endblock javascripts %}
-
-    {% block javascripts_analytics %}
-        {% if local == false %}
-            <script type="text/javascript">
-                var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', 'UA-40140733-1']);
-                _gaq.push(['_trackPageview']);
-
-                (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-            </script>
-        {% endif %}
-    {% endblock javascripts_analytics %}
+    {% endif %}
+{% endblock javascripts_analytics %}
 </html>
