@@ -9,6 +9,7 @@
 @import "fotorama";
 @import "flashes";
 
+/* Main styles */
 *, *:after, *::before {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -19,43 +20,156 @@ html, body{height: 100%;}
 body{
     margin: 0;
     padding: 0;
+    color: #fff;
+    // font-family: 'Znikomit', 'Vetka', sans-serif;
 }
-h3 {margin: 20px 0px;}
+h3 {
+    margin: 20px 0px;
+    font-size: 3em;
+}
 a {text-decoration: none;}
+p, span, a, h1, h2, h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+/* End Main styles */
 
+
+.rr-container {
+    position: relative;
+    overflow: hidden;
+
+    .rr-content {
+        margin: 50px 0 -50px;
+
+        .rainbow-section {
+            text-align: center;
+            display: inline-block;
+            float: left;
+            position: relative;
+            width: 100%;
+            height: 120vh;
+            min-height: 700px;
+            font-family: arial, sans-serif;
+            line-height: normal;
+            background-color: #7C327E;
+            // background-color: #c56dc8;
+            // background-image: url('../images/main/pattern-origami.png');
+            background-repeat: repeat;
+            background-attachment: fixed!important;
+            border-bottom: 2px dashed #000;
+
+            .section-content {
+                display: inline-block;
+                width: 100%;
+                padding: 10% 220px;
+                height: auto;
+                text-align: center;
+
+                &.wide {
+                    padding: 20px 0;
+                }
+            }
+
+            img.rr-promo {
+                border-radius: 50%;
+                background-color: #360E52;
+
+                filter: grayscale(90%);
+                -webkit-filter: grayscale(90%);
+                -moz-filter: grayscale(90%);
+                -ms-filter: grayscale(90%);
+                -o-filter: grayscale(90%);
+
+                &:hover {
+                    filter: none;
+                    -webkit-filter: none;
+                    -moz-filter: none;
+                    -ms-filter: none;
+                    -o-filter: none;
+                }
+            }
+
+            p.content {
+                color: #fff!important;
+                font-family: 'Znikomit', 'Vetka', sans-serif;
+                font-weight: 800;
+                font-size: 25px;
+            }
+        }
+    }
+}
 .rr-header {
     background-image: url('../images/main/bg_header.png');
     background-position: 0 -17px;
-}
-/* Rats records logo */
-.rr-logo {
-    display: inline-block;
-    float: left;
-}
-.rr-logo > a > span:after {
-    content: 'rats records'
-}
-@media (max-width: 720px) {
+
+    /* Rats records logo */
+    .rr-logo {
+        display: inline-block;
+        float: left;
+    }
     .rr-logo > a > span:after {
-        content: 'rr'
+        content: 'rats records';
+    }
+    @media (max-width: 720px) {
+        .rr-logo > a > span:after {
+            content: 'rr'
+        }
+    }
+    .rr-logo > a {
+        color: #C56DC8;
+        font-family: 'Fredericka the Great', Arial!important;
+        text-shadow: 2px 2px 0px #ffffff;
+        font-weight: bold;
+        font-size: 4em;
+        line-height: 50px;
+
+        letter-spacing: -4px;
+        
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    .rr-logo > a:hover {
+        color: #ff6c00;
+        border: none;
     }
 }
-.rr-logo > a {
-    color: #5831AA;
-    font-family: 'Fredericka the Great', Arial;
-    text-shadow: 2px 2px 0px #ffffff;
-    font-weight: bold;
-    font-size: 4em;
-    line-height: 50px;
 
-    letter-spacing: -4px;
-    
-    text-transform: uppercase;
-    text-decoration: none;
-}
-.rr-logo > a:hover {
-    color: #ff6c00;
-    border: none;
+/* Footer main */
+footer.rr-footer{
+    position: absolute;
+    background: #F3F3F3 url('../images/main/bg_footer.png') repeat;
+    color: #ffffff;
+    /*bottom: 0;*/
+    width: 100%;
+    height: 60px;
+
+    .copyright{
+        position: absolute;
+        width: 400px;
+        bottom: 0;
+        text-align: center;
+        padding-bottom: 19px;
+        right: 0;
+        letter-spacing: 3px;
+        font-size: 15px;
+
+        a {
+            width: 11px;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            margin-left: 4px;
+            padding-left: 2px;
+
+            &:hover {
+                border: none!important;
+            }
+            &.number {
+                width: 44px;
+            }
+        }
+    }
 }
 
 /* Icons */
@@ -78,3 +192,16 @@ a {text-decoration: none;}
     width: 1em;
 }
 /* End Icons */
+
+/* Background color */
+.red {background-color: #D52100;}  
+.orange {background-color: #FF6600;}  
+.yellow {background-color: #FBC700;}  
+.green {background-color: #6AA63B;}  
+.dark-green {background-color: #006600;}
+.blue {background-color: #0292C0;}
+.blue-main {background-color: #503587;}  
+.blue-dark {background-color: #0229ff;}  
+.purple {background-color: #5122B4;}  
+.gray {background-color: #999;}
+/* End Background color */

@@ -26,10 +26,10 @@ class HomeController extends FrameworkController
      */
     public function mainPageContentAction(Request $request)
     {
-        $request->getSession()->getFlashBag()->add(
-            'rr.red.success',
-            'rr.flash.mail_form.success'
-        );
+        // $request->getSession()->getFlashBag()->add(
+        //     'rr.red.success',
+        //     'rr.flash.mail_form.success'
+        // );
         // $request->getSession()->getFlashBag()->add(
         //     'rr.yellow.error',
         //     'rr.flash.mail_form.error'

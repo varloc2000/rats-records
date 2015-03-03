@@ -24,18 +24,36 @@
     </head>
 
     <body>
-        <nav class="rr-header navbar navbar-default navbar-fixed-top">
-            <div class="rr-logo">
-                <a href="/" title="Rats Records">
-                    <span></span>
-                    {# Here logo with css #}
-                </a>
+        <nav class="rr-header navbar navbar-default navbar-fixed-top container-fluid">
+            <div class="row">
+                <div class="col-xs-15">
+                    <div class="rr-logo">
+                        <a href="/" title="Rats Records">
+                            <span></span>
+                            {# Here logo with css #}
+                        </a>
+                    </div>
+                </div>
             </div>
         </nav>
 
         <div class="rr-container">
             {% block container %}{% endblock container %}
         </div>
+
+        <footer class="rr-footer container-fluid">
+            <div class="copyright">
+                <small>
+                    <a href="#red" class="red rr-scroller">v</a>
+                    <a href="#orange" class="orange rr-scroller">a</a>
+                    <a href="#yellow" class="yellow rr-scroller">r</a>
+                    <a href="#green" class="green rr-scroller">l</a>
+                    <a href="#blue" class="blue rr-scroller">o</a>
+                    <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
+                    <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
+                </small>
+            </div>
+        </footer>
     </body>
 
     {% block javascripts %}

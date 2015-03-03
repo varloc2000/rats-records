@@ -32,7 +32,7 @@
     });
 </script>
 
-<section class="rr-content">
+<section class="rr-content row">
     <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
         {# Flash message here #}
         <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
@@ -50,16 +50,14 @@
             </header>
         </div>
     </div>
-    <div id="purple" class="rainbow-section purple full">
-        <div class="section-content">
+    <div id="purple" class="rainbow-section">
+        <div class="section-content wide">
             {{ render('Home:Home:galleryBlock') }}
         </div>
     </div>
-    <hr>
-    <div class="rainbow-section breaker">
+    <div class="rainbow-section blue">
     </div>
-    <hr>
-    <div id="orange" class="rainbow-section purple">
+    <div id="orange" class="rainbow-section">
         <div class="section-content">
             {{ include('about.html.twig') }}
         </div>
@@ -68,7 +66,7 @@
         <div class="section-content">
         </div>
     </div> #}
-    <div id="green" class="rainbow-section purple">
+    <div id="green" class="rainbow-section">
         <div class="section-content">
             {{ render('Home:Home:mailBlock') }}
         </div>
@@ -82,18 +80,4 @@
         </div>
     </div> #}
 </section>
-
-<footer class="rr-footer">
-    <div class="copyright">
-        <small>
-            <a href="#red" class="red rr-scroller">v</a>
-            <a href="#orange" class="orange rr-scroller">a</a>
-            <a href="#yellow" class="yellow rr-scroller">r</a>
-            <a href="#green" class="green rr-scroller">l</a>
-            <a href="#blue" class="blue rr-scroller">o</a>
-            <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
-            <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
-        </small>
-    </div>
-</footer>
 {% endspaceless %}
