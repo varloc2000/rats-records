@@ -3,7 +3,7 @@
  * @required jQuery
  */
 var RR = {
-    $container: $('html'),
+    $container: $('#rr-container'),
     rainbow: [
         'red',
         'orange',
@@ -21,51 +21,65 @@ var RR = {
  */
 RR.contentLoader = function(url) {
     this.url = url;
-    this.$content = $('#rr-container');
     this.$loading = $('.rr-loading-stage');
     this.$loadingMessage = this.$loading.find('.rr-loading-message');
-    this.messageTime = 500;
+    this.messagesInterval = null;
+    this.messagesIntervalTime = 10;
+    this.messagesIntervalCount = 0;
+    this.loaded = false;
+    this.loadedError = false;
     this.messages = [
         'Collecting textures...',
         'Create good advices...',
-        'Collectiong Rat King parameters...',
+        'Collecting Rat King parameters...',
         'Compiling Rat King...',
         'Smoking...',
-        'Drinking...',
-        'Done.'
+        'Drinking...'
     ];
-};
-    RR.contentLoader.prototype.init = function() {
-        var _self = this;
+    this.stopLoading = function(error, message) {
+        clearInterval(this.messagesInterval);
+        this.$loadingMessage.html(message);
 
-        $.get(
-            this.url,
-            function(data) {
-                if (true == data.success) {
-                    var i = 0;
-                    var messagesInterval = setInterval(function() {
-                            if (i <=_self.messages.length) {
-                                _self.$loadingMessage.html(_self.messages[i]);
-                                i++;
-                            } else {
-                                clearInterval(messagesInterval);
-                                _self.$content.html(data.content);
-                                _self.$loading.fadeOut({
-                                    duration: 800,
-                                    easing: 'linear'
-                                });
-                            }
-                        },
-                        _self.messageTime
-                    );
-                } else {
-                    _self.$loadingMessage.html('Sorry but content unavailable due to some problems.');
-                    _self.$loading.fadeOut(500);
-                }
-            },
-            'json'
-        );
+        if (false == error) {
+            this.$loading.fadeOut({
+                duration: 800,
+                easing: 'linear'
+            });
+        }
     };
+    this.messagesIntervalHandler = function() {
+        if (this.messagesIntervalCount <= this.messages.length) {
+            this.$loadingMessage.html(this.messages[this.messagesIntervalCount]);
+            this.messagesIntervalCount++;
+        } else {
+            if (true == this.loaded) {
+                this.stopLoading(
+                    this.loadedError,
+                    this.loadedError
+                        ? 'Sorry! But some error occurred while load content. Please retry later!'
+                        : 'Done.'
+                );
+            } else {
+                // Repeat loop of interval
+                this.messagesIntervalCount = 0;
+            }
+        }
+    };
+    this.init = function() {
+        this.messagesInterval = setInterval(
+            $.proxy(this.messagesIntervalHandler, this),
+            this.messagesIntervalTime
+        );
+
+        var _self = this;
+        RR.$container.load(url, function(response, status, xhr) {
+            _self.loadedError = ("error" == status);
+            _self.loaded = true;
+        });
+    };
+
+    this.init();
+};
 
 /**
  * Single rotate smiles class

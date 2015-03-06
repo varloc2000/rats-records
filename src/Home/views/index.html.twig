@@ -2,6 +2,7 @@
 {# Inbody scripts #}
     <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
     <script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
+    <script src="/app/public/js/chromata.min.js" type="text/javascript"></script>
 
     <script>
         $(function() {
@@ -10,6 +11,25 @@
 
             // var smiles = new RR.smileSingleRotate('span.smile');
             // smiles.init();
+
+            var imageElement = document.querySelector('.rr-promo');
+            var defaults = {
+                colorMode: 'greyscale',
+                compositeOperation: 'lighten',
+                iterationLimit: 0,
+                key: 'high',
+                lineWidth: 1,
+                lineMode: 'smooth',
+                origin: ['bottom', '50%', '50%', 'top'],
+                outputSize: 'original',
+                pathFinderCount: 40,
+                speed: 7,
+                turningAngle: Math.PI/2
+            };
+            var chromata = new Chromata(imageElement, defaults);
+
+//            chromata.start();
+
 
             var scroller = new RR.pageScroller();
             scroller.init();
@@ -45,47 +65,94 @@
 
     <nav class="rr-header navbar navbar-default">
         <div class="navbar-header">
-            <div class="rr-logo">
-                <a href="/" title="Rats Records">
+            <div class="rr-logo pull-left">
+                <a href="#first" class="rr-scroller" title="Rats Records">
                     <span></span>
                     {# Here logo with css #}
                 </a>
             </div>
+            <div class="pull-right">
+                <button type="button" class="btn btn-sm navbar-toggle collapsed navbar-toggle-btn" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="fa fa-navicon"></span>
+                </button>
+            </div>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#second" class="rr-scroller">Слушать</a>
+                </li>
+                <li>
+                    <a href="#third" class="rr-scroller">Читать</a>
+                </li>
+                <li>
+                    <a href="#fourth" class="rr-scroller">Смотреть</a>
+                </li>
+            </ul>
+
+        </div>
+
     </nav>
 
     <div id="second" class="rr-section">
+        <div class="rr-section-content">
+            {{ render('Home:Home:recordsBlock') }}
+        </div>
+    </div>
+
+    <div id="third" class="rr-section orange">
+        <div class="rr-section-content">
+            {{ render('Home:Home:aboutBlock') }}
+        </div>
+    </div>
+
+    <div id="fourth" class="rr-section">
         <div class="rr-section-content wide">
             {{ render('Home:Home:galleryBlock') }}
         </div>
     </div>
 
-    {#<div class="rr-section blue">#}
-    {#</div>#}
-
-    {#<div id="orange" class="rr-section">#}
-        {#<div class="rr-section-content">#}
-            {#{{ include('about.html.twig') }}#}
-        {#</div>#}
-    {#</div>#}
-
-    {#<div id="green" class="rr-section">#}
-        {#<div class="rr-section-content">#}
-            {#{{ render('Home:Home:mailBlock') }}#}
-        {#</div>#}
-    {#</div>#}
+    <div id="fifth" class="rr-section">
+        <div class="rr-section-content">
+            {{ render('Home:Home:mailBlock') }}
+        </div>
+    </div>
 
     <footer class="rr-footer">
-        <div class="copyright">
-            <small>
-                <a href="#first" class="red rr-scroller">v</a>
-                <a href="#orange" class="orange rr-scroller">a</a>
-                <a href="#yellow" class="yellow rr-scroller">r</a>
-                <a href="#green" class="green rr-scroller">l</a>
-                <a href="#blue" class="blue rr-scroller">o</a>
-                <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
-                <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
-            </small>
+        <div class="container-fluid">
+            <div class="pull-left">
+                <ul class="rr-footer-list list-unstyled">
+                    <li>
+                        <a href="https://soundcloud.com/varloc2000" target="_blank">
+                            <i class="fa fa-soundcloud"></i>
+                            SoundCloud
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vk.com/varloc2000" target="_blank">
+                            <i class="fa fa-vk"></i>
+                            Вконакте
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCQUb_v_p6BRpeAgaciPokGQ" target="_blank">
+                            <i class="fa fa-youtube"></i>
+                            YouTube
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <small>
+                    <a href="#first" class="red rr-scroller">v</a>
+                    <a href="#orange" class="orange rr-scroller">a</a>
+                    <a href="#yellow" class="yellow rr-scroller">r</a>
+                    <a href="#green" class="green rr-scroller">l</a>
+                    <a href="#blue" class="blue rr-scroller">o</a>
+                    <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
+                    <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
+                </small>
+            </div>
         </div>
     </footer>
 

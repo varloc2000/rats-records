@@ -17,6 +17,9 @@ abstract class RoutingConfig
         $routes->add('home_content', new Routing\Route('/home_content', array(
             '_worker' => 'Home:Home:mainPageContent'
         )));
+        $routes->add('mail_us', new Routing\Route('/mail_us', array(
+            '_worker' => 'Home:Home:mailBlock'
+        )));
 
         /*
          * Lessons part routes

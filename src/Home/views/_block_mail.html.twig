@@ -1,54 +1,63 @@
 <header>
     <h3 class="retro shade">
-        Почтампт
+        Пишите письма
     </h3>
 </header>
-<div class="content">
-    <form action="#yellow" method="post" class="rr-contact-form" novalidate="novalidate">
-        <section>
-            <label for="email">Email</label>
-            <div class="field{{ errors['email'] ? ' error' : '' }}">
-                {{ _self.field_error(errors, 'email') }}
-                <input 
-                    type="text" 
-                    name="email" 
-                    id="email" 
-                    maxlength="100" 
-                    value="{{ data['email']|default('') }}" 
-                    placeholder="Тут Ваш email..."
-                />
+<div class="container-fluid">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 border-right">
+        <div class="media">
+            <p class="content">
+                Все сказанное будет прочитанно компетентным жюри и принято к сведению! Можно рассчитывать на полноценный ответ и даже диалог!
+            </p>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <form action="/mail_us" id="email-us" method="post" class="rr-contact-form" novalidate="novalidate">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="field{{ errors['email'] ? ' error' : '' }}">
+                    {{ _self.field_error(errors, 'email') }}
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control input-lg"
+                        maxlength="100"
+                        value="{{ data['email']|default('') }}"
+                    />
+                </div>
             </div>
-        </section>
-        <section>
-            <label for="name">От кого? *</label>
-            <div class="field{{ errors['name'] ? ' error' : '' }}">
-                {{ _self.field_error(errors, 'name') }}
-                <input 
-                    type="text" 
-                    name="name" 
-                    id="name" 
-                    maxlength="100" 
-                    value="{{ data['name']|default('') }}" 
-                    placeholder="Тут Ваше имя..."
-                />
+            <div class="form-group">
+                <label for="name">От кого? *</label>
+                <div class="field{{ errors['name'] ? ' error' : '' }}">
+                    {{ _self.field_error(errors, 'name') }}
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="form-control input-lg"
+                        maxlength="100"
+                        value="{{ data['name']|default('') }}"
+                    />
+                </div>
             </div>
-        </section>
-        <section class="textarea">
-            <label for="feedback">Что передать? *</label>
-            <div class="field{{ errors['feedback'] ? ' error' : '' }}">
-                {{ _self.field_error(errors, 'feedback') }}
-                <textarea 
-                    name="feedback" 
-                    id="feedback" 
-                    maxlength="6000"
-                    placeholder="Тут все что хочется..."
-                >{{ data['feedback']|default('') }}</textarea>
+            <div class="form-group">
+                <label for="feedback">Что передать? *</label>
+                <div class="field{{ errors['feedback'] ? ' error' : '' }}">
+                    {{ _self.field_error(errors, 'feedback') }}
+                    <textarea
+                        name="feedback"
+                        id="feedback"
+                        class="form-control input-lg"
+                        maxlength="6000"
+                    >{{ data['feedback']|default('') }}</textarea>
+                </div>
             </div>
-        </section>
-        <section class="controls">
-            <button class="btn-submit green" type="submit">Отправить</button>
-        </section>
-    </form>
+            <div class="form-group">
+                <button class="btn btn-lg btn-orange" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 {% macro field_error(errors, fieldName) %}

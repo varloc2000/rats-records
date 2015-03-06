@@ -15,9 +15,12 @@
 
 @brand-primary: #5122B4;
 @brand-danger: #D52100;
+@brand-orange: #ff6c00;
+
+@link-color: #ffffff;
 
 //** Number of columns in the grid.
-@grid-columns: 15;
+@grid-columns: 12;
 
 // Large screen / wide desktop
 @container-large-desktop: 100%!important;
@@ -27,12 +30,17 @@
 @navbar-default-bg: #231B1E;
 @navbar-margin-bottom: 0px;
 
-@navbar-default-link-color: #0292C0;
-@navbar-default-link-hover-color: #0E0E0E;
-@navbar-default-link-active-color: #0E0E0E;
+@navbar-default-link-color: #fff;
+@navbar-default-link-hover-color: @brand-orange;
+@navbar-default-link-hover-bg: transparent;
+@navbar-default-link-active-color: @brand-orange;
 @navbar-default-link-active-bg: transparent;
 
+@navbar-default-color: #fff;
 @navbar-default-border: transparent;
+
+@navbar-default-toggle-hover-bg:           transparent;
+@navbar-default-toggle-border-color:       transparent;
 
 //=== Shared nav styles
 @nav-link-padding: 10px 5px;
@@ -52,3 +60,10 @@
 @modal-backdrop-opacity:      .9;
 //** Modal header border color
 @modal-header-border-color:   transparent;
+
+// Inputs
+@input-bg: transparent;
+@input-color: @brand-orange;
+@input-border: #fff;
+@input-border-focus: @brand-orange;
+@input-color-placeholder: #999;

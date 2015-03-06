@@ -3,7 +3,6 @@
 namespace Home;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 use Varloc\Framework\Controller\Controller as FrameworkController;
 use Varloc\Framework\Database\Connector;
@@ -42,12 +41,7 @@ class HomeController extends FrameworkController
         //     'rr.flash.mail_form.asdfsadf'
         // );
 
-        $response = new JsonResponse();
-
-        return $response->setData(array(
-            'success' => true,
-            'content' => $this->render('index.html.twig')->getContent(),
-        ));
+        return $this->render('index.html.twig');
     }
 
     /**
@@ -56,9 +50,7 @@ class HomeController extends FrameworkController
      */
     public function galleryBlockAction(Request $request)
     {
-        return $this->render('_block_gallery.html.twig', array(
-            'page_title' => 'Photos!'
-        ));
+        return $this->render('_block_gallery.html.twig');
     }
 
     /**
@@ -67,9 +59,16 @@ class HomeController extends FrameworkController
      */
     public function recordsBlockAction(Request $request)
     {
-        return $this->render('_block_records.html.twig', array(
-            'page_title' => 'Records!'
-        ));
+        return $this->render('_block_records.html.twig');
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function aboutBlockAction(Request $request)
+    {
+        return $this->render('_block_about.html.twig');
     }
 
     /**
