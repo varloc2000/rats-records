@@ -52,9 +52,9 @@ p, span, a, h1, h2, h3 {
 
     p.content {
         color: #fff!important;
-        font-family: 'Znikomit', 'Vetka', sans-serif;
-        font-weight: 800;
-        font-size: 25px;
+//        font-family: 'Znikomit', 'Vetka', sans-serif;
+        font-size: 30px;
+        line-height: 42px;
     }
 
     &#first {
@@ -91,8 +91,12 @@ p, span, a, h1, h2, h3 {
 
         .rr-section-content {
             height: 100%;
-            padding: 15vh 10%;
-            background-color: rgba(0,0,0,0.5);
+            padding: 5vh 10% 20vh;
+            background-color: rgba(0,0,0,0.8);
+
+            h3 {
+                margin: 20px 0 10vh;
+            }
         }
     }
 
@@ -107,6 +111,11 @@ p, span, a, h1, h2, h3 {
         .rr-section-content {
             padding: 20px;
             background-color: rgba(0,0,0,0.5);
+
+            p.content {
+                min-height: 340px;
+                padding-top: 10px 30px;
+            }
         }
     }
 }
@@ -186,6 +195,10 @@ img.rr-promo {
         margin-bottom: 0;
         font-size: 33px;
         color: #fff;
+
+        &:active:focus, &:focus {
+            outline: none;
+        }
     }
 }
 
