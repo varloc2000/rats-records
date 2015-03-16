@@ -75,6 +75,15 @@ class HomeController extends FrameworkController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      */
+    public function playlistBlockAction(Request $request)
+    {
+        return $this->render('_block_playlist.html.twig');
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function mailBlockAction(Request $request)
     {
         $errors = array();

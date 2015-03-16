@@ -8,12 +8,6 @@
 
     <script>
         $(function() {
-            // var menuMain = new RR.menuDropdown('.rr-top-menu .dropdown > a');
-            // menuMain.init();
-
-            // var smiles = new RR.smileSingleRotate('span.smile');
-            // smiles.init();
-
             var imageElement = document.querySelector('.rr-promo');
             var defaults = {
                 colorMode: 'greyscale',
@@ -35,6 +29,34 @@
 
             var scroller = new RR.pageScroller();
             scroller.init();
+
+//            var flashvars = {
+//                enable_api: true,
+//                object_id: "rr_player",
+//                url: "http://soundcloud.com/forss/flickermood"
+//            };
+//            var params = {
+//                allowscriptaccess: "always"
+//            };
+//            var attributes = {
+//                id: "rr_player",
+//                name: "rr_player"
+//            };
+//            swfobject.embedSWF(
+//                "http://player.soundcloud.com/player.swf",
+//                "myContent",
+//                "450",
+//                "80%",
+//                "9.0.0",
+//                "expressInstall.swf",
+//                flashvars,
+//                params,
+//                attributes
+//            );
+
+            soundcloud.addEventListener('onPlayerReady', function(player, data) {
+//                player.api_play();
+            });
 
             $('#rr-gallery').fotorama();
 
@@ -108,9 +130,15 @@
         </div>
     </div>
 
-    <div id="third" class="rr-section orange">
+    <div id="third" class="rr-section">
         <div class="rr-section-content">
             {{ render('Home:Home:aboutBlock') }}
+        </div>
+    </div>
+
+    <div id="playlist" class="rr-section">
+        <div class="rr-section-content">
+            {{ render('Home:Home:playlistBlock') }}
         </div>
     </div>
 
