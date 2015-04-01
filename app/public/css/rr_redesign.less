@@ -31,6 +31,21 @@ a {text-decoration: none;}
 p, span, a, h1, h2, h3 {
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+@media (min-width: @screen-sm) {
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-button {display: none;}
+    ::-webkit-scrollbar-track {background-color: transparent;}
+    ::-webkit-scrollbar-thumb {background-color: @gray-lighter;}
+    ::-webkit-scrollbar-thumb:vertical {min-height: 100px;}
+    ::-webkit-scrollbar-thumb:horizontal {min-width: 100px;}
+    ::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:focus {background-color: lighten(@brand-orange, 13.5%);}
+    ::-webkit-scrollbar-thumb:active {background-color: @brand-orange;}
+}
 /* End Main styles */
 
 
@@ -57,9 +72,14 @@ p, span, a, h1, h2, h3 {
         line-height: 42px;
     }
 
+    h3 {
+        margin: 20px 0 10vh;
+    }
+
     &#first {
         height: 90vh;
         min-height: 400px;
+        background-color: #000000;
         background-image: url('../images/promo/1_sm.JPG');
         background-size: cover;
         background-position: 50% 0%;
@@ -93,15 +113,24 @@ p, span, a, h1, h2, h3 {
             height: 100%;
             padding: 5vh 10% 20vh;
             background-color: rgba(0,0,0,0.8);
+        }
+    }
 
-            h3 {
-                margin: 20px 0 10vh;
-            }
+    &#fourth {
+        background-size: cover;
+        background-position: 50% 0%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+        .rr-section-content {
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
         }
     }
 
     &#fifth {
-        height: auto;
+        min-height: 100vh;
+        height: 100%;
         background-image: url('../images/promo/4_sm.JPG');
         background-size: cover;
         background-position: 50% 0%;
@@ -109,12 +138,14 @@ p, span, a, h1, h2, h3 {
         background-attachment: fixed;
 
         .rr-section-content {
+            min-height: 100vh;
+            height: 100%;
             padding: 20px;
             background-color: rgba(0,0,0,0.5);
 
             p.content {
                 min-height: 340px;
-                padding-top: 10px 30px;
+                padding-top: 30px;
             }
         }
     }
