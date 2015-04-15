@@ -28,7 +28,7 @@ h3 {
     font-size: 3em;
 }
 a {text-decoration: none;}
-p, span, a, h1, h2, h3 {
+p, span, a, h1, h2, h3, label {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -167,11 +167,13 @@ p, span, a, h1, h2, h3 {
     border-right: 1px solid #ffffff;
 }
 
-#feedback {
+textarea#feedback {
     height: 120px;
+    resize: vertical;
 }
 input:focus, textarea:focus {
     color: @brand-orange;
+    box-shadow: none!important;
 }
 
 img.rr-promo {
