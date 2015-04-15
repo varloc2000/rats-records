@@ -103,7 +103,8 @@ p, span, a, h1, h2, h3 {
 
     &#third {
         height: auto;
-        background-image: url('../images/gallery/thumbs/rr-gallery-2.jpg');
+//        background-image: url('../images/gallery/thumbs/rr-gallery-2.jpg');
+        background-image: url('../images/promo/27_sm.jpg');
         background-size: cover;
         background-position: 50% 0%;
         background-repeat: no-repeat;
@@ -176,19 +177,13 @@ input:focus, textarea:focus {
 img.rr-promo {
     border-radius: 50%;
 
-    filter: grayscale(90%);
-    -webkit-filter: grayscale(90%);
-    -moz-filter: grayscale(90%);
-    -o-filter: grayscale(90%);
-    -ms-filter: grayscale(90%);
-
     &:hover {
         cursor: url("../images/main/zoomin_cursor.png") 30 30, auto;
-        filter: none;
-        -webkit-filter: none;
-        -moz-filter: none;
-        -o-filter: none;
-        -ms-filter: none;
+        filter: grayscale(90%);
+        -webkit-filter: grayscale(90%);
+        -moz-filter: grayscale(90%);
+        -o-filter: grayscale(90%);
+        -ms-filter: grayscale(90%);
     }
 }
 
@@ -217,7 +212,7 @@ img.rr-promo {
         }
 
         span {
-            font-family: 'Fredericka the Great', Arial!important;
+            font-family: 'FrederickatheGreat', Arial!important;
         }
     }
     .navbar-toggle {
@@ -243,9 +238,15 @@ img.rr-promo {
 
     .rr-footer-list {
         margin: 20px 30px;
+        display: inline-block;
 
         li {
             margin-top: 5px;
+
+            @media (max-width: @screen-xs) {
+                display: inline-block;
+                margin-left: 15px;
+            }
 
             i.fa {
                 width: 10px;
@@ -264,7 +265,7 @@ img.rr-promo {
     }
 
     .copyright {
-        position: absolute;
+        display: inline-block;
         width: 250px;
         text-align: center;
         padding-top: 20px;
