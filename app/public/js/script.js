@@ -43,7 +43,10 @@ RR.contentLoader = function(url) {
         if (false == error) {
             this.$loading.fadeOut({
                 duration: 800,
-                easing: 'linear'
+                easing: 'linear',
+                complete: function() {
+                    $(this).remove();
+                }
             });
         }
     };
