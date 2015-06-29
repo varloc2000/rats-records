@@ -24,23 +24,6 @@ class HomeController extends FrameworkController
      */
     public function mainPageContentAction(Request $request)
     {
-        // $request->getSession()->getFlashBag()->add(
-        //     'rr.red.success',
-        //     'rr.flash.mail_form.success'
-        // );
-        // $request->getSession()->getFlashBag()->add(
-        //     'rr.yellow.error',
-        //     'rr.flash.mail_form.error'
-        // );
-        // $request->getSession()->getFlashBag()->add(
-        //     'rr.orange.error',
-        //     'rr.flash.mail_form.error'
-        // );
-        // $request->getSession()->getFlashBag()->add(
-        //     'rr.orange.error',
-        //     'rr.flash.mail_form.asdfsadf'
-        // );
-
         return $this->render('index.html.twig');
     }
 
@@ -136,7 +119,7 @@ class HomeController extends FrameworkController
             ),
         );
 
-        if ('POST' == $request->getMethod()) {
+        if ($request->isMethod('POST')) {
             foreach ($request->request->all() as $fieldName => $value) {
                 if (!array_key_exists($fieldName, $validation)) {
                     $errors['form'][] = sprintf('Unrecognized extra field is submitted "%s"', $fieldName);
@@ -164,6 +147,8 @@ class HomeController extends FrameworkController
                     'rr.flash.mail_form.error'
                 );
             }
+
+            return $this->mainPageContentAction($request);
         }
 
         return $this->render('_block_mail.html.twig', array(
