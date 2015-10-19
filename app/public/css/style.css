@@ -1500,7 +1500,7 @@ p,span,a,h1,h2,h3,label{font-family:'Open Sans Condensed',sans-serif}
 .border-right{border-right:1px solid #fff}
 textarea#feedback{height:120px;resize:vertical}
 input:focus,textarea:focus{color:#ff6c00;box-shadow:none !important}
-img.rr-promo{border-radius:50%}img.rr-promo:hover{cursor:url("../images/main/zoomin_cursor.png") 30 30,auto;filter:grayscale(90%);-webkit-filter:grayscale(90%);-moz-filter:grayscale(90%);-o-filter:grayscale(90%);-ms-filter:grayscale(90%)}
+img.rr-promo{border-radius:50%}img.rr-promo:hover{filter:grayscale(90%);-webkit-filter:grayscale(90%);-moz-filter:grayscale(90%);-o-filter:grayscale(90%);-ms-filter:grayscale(90%)}
 .rr-header{}.rr-header .rr-logo>a>span:after{content:'rats records'}
 @media (max-width:720px){.rr-header .rr-logo>a>span:after{content:'rr'}}.rr-header .rr-logo>a{color:#ff6c00;text-shadow:2px 2px 0 #fff;font-weight:bold;font-size:4em;line-height:50px;letter-spacing:-4px;text-transform:uppercase;text-decoration:none}.rr-header .rr-logo>a:hover{border:none}
 .rr-header .rr-logo>a span{font-family:'FrederickatheGreat',Arial !important}

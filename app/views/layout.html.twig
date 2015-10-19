@@ -16,18 +16,14 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
-    {% endblock stylesheets %}
-
-    {% block javascripts_head %}{% endblock javascripts_head %}
+    <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
 </head>
 
 <body>
     <div class="content" id="rr-container">
         {% block container %}{% endblock container %}
     </div>
-    {% include('loading.html.twig') %}
+    {# {% include('loading.html.twig') %} #}
 
     {% block javascripts %}
         <script>blockFotoramaData = true;</script> {# Disable fotorama statistic iframe #}
