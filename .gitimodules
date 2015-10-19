@@ -1,0 +1,3 @@
+[submodule "app/public/images/logo"]
+    path = app/public/images/logo
+    url = git@bitbucket.org:varloc2000/rrbranding.git

@@ -42,7 +42,7 @@ RR.contentLoader = function(url) {
 
         if (false == error) {
             this.$loading.fadeOut({
-                duration: 800,
+                duration: 30,
                 easing: 'linear',
                 complete: function() {
                     $(this).remove();
