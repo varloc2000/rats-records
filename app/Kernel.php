@@ -11,7 +11,7 @@ class Kernel extends FrameworkKernel
     {
         return array(
             'Home'      => __DIR__ . '/../src',
-            'Lesson'    => __DIR__ . '/../src',
+            // 'Lesson'    => __DIR__ . '/../src',
         );
     }
 }

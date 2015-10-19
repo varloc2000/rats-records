@@ -23,7 +23,7 @@
     <div class="content" id="rr-container">
         {% block container %}{% endblock container %}
     </div>
-    {# {% include('loading.html.twig') %} #}
+    {% include('loading.html.twig') %}
 
     {% block javascripts %}
         <script>blockFotoramaData = true;</script> {# Disable fotorama statistic iframe #}
