@@ -24,7 +24,7 @@ RR.contentLoader = function(url) {
     this.$loading = $('.rr-loading-stage');
     this.$loadingMessage = this.$loading.find('.rr-loading-message');
     this.messagesInterval = null;
-    this.messagesIntervalTime = 10;
+    this.messagesIntervalTime = 200;
     this.messagesIntervalCount = 0;
     this.loaded = false;
     this.loadedError = false;
@@ -42,7 +42,7 @@ RR.contentLoader = function(url) {
 
         if (false == error) {
             this.$loading.fadeOut({
-                duration: 30,
+                duration: 800,
                 easing: 'linear',
                 complete: function() {
                     $(this).remove();

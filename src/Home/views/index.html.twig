@@ -24,7 +24,7 @@
         <div class="rr-section-content text-center">
             <p class="content">
                 <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px">
-                <img class="rr-promo" src="app/public/images/logo/logo.svg" title="RR" width="280px">
+                {# <img class="rr-promo" src="app/public/images/logo/logo.svg" title="RR" width="280px"> #}
             </p>
             <header>
                 <h3 class="retro shade">
@@ -77,15 +77,21 @@
         </div>
     </div>
 
-    <div id="third" class="rr-section">
+    <div class="rr-section separator separator-one">
         <div class="rr-section-content">
-            {{ render('Home:Home:aboutBlock') }}
+            {% include('_block_about.html.twig') %}
         </div>
     </div>
 
     <div id="playlist" class="rr-section">
         <div class="rr-section-content">
             {{ render('Home:Home:playlistBlock') }}
+        </div>
+    </div>
+
+    <div class="rr-section separator separator-two">
+        <div class="rr-section-content">
+            {% include('_block_about_two.html.twig') %}
         </div>
     </div>
 
