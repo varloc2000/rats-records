@@ -18,18 +18,18 @@ h3 {
 }
 a {text-decoration: none;}
 p, span, a, h1, h2, h3, label {
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'OpenSansCondensed', sans-serif;
 }
 
 @media (min-width: @screen-sm) {
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 2px;
         height: 10px;
     }
 
     ::-webkit-scrollbar-button {display: none;}
     ::-webkit-scrollbar-track {background-color: transparent;}
-    ::-webkit-scrollbar-thumb {background-color: @gray-lighter;}
+    ::-webkit-scrollbar-thumb {background-color: @brand-orange;}
     ::-webkit-scrollbar-thumb:vertical {min-height: 100px;}
     ::-webkit-scrollbar-thumb:horizontal {min-width: 100px;}
     ::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:focus {background-color: lighten(@brand-orange, 13.5%);}
@@ -59,13 +59,20 @@ p, span, a, h1, h2, h3, label {
     .rr-section-content {
         width: 100%;
         height: 100%;
+
+        &.shadow {
+            box-shadow: 0 0 150px 30px #000 inset;
+        }
     }
 
     p.content {
-        color: #fff!important;
-//        font-family: 'Znikomit', 'Vetka', sans-serif;
         font-size: 30px;
         line-height: 42px;
+
+        @media (max-width: @container-sm) {
+            font-size: 20px;
+            line-height: 30px;
+        }
     }
 
     h3 {
@@ -93,6 +100,7 @@ p, span, a, h1, h2, h3, label {
 
     &.separator {
         height: auto;
+        min-height: 100px;
 
         &.separator-one {
             background-image: url('../images/promo/27_sm.jpg');
@@ -102,8 +110,18 @@ p, span, a, h1, h2, h3, label {
         }
 
         .rr-section-content {
-            padding: 5vh 10% 20vh;
+            padding: 10vh 7%;
             background-color: rgba(0,0,0,0.6);
+
+            p.content {
+                // color: #FFFDD1;
+                color: #FC717B;
+                font-family: SSM, Quoter;
+            }
+            p.author {
+                font-family: SSM, Quoter;
+                color: #5DCFC3;
+            }
         }
     }
 
@@ -169,20 +187,21 @@ img.rr-promo {
     .rr-logo > a > span:after {
         content: 'rats records';
     }
-    @media (max-width: 720px) {
+    @media (max-width: @container-sm) {
         .rr-logo > a > span:after {
             content: 'rr'
         }
     }
     .rr-logo > a {
         color: #ff6c00;
-        text-shadow: 2px 2px 0px #ffffff;
+        text-shadow: 2px 2px 0 #fff, 7px 5px 0 #070508;
         font-weight: bold;
         font-size: 4em;
-        line-height: 50px;
+        line-height: 40px;
         letter-spacing: -4px;
         text-transform: uppercase;
         text-decoration: none;
+        vertical-align: sub;
 
         &:hover {
             border: none;
@@ -203,6 +222,12 @@ img.rr-promo {
             outline: none;
         }
     }
+    li>a {
+        line-height: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-family: 'Jura', Arial;
+    }
 }
 
 /* Footer main */
@@ -218,12 +243,7 @@ img.rr-promo {
         display: inline-block;
 
         li {
-            margin-top: 5px;
-
-            @media (max-width: @screen-xs) {
-                display: inline-block;
-                margin-left: 15px;
-            }
+            margin-left: 15px;
 
             i.fa {
                 width: 10px;
@@ -231,7 +251,7 @@ img.rr-promo {
             }
             a {
                 color: #545454;
-                font-size: 12px;
+                font-size: 15px;
 
                 &:hover {
                     color: @brand-orange;
@@ -286,7 +306,6 @@ img.rr-promo {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
     -webkit-font-smoothing: antialiased;
     font-style: normal;
     font-weight: normal;

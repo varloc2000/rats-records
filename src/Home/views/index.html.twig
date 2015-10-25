@@ -1,75 +1,19 @@
 {% spaceless %}
-    <script>
-        $(function() {
-            var scroller = new RR.pageScroller();
-            scroller.init();
-
-            $('#rr-gallery').fotorama();
-
-            var flasher = new RR.flasher();
-
-            {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
-                {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
-                    {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
-                        flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
-                    {% endfor %}
-                {% endfor %}
-            {% endfor %}
-
-            flasher.init();
-        });
-    </script>
-{# End Inbody scripts #}
     <div id="first" class="rr-section">
         <div class="rr-section-content text-center">
             <p class="content">
                 <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px">
-                {# <img class="rr-promo" src="app/public/images/logo/logo.svg" title="RR" width="280px"> #}
+                {# <img class="rr-promo" src="app/public/images/logo/logo 2.svg" title="RR" width="280px"> #}
             </p>
             <header>
-                <h3 class="retro shade">
-                    Рады Вас видеть! Но не всех.
+                <h3>
+                    {# Рады Вас видеть! Но не всех. #}
                 </h3>
             </header>
         </div>
     </div>
 
-    <nav class="rr-header navbar navbar-default">
-        <div class="navbar-header">
-            <div class="rr-logo pull-left">
-                <a href="#first" class="rr-scroller" title="Rats Records">
-                    <span></span>
-                    {# Here logo with css #}
-                </a>
-            </div>
-            <div class="pull-right">
-                <button
-                    type="button"
-                    class="btn btn-sm navbar-toggle collapsed navbar-toggle-btn"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"
-                    title="Меню"
-                >
-                    <span class="fa fa-th"></span>
-                </button>
-            </div>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#second" class="rr-scroller">Слушать</a>
-                </li>
-                <li>
-                    <a href="#third" class="rr-scroller">Читать</a>
-                </li>
-                <li>
-                    <a href="#fourth" class="rr-scroller">Смотреть</a>
-                </li>
-            </ul>
-
-        </div>
-
-    </nav>
+    {% include('_navbar.html.twig') %}
 
     <div id="second" class="rr-section">
         <div class="rr-section-content">
@@ -96,7 +40,7 @@
     </div>
 
     <div id="fourth" class="rr-section">
-        <div class="rr-section-content wide">
+        <div class="rr-section-content">
             {{ render('Home:Home:galleryBlock') }}
         </div>
     </div>
@@ -107,46 +51,35 @@
         </div>
     </div>
 
-    <footer class="rr-footer">
-        <div class="container-fluid">
-            <ul class="rr-footer-list list-unstyled">
-                <li>
-                    <a href="https://soundcloud.com/varloc2000" target="_blank">
-                        <i class="fa fa-soundcloud"></i>
-                        SoundCloud
-                    </a>
-                </li>
-                <li>
-                    <a href="https://vk.com/varloc2000" target="_blank">
-                        <i class="fa fa-vk"></i>
-                        Вконакте
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCQUb_v_p6BRpeAgaciPokGQ" target="_blank">
-                        <i class="fa fa-youtube"></i>
-                        YouTube
-                    </a>
-                </li>
-            </ul>
-            <div class="copyright pull-right">
-                <small>
-                    <a href="#first" class="red rr-scroller">v</a>
-                    <a href="#orange" class="orange rr-scroller">a</a>
-                    <a href="#yellow" class="yellow rr-scroller">r</a>
-                    <a href="#green" class="green rr-scroller">l</a>
-                    <a href="#blue" class="blue rr-scroller">o</a>
-                    <a href="#blue-dark" class="blue-dark rr-scroller">c</a>
-                    <a href="#purple" class="number purple rr-scroller">2000</a> (2013 - {{ 'now'|date('Y') }}) &copy;
-                </small>
-            </div>
-        </div>
-    </footer>
+    {% include('_footer.html.twig') %}
 
-{# Hidden flashes prototype #}
+    {# Hidden flashes prototype #}
     <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
         {# Flash message here #}
         <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
     </div>
-{# End Hidden flashes prototype #}
+    {# End Hidden flashes prototype #}
+
+    <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
+    <script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
+    <script src="/app/public/components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script>
+        $(function() {
+            var scroller = new RR.pageScroller();
+
+            $('#rr-gallery').fotorama();
+
+            var flasher = new RR.flasher();
+
+            {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
+                {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
+                    {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
+                        flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+
+            flasher.init();
+        });
+    </script>
 {% endspaceless %}
