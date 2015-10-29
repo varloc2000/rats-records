@@ -128,10 +128,6 @@ RR.pageScroller = function() {
                 } else if ('content' === $obj.data('type')) {
                     // Move the content and fade to black
                     $obj.css({top: yPos * 4 + 'px'});
-
-                    if ($obj.hasClass('n-fade')) {
-                        $obj.fadeTo(10, (1 / yPos * 10));
-                    }
                 }
             });
         });
