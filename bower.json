@@ -1,11 +1,9 @@
 {
     "name": "rr",
     "dependencies": {
-        "jquery": "~1.9.0",
-        "jquery-ui": "1.11.2",
-        "bootstrap": "latest",
+        "jquery": "~2.1.0",
+        "bootstrap": "v4.0.0-alpha",
         "fotorama": "4.6.2",
-        "font-awesome": "4.2.0",
-        "normalize.css": "latest"
+        "font-awesome": "4.2.0"
     }
 }

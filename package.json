@@ -1,0 +1,16 @@
+{
+  "name": "rats-records",
+  "version": "0.1.0",
+  "description": "Rats Records studio",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^2.1.0",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14"
+  }
+}

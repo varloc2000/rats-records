@@ -1,0 +1,64 @@
+/* Colors */
+$colorCollection: (#D00010, #FEC641, #63C13B, #FE0016, #5C6C94, #6B0D05, #7D0006, #DB1913, #FEE34A, #2F8A27);
+// $colorCollection: (#F4A43B, #0AB1AA, #FDFEE4, #F42618, #ADFEDD, #FF5F24, #FEF14F, #FD361B, #30398D, #FEE086);
+// $colorCollection: (#FCF1BD);
+
+/* Config */
+$lights: 150; // match lights in mark up
+$totalAnimation: 5;
+$lightSize: 75;
+$blurLevel: 2;
+
+.light{
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+@for $i from 1 through $lights {
+    $lightWidth: $lightSize + random(25);
+    $lightHeight: $lightWidth;
+    $lightVertical: random(100);
+    $lightHorizontal: random(100);
+    $lightBlur: $blurLevel + random($blurLevel);
+    $lightDelay: 10 + random(25);
+    $animation: 1 + random($totalAnimation);
+    $animationString: #{$lightDelay + s} #{"light" + $animation} linear infinite;
+
+    .light:nth-child(#{$i}){
+        width: $lightWidth + px;
+        height: $lightHeight + px;
+        top: #{$lightVertical + "%"};
+        left: #{$lightHorizontal + "%"};
+        background: nth($colorCollection, random(length($colorCollection)));
+
+        filter: blur($lightBlur + px);
+        -webkit-filter: blur($lightBlur + px);
+        -moz-filter: blur($lightBlur + px);
+        -ms-filter: blur($lightBlur + px);
+        -o-filter: blur($lightBlur + px);
+
+        animation: $animationString;
+        -webkit-animation: $animationString;
+        -moz-animation: $animationString;
+        -ms-animation: $animationString;
+        -o-animation: $animationString;
+    }
+}
+
+@for $i from 1 through $totalAnimation{
+    @keyframes light#{$i} {
+        25%{
+            opacity: (25 + random(50)) * 0.01;
+        }
+        50%{
+            opacity: 0;
+        }
+        75%{
+            opacity: (25 + random(50)) * 0.01;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+}

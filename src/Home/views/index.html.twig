@@ -17,41 +17,41 @@
 
     <div id="second" class="rr-section">
         <div class="rr-section-content">
-            {{ render('Home:Home:recordsBlock') }}
+            {% include('_block_records.html.twig') %}
         </div>
     </div>
 
     <div class="rr-section separator separator-one">
         <div class="rr-section-content">
-            {% include('_block_about.html.twig') %}
+            {%- include('_block_about.html.twig') -%}
         </div>
     </div>
 
     <div id="playlist" class="rr-section">
         <div class="rr-section-content">
-            {{ render('Home:Home:playlistBlock') }}
+            {%- include('_block_playlist.html.twig') -%}
         </div>
     </div>
 
     <div class="rr-section separator separator-two">
         <div class="rr-section-content">
-            {% include('_block_about_two.html.twig') %}
+            {%- include('_block_about_two.html.twig') -%}
         </div>
     </div>
 
     <div id="fourth" class="rr-section">
         <div class="rr-section-content">
-            {{ render('Home:Home:galleryBlock') }}
+            {%- include('_block_gallery.html.twig') -%}
         </div>
     </div>
 
     <div id="fifth" class="rr-section">
         <div class="rr-section-content">
-            {{ render('Home:Home:mailBlock') }}
+            {%- include('_block_mail.html.twig') -%}
         </div>
     </div>
 
-    {% include('_footer.html.twig') %}
+    {%- include('_footer.html.twig') -%}
 
     {# Hidden flashes prototype #}
     <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
@@ -61,8 +61,8 @@
     {# End Hidden flashes prototype #}
 
     <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
-    <script src="/app/public/components/fotorama/fotorama.js" type="text/javascript"></script>
-    <script src="/app/public/components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/app/public/vendor/fotorama/fotorama.js" type="text/javascript"></script>
+    <script src="/app/public/vendor/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script>
         $(function() {
             var scroller = new RR.pageScroller();

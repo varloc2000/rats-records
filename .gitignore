@@ -1,13 +1,8 @@
-nbproject/
-subdomains/*
 !.htaccess
 
 app/config/database.php
 app/cache
 
 vendor/*
-.c9
-.idea
 
-composer.phar
-composer.lock
+/node_modules/
