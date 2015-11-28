@@ -3,6 +3,8 @@
 namespace Home;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 use Varloc\Framework\Controller\Controller as FrameworkController;
 use Varloc\Framework\Database\Connector;
@@ -20,7 +22,7 @@ class HomeController extends FrameworkController
 
     /**
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function mainPageContentAction(Request $request)
     {
@@ -29,48 +31,12 @@ class HomeController extends FrameworkController
 
     /**
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @throws \Symfony\Component\Routing\Exception\MethodNotAllowedException
      */
-    public function galleryBlockAction(Request $request)
+    public function mailAjaxAction(Request $request)
     {
-        return $this->render('_block_gallery.html.twig');
-    }
-
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function recordsBlockAction(Request $request)
-    {
-        return $this->render('_block_records.html.twig');
-    }
-
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function aboutBlockAction(Request $request)
-    {
-        return $this->render('_block_about.html.twig');
-    }
-
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function playlistBlockAction(Request $request)
-    {
-        return $this->render('_block_playlist.html.twig');
-    }
-
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function mailBlockAction(Request $request)
-    {
-        $errors = array();
-        $data = array();
+        $errors = $data = $responseData = array();
         $validation = array(
             'email' => array(
                 'required' => false,
@@ -119,43 +85,46 @@ class HomeController extends FrameworkController
             ),
         );
 
-        if ($request->isMethod('POST')) {
-            foreach ($request->request->all() as $fieldName => $value) {
-                if (!array_key_exists($fieldName, $validation)) {
-                    $errors['form'][] = sprintf('Unrecognized extra field is submitted "%s"', $fieldName);
-
-                } else if (empty($value) && true === $validation[$fieldName]['required']) {
-                    $errors[$fieldName][] = 'required_field';
-
-                } else if (true !== ($message = call_user_func($validation[$fieldName]['isValid'], $value))) {
-                    $errors[$fieldName][] = $message;
-                }
-
-                $data[$fieldName] = $value;
-            }
-
-            if (empty($errors)) {
-                $this->sendEmailToMe($data);
-
-                $request->getSession()->getFlashBag()->add(
-                    'rr.yellow.success',
-                    'rr.flash.mail_form.success'
-                );
-            } else {
-                $request->getSession()->getFlashBag()->add(
-                    'rr.yellow.error',
-                    'rr.flash.mail_form.error'
-                );
-            }
-
-            return $this->mainPageContentAction($request);
+        if (!$request->isMethod('POST') || !$request->isXmlHttpRequest()) {
+            throw new MethodNotAllowedException('Only post ajax requests allowed to mailAjaxAction!');
         }
 
-        return $this->render('_block_mail.html.twig', array(
-            'page_title' => 'Email us!',
-            'errors' => $errors,
-            'data' => $data,
-        ));
+        foreach ($request->request->all() as $fieldName => $value) {
+            if (!array_key_exists($fieldName, $validation)) {
+                $errors['form'][] = sprintf('Unrecognized extra field is submitted "%s"', $fieldName);
+
+            } else if (empty($value) && true === $validation[$fieldName]['required']) {
+                $errors[$fieldName][] = 'required_field';
+
+            } else if (true !== ($message = call_user_func($validation[$fieldName]['isValid'], $value))) {
+                $errors[$fieldName][] = $message;
+            }
+
+            $data[$fieldName] = $value;
+        }
+
+        if (empty($errors)) {
+            try {
+                $this->sendEmailToMe($data);
+            } catch (\Exception $e) {
+                // Do nothing
+            }
+
+            $responseData = array(
+                'success' => true,
+                'flasher_section' => 'rr.mail.success',
+                'flasher_message' => 'rr.flash.mail_form.success',
+            );
+        } else {
+            $responseData = array(
+                'success' => false,
+                'flasher_section' => 'rr.mail.error',
+                'flasher_message' => 'rr.flash.mail_form.error',
+                'errors' => $errors,
+            );
+        }
+
+        return new JsonResponse($responseData);
     }
 
     /**
@@ -168,7 +137,8 @@ class HomeController extends FrameworkController
         $transport = \Swift_MailTransport::newInstance();
         $mailer = \Swift_Mailer::newInstance($transport);
 
-        $fromEmail = isset($data['email']) ? $data['email'] : 'prikritie@gmail.com';
+        $email = $data['email'];
+        $fromEmail = empty($email) ? 'prikritie@gmail.com' : $email;
 
         $message = \Swift_Message::newInstance()
             ->setSubject('Rats records email')

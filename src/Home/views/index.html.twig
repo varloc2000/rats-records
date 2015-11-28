@@ -54,9 +54,18 @@
     {%- include('_footer.html.twig') -%}
 
     {# Hidden flashes prototype #}
-    <div id="rr-flash-notice-prototype" class="rr-flash-notice" style="display: none;">
+    <div 
+        id="rr-flash-notice-prototype" 
+        class="rr-flash-notice alert alert-dismissible fade in" 
+        role="alert" 
+        style="display: none;"
+    >
         {# Flash message here #}
-        <a class="rr-icon remove-circle dismiss" data-dismiss="rr-flash-notice"></a>
+        Message
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </button>
     </div>
     {# End Hidden flashes prototype #}
 
@@ -66,12 +75,13 @@
     <script>
         $(function() {
             var scroller = new RR.pageScroller();
+            var submitter = new RR.formSubmitter();
 
             $('#rr-gallery').fotorama();
 
             var flasher = new RR.flasher();
 
-            {% for rainbowSection in ['red', 'orange', 'yellow', 'green', 'blue', 'blue-dark', 'purple'] %}
+            {% for rainbowSection in ['fifth'] %}
                 {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
                     {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
                         flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');

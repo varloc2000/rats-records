@@ -5,9 +5,9 @@ $fa-font-path: "./../vendor/font-awesome/fonts";
 //** Load fonts from this directory.
 $icon-font-path: "./../vendor/bootstrap/fonts/";
 
-$border-radius-base: 0;
-$border-radius-large: 0;
-$border-radius-small: 0;
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
 
 //** Background color for `<body>`.
 $body-bg: #070508;
@@ -15,12 +15,13 @@ $gray-light: #eeeeee;
 
 $brand-primary: #5122B4;
 $brand-danger: #D52100;
+$brand-success: #6AA63B;
 $brand-orange: #ff6c00;
 
 $link-color: #ffffff;
 $link-hover-color: $brand-orange;
 //** Link hover decoration.
-$link-hover-decoration: underline;
+$link-hover-decoration: none;
 
 //** Number of columns in the grid.
 $grid-columns: 12;
@@ -47,9 +48,6 @@ $navbar-default-border: transparent;
 
 $navbar-default-toggle-hover-bg:           transparent;
 $navbar-default-toggle-border-color:       transparent;
-
-//=== Shared nav styles
-$nav-link-padding: 10px 5px;
 
 //== Wells
 $well-bg: #f2f2f2;

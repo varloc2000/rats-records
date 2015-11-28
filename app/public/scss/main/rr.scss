@@ -22,7 +22,7 @@ p, span, a, h1, h2, h3, label {
 ::-moz-selection { background: #56BBC6; }
 ::selection { background: #56BBC6; }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
     ::-webkit-scrollbar {
         width: 2px;
         height: 10px;
@@ -38,16 +38,18 @@ p, span, a, h1, h2, h3, label {
 }
 
 .rr-header {
-    .rr-logo > a > span:after {
+    // background-color: $navbar-default-bg;
+
+    .rr-logo > span:after {
         content: 'rats records';
     }
-    @media (max-width: 480px) {
-        .rr-logo > a > span:after {
+    @media (max-width: 768px) {
+        .rr-logo > span:after {
             content: 'rr'
         }
     }
-    .rr-logo > a {
-        color: #ff6c00;
+    .rr-logo {
+        color: $brand-orange;
         text-shadow: 2px 2px 0 #fff, 7px 5px 0 #070508;
         font-weight: bold;
         font-size: 4em;
@@ -56,6 +58,7 @@ p, span, a, h1, h2, h3, label {
         text-transform: uppercase;
         text-decoration: none;
         vertical-align: sub;
+        float: left;
 
         &:hover {
             border: none;
@@ -65,7 +68,7 @@ p, span, a, h1, h2, h3, label {
             font-family: 'FrederickatheGreat', Arial!important;
         }
     }
-    .navbar-toggle {
+    .navbar-toggler {
         padding: 0px;
         margin-top: 0;
         margin-bottom: 0;
@@ -117,7 +120,7 @@ p, span, a, h1, h2, h3, label {
         font-size: 30px;
         line-height: 42px;
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             font-size: 20px;
             line-height: 30px;
         }
@@ -198,9 +201,36 @@ p, span, a, h1, h2, h3, label {
     border: 1px solid $brand-orange;
     color: #fff;
 
+    .submit {
+        display: inline-block;
+    }
+    .submitted {
+        display: none;
+    }
+
+    &.loaded {
+        .submit {
+            display: none;
+        }
+        .submitted {
+            display: inline-block;
+        }
+    }
+    &.loading {
+        // background-color: $brand-primary;
+    }
     &:hover {
         background-color: transparent;
         color: $brand-orange;
+    }
+    &:active:focus, &:focus {
+        outline: none;
+    }
+}
+
+form {
+    input.rr-form-error, textarea.rr-form-error {
+        border-color: $brand-danger;
     }
 }
 

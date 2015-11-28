@@ -17,18 +17,8 @@ abstract class RoutingConfig
         $routes->add('home_content', new Routing\Route('/home_content', array(
             '_worker' => 'Home:Home:mainPageContent'
         )));
-        $routes->add('mail_us', new Routing\Route('/mail_us', array(
-            '_worker' => 'Home:Home:mailBlock'
-        )));
-
-        /*
-         * Lessons part routes
-         */
-        $routes->add('lesson_list', new Routing\Route('/lessons', array(
-            '_worker' => 'Lesson:Lesson:index'
-        )));
-        $routes->add('lesson', new Routing\Route('/lessons/{id}', array(
-            '_worker' => 'Lesson:Lesson:lesson'
+        $routes->add('mail_me', new Routing\Route('/mail_me', array(
+            '_worker' => 'Home:Home:mailAjax'
         )));
         
         return $routes;

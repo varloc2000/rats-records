@@ -1,25 +1,21 @@
 <nav class="rr-header navbar navbar-default">
-    <div class="navbar-header">
-        <div class="rr-logo pull-left">
-            <a href="#first" class="rr-scroller" title="Rats Records">
-                <span></span>
-                {# Here logo with css #}
-            </a>
-        </div>
-        <div class="text-right">
-            <button
-                type="button"
-                class="btn btn-sm navbar-toggle collapsed navbar-toggle-btn"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-                title="Меню"
-            >
-                <span class="fa fa-th"></span>
-            </button>
-        </div>
+    <a href="#first" class="rr-logo rr-scroller" title="Rats Records">
+        <span></span>
+        {# Here logo with css #}
+    </a>
+    <div class="text-right">
+        <button
+            type="button"
+            class="btn btn-sm navbar-toggler hidden-sm-up navbar-toggle-btn"
+            data-toggle="collapse"
+            data-target="#rr-nav-toogleable"
+            title="Меню"
+        >
+            <span class="fa fa-th"></span>
+        </button>
     </div>
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
+    <div id="rr-nav-toogleable" class="collapse navbar-toggleable-xs pull-right">
+        <ul class="nav navbar-nav list-inline">
             <li>
                 <a href="#second" class="rr-scroller">Слушать</a>
             </li>

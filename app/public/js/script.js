@@ -15,7 +15,7 @@ RR.contentLoader = function(url) {
     this.$loading = $('.rr-loading-stage');
     this.$loadingMessage = this.$loading.find('.rr-loading-message');
     this.messagesInterval = null;
-    this.messagesIntervalTime = 400;
+    this.messagesIntervalTime = 40;
     this.messagesIntervalCount = 0;
     this.loaded = false;
     this.loadedError = false;
@@ -137,6 +137,63 @@ RR.pageScroller = function() {
 };
 
 /**
+ * formSubmitter
+ * @constructor
+ */
+RR.formSubmitter = function() {
+    var defaultOptions = {
+            submitBtnClass: 'rr-submiter',
+            errorFieldClass: 'rr-form-error',
+        },
+        _that = this,
+        _onSubmitterClick = function (e) {
+            e.preventDefault();
+
+            _that.submitForm($(this), $(this).parents('form'));
+        };
+
+    this.setFormErrors = function(errors) {
+        for (var fieldId in errors) {
+            if (errors.hasOwnProperty(fieldId)) {
+                $('#' + fieldId).addClass(defaultOptions.errorFieldClass);
+            }
+        }
+    };
+    this.removeFormErrors = function($form) {
+        $form.find('input, textarea').removeClass(defaultOptions.errorFieldClass);
+    };
+    this.submitForm = function($btn, $form) {
+        $btn.attr('disabled', 'disabled').addClass('loading');
+
+        $.post(
+            $form.attr('action'),
+            $form.serialize(),
+            function (data) {
+                $btn.removeAttr('disabled').removeClass('loading');
+
+                if (false === data.success) {
+                    _that.setFormErrors(data.errors);
+                } else {
+                    _that.removeFormErrors($form);
+                    $btn.addClass('loaded');
+                    console.log(data);
+                }
+            },
+            'json'
+        );
+    };
+    this.init = function () {
+        $('form').on(
+            'click',
+            '.' + defaultOptions.submitBtnClass,
+            _onSubmitterClick
+        );
+    };
+
+    this.init();
+};
+
+/**
  * Flasher
  * @constructor
  */
@@ -168,6 +225,9 @@ RR.flasher = function() {
     RR.flasher.prototype.addMessage = function(section, level, message) {
         this.messages.push({section: section, level: level, message: message});
         this.count++;
+    };
+    RR.flasher.prototype.addErrorMessage = function(section, message) {
+        this.addMessage(section, 'error', message);
     };
     RR.flasher.prototype._onMessageDismiss = function(e) {
         e.preventDefault();
