@@ -3,7 +3,14 @@
  * @required jQuery
  */
 var RR = {
-    $container: $('#rr-container')
+    $container: $('#rr-container'),
+    translationsContainerId: 'rr-translations',
+    _getTranslatedMessage: function (id, cssClass) {
+        return $('<span />', {
+            "class": cssClass,
+            text: $('#' + this.translationsContainerId).find('#' + id).html()
+        }); 
+    }
 };
 
 /**
@@ -15,7 +22,7 @@ RR.contentLoader = function(url) {
     this.$loading = $('.rr-loading-stage');
     this.$loadingMessage = this.$loading.find('.rr-loading-message');
     this.messagesInterval = null;
-    this.messagesIntervalTime = 40;
+    this.messagesIntervalTime = 400;
     this.messagesIntervalCount = 0;
     this.loaded = false;
     this.loadedError = false;
@@ -65,9 +72,12 @@ RR.contentLoader = function(url) {
         );
 
         var _self = this;
+
         RR.$container.load(url, function(response, status, xhr) {
             _self.loadedError = ("error" == status);
             _self.loaded = true;
+
+            document.dispatchEvent(new CustomEvent("content_loaded"));
         });
     };
 
@@ -143,7 +153,8 @@ RR.pageScroller = function() {
 RR.formSubmitter = function() {
     var defaultOptions = {
             submitBtnClass: 'rr-submiter',
-            errorFieldClass: 'rr-form-error',
+            errorFieldClass: 'rr-field-error',
+            errorClass: 'rr-error'
         },
         _that = this,
         _onSubmitterClick = function (e) {
@@ -155,15 +166,26 @@ RR.formSubmitter = function() {
     this.setFormErrors = function(errors) {
         for (var fieldId in errors) {
             if (errors.hasOwnProperty(fieldId)) {
-                $('#' + fieldId).addClass(defaultOptions.errorFieldClass);
+                $('#' + fieldId)
+                    .addClass(defaultOptions.errorFieldClass)
+                    .before(
+                        RR._getTranslatedMessage(errors[fieldId], defaultOptions.errorClass)
+                    );
             }
         }
     };
     this.removeFormErrors = function($form) {
-        $form.find('input, textarea').removeClass(defaultOptions.errorFieldClass);
+        $form
+            .find('input, textarea')
+            .removeClass(defaultOptions.errorFieldClass);
+
+        $form
+            .find('.' + defaultOptions.errorClass)
+            .remove();
     };
     this.submitForm = function($btn, $form) {
         $btn.attr('disabled', 'disabled').addClass('loading');
+        _that.removeFormErrors($form);
 
         $.post(
             $form.attr('action'),
@@ -174,7 +196,6 @@ RR.formSubmitter = function() {
                 if (false === data.success) {
                     _that.setFormErrors(data.errors);
                 } else {
-                    _that.removeFormErrors($form);
                     $btn.addClass('loaded');
                     console.log(data);
                 }
@@ -198,44 +219,39 @@ RR.formSubmitter = function() {
  * @constructor
  */
 RR.flasher = function() {
-    this.messages = [];
-    this.count = 0;
-};
-    RR.flasher.prototype.init = function() {
+    var defaultOptions = {
+            noticePrototypeId: 'rr-flash-notice-prototype',
+            animationTime: 2000
+        },
+        _that = this,
+        messages = [],
+        count = 0;
 
-        for (var index in this.messages) {
-            var $section = getElementById(this.messages[index].section);
-            var $message = getElementById(RR.flasher.defaultOptions.noticePrototypeId)
+    this.init = function() {
+
+        for (var index in messages) {
+            var $section = $('#' + messages[index].section);
+            var $message = $('#' + defaultOptions.noticePrototypeId)
                 .clone()
-                .attr('id', this.messages[index].message)
-                .prepend(this.messages[index].message)
-                .addClass(this.messages[index].level);
+                .attr('id', messages[index].message)
+                .prepend(messages[index].message)
+                .addClass(messages[index].level);
 
             console.log($section);
             console.log($message);
-            $message.on('click', '.dismiss', this._onMessageDismiss);
 
             $section.find('header').prepend(
                 $message.fadeIn(
-                    RR.flasher.defaultOptions.animationTime
+                    defaultOptions.animationTime
                 )
             );
         }
     };
-    RR.flasher.prototype.addMessage = function(section, level, message) {
-        this.messages.push({section: section, level: level, message: message});
+    this.addMessage = function(section, level, message) {
+        messages.push({section: section, level: level, message: message});
         this.count++;
     };
-    RR.flasher.prototype.addErrorMessage = function(section, message) {
+    this.addErrorMessage = function(section, message) {
         this.addMessage(section, 'error', message);
     };
-    RR.flasher.prototype._onMessageDismiss = function(e) {
-        e.preventDefault();
-
-        $(this).parents('.' + $(this).data('dismiss')).remove();
-    };
-    RR.flasher.defaultOptions = {
-        noticePrototypeId: 'rr-flash-notice-prototype',
-        translationsHolderClass: 'rr-notice-translations',
-        animationTime: 2000
-    };
+};

@@ -29,18 +29,18 @@ $grid-columns: 12;
 // Large screen / wide desktop
 $container-large-desktop: 100%!important;
 
-// $font-size-base: 18px;
+// $font-size-base: 1.2rem;
 
 // Basics of a navbar
 $navbar-height: 40px;
-$navbar-default-bg: #FC3F4D;
-// $navbar-default-bg: #231B1E;
+$navbar-default-bg: #1B1414;
+// $navbar-default-bg: #FC717B;
 $navbar-margin-bottom: 0px;
 
 $navbar-default-link-color: #fff;
 $navbar-default-link-hover-color: #000;
 $navbar-default-link-hover-bg: transparent;
-$navbar-default-link-active-color: $brand-orange;
+$navbar-default-link-active-color: #FC3F4D;
 $navbar-default-link-active-bg: transparent;
 
 $navbar-default-color: #fff;

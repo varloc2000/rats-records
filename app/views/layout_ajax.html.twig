@@ -1,0 +1,17 @@
+{% embed "__layout_skeleton.html.twig" %}
+    {% block header_styles %}
+        <link rel="stylesheet" type="text/css" href="/app/public/css/loading.min.css" />
+        <link rel="stylesheet" type="text/css" href="/app/public/css/main.min.css" />
+    {% endblock header_styles %}
+
+    {% block after_content %}
+        {%- include('loading.html.twig') -%}
+
+        {%- include('_layout_scripts.html.twig') -%}
+        <script>
+            $(function() {
+                var contentLoader = new RR.contentLoader('/home_content');
+            });
+        </script>
+    {% endblock after_content %}
+{% endembed %}

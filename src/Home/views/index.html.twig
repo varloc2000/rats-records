@@ -1,5 +1,10 @@
 {% spaceless %}
-    <div id="first" class="rr-section">
+    <div 
+        id="first" 
+        class="rr-section parallax-window" 
+        data-parallax="scroll" 
+        data-image-src="app/public/images/promo/1_sm.JPG"
+    >
         <div class="rr-section-content text-center">
             <p class="content">
                 {# <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px"> #}
@@ -7,7 +12,7 @@
             </p>
             <header>
                 <h3>
-                    {# Рады Вас видеть! Но не всех. #}
+                    Рады Вас видеть! Но не всех.
                 </h3>
             </header>
         </div>
@@ -15,9 +20,9 @@
 
     {% include('_navbar.html.twig') %}
 
-    <div id="second" class="rr-section">
+    <div id="latest" class="rr-section">
         <div class="rr-section-content">
-            {% include('_block_records.html.twig') %}
+            {%- include('_block_records.html.twig') -%}
         </div>
     </div>
 
@@ -39,7 +44,7 @@
         </div>
     </div>
 
-    <div id="fourth" class="rr-section">
+    <div id="photos" class="rr-section">
         <div class="rr-section-content">
             {%- include('_block_gallery.html.twig') -%}
         </div>
@@ -61,7 +66,6 @@
         style="display: none;"
     >
         {# Flash message here #}
-        Message
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
@@ -69,27 +73,34 @@
     </div>
     {# End Hidden flashes prototype #}
 
+    {# Hidden translations #}
+    <div id="rr-translations">
+        {% set translations = {
+                'email_limit_min_error': 'Коротковат email! Хотя бы пять символов.',
+                'email_limit_max_error': 'Слишком много! Не больше ста символов.!',
+                'email_format_error': 'Не совсем валидный email! Поправить бы..',
+                'feedback_limit_min_error': 'Ну хотя бы пять буковок осильте!',
+                'feedback_limit_max_error': 'Слишком много! Прочту не более 6000 симфолов =)',
+                'name_limit_min_error': 'Имя одной буквой? Серьезно?',
+                'name_limit_max_error': 'Слишком много! 100 символов максимум.',
+                'required_field': 'Без этого поля не отправлюсь.'
+        } %}
+        {% for id, message in translations %}
+            <span id="{{ id }}">{{ message }}</span>
+        {% endfor %}
+    </div>
+    {# End translations #}
+
     <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
+    <script src="/app/public/vendor/parallax.js/parallax.min.js" type="text/javascript"></script>
     <script src="/app/public/vendor/fotorama/fotorama.js" type="text/javascript"></script>
     <script src="/app/public/vendor/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     <script>
-        $(function() {
+        document.addEventListener("content_loaded", function() {
             var scroller = new RR.pageScroller();
             var submitter = new RR.formSubmitter();
 
             $('#rr-gallery').fotorama();
-
-            var flasher = new RR.flasher();
-
-            {% for rainbowSection in ['fifth'] %}
-                {% for noticeLevel in ['success', 'error', 'warning', 'info'] %}
-                    {% for message in request.session.flashbag.get('rr.' ~ rainbowSection ~ '.' ~ noticeLevel) %}
-                        flasher.addMessage('{{ rainbowSection }}' ,'{{ noticeLevel }}', '{{ message }}');
-                    {% endfor %}
-                {% endfor %}
-            {% endfor %}
-
-            flasher.init();
         });
     </script>
 {% endspaceless %}

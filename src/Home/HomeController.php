@@ -4,6 +4,7 @@ namespace Home;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 use Varloc\Framework\Controller\Controller as FrameworkController;
@@ -17,7 +18,7 @@ class HomeController extends FrameworkController
      */
     public function mainPageAction(Request $request)
     {
-        return $this->render('layout.html.twig');
+        return $this->render('layout_ajax.html.twig');
     }
 
     /**
@@ -26,7 +27,11 @@ class HomeController extends FrameworkController
      */
     public function mainPageContentAction(Request $request)
     {
-        return $this->render('index.html.twig');
+        if ($request->isXmlHttpRequest()) {
+            return $this->render('index.html.twig');
+        } else {
+            return $this->render('layout.html.twig');
+        }
     }
 
     /**
@@ -86,7 +91,8 @@ class HomeController extends FrameworkController
         );
 
         if (!$request->isMethod('POST') || !$request->isXmlHttpRequest()) {
-            throw new MethodNotAllowedException('Only post ajax requests allowed to mailAjaxAction!');
+            // Force redirect back
+            return new RedirectResponse('/');
         }
 
         foreach ($request->request->all() as $fieldName => $value) {
@@ -112,13 +118,13 @@ class HomeController extends FrameworkController
 
             $responseData = array(
                 'success' => true,
-                'flasher_section' => 'rr.mail.success',
+                'flasher_section' => 'fifth',
                 'flasher_message' => 'rr.flash.mail_form.success',
             );
         } else {
             $responseData = array(
                 'success' => false,
-                'flasher_section' => 'rr.mail.error',
+                'flasher_section' => 'fifth',
                 'flasher_message' => 'rr.flash.mail_form.error',
                 'errors' => $errors,
             );

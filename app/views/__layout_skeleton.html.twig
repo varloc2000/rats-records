@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="description" content="Rats Records (RR) Studio - личное пространство varloc2000, студия звукозаписи, просто склад разных вещей.">
+    <meta name="keywords" content="Rats Records, RatsRecords, Rats-Records, RR, Studio, студия звукозаписи, varloc2000">
+    <meta name="author" content="varloc2000"/>
+
+    <title>Rats Records | Студия звукозаписи</title>
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    {% block header_styles '' %}
+    {% block header_scripts '' %}
+</head>
+
+<body class="loading">
+    <div class="content" id="rr-container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    {% block after_content '' %}
+
+    {% if local == false %}
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-40140733-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    {% endif %}
+</body>
+</html>

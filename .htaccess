@@ -2,6 +2,10 @@ AddDefaultCharset utf-8
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    # Force non www domain usage
+    RewriteCond %{HTTP_HOST} ^www.rats-records.by [NC]
+    RewriteRule ^(.*)$ http://rats-records.by/$1 [L,R=301,NC]
+
     # remove trailing slash
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 

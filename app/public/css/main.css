@@ -6182,44 +6182,54 @@ p, span, a, h1, h2, h3, label {
   ::-webkit-scrollbar-thumb:active {
     background-color: #ff6c00; } }
 
-.rr-header .rr-logo > span:after {
-  content: 'rats records'; }
-
-@media (max-width: 768px) {
+.rr-header {
+  padding: 0 1rem;
+  height: 56px;
+  background-color: #1B1414; }
   .rr-header .rr-logo > span:after {
-    content: 'rr'; } }
-
-.rr-header .rr-logo {
-  color: #ff6c00;
-  text-shadow: 2px 2px 0 #fff, 7px 5px 0 #070508;
-  font-weight: bold;
-  font-size: 4em;
-  line-height: 40px;
-  letter-spacing: -4px;
-  text-transform: uppercase;
-  text-decoration: none;
-  vertical-align: sub;
-  float: left; }
-  .rr-header .rr-logo:hover {
-    border: none; }
-  .rr-header .rr-logo span {
-    font-family: "FrederickatheGreat", Arial !important; }
-
-.rr-header .navbar-toggler {
-  padding: 0px;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 33px;
-  color: #fff;
-  background-color: transparent; }
-  .rr-header .navbar-toggler:active:focus, .rr-header .navbar-toggler:focus {
-    outline: none; }
-
-.rr-header li > a {
-  line-height: 40px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-family: 'Jura', Arial; }
+    content: 'rats records'; }
+  @media (max-width: 768px) {
+    .rr-header .rr-logo > span:after {
+      content: 'rr'; } }
+  .rr-header .rr-logo {
+    color: #ff6c00;
+    text-shadow: 2px 2px 0 #fff, 7px 5px 0 #070508;
+    font-weight: bold;
+    font-size: 4em;
+    line-height: 54px;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    vertical-align: sub;
+    float: left; }
+    .rr-header .rr-logo:hover {
+      border: none; }
+    .rr-header .rr-logo span {
+      font-family: "FrederickatheGreat", Arial !important; }
+  .rr-header .navbar-toggler {
+    padding: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 33px;
+    color: #fff;
+    background-color: transparent; }
+    .rr-header .navbar-toggler:active:focus, .rr-header .navbar-toggler:focus {
+      outline: none; }
+  .rr-header li {
+    padding: 0; }
+    .rr-header li a {
+      display: inline-block;
+      line-height: 46px;
+      padding: 5px 15px;
+      font-size: 18px;
+      -webkit-transition: background-color 100ms linear;
+      -moz-transition: background-color 100ms linear;
+      -o-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear; }
+      .rr-header li a:hover {
+        background-color: #FC3F4D;
+        color: #fff; }
 
 .rr-section {
   position: relative;
@@ -6257,10 +6267,10 @@ p, span, a, h1, h2, h3, label {
     .rr-section#first .rr-section-content {
       padding-top: 20vh;
       background-color: rgba(0, 0, 0, 0.2); }
-  .rr-section#second {
+  .rr-section#latest {
     height: auto;
     min-height: 100vh; }
-    .rr-section#second .rr-section-content {
+    .rr-section#latest .rr-section-content {
       padding: 0 0 50px; }
   .rr-section.separator {
     height: auto;
@@ -6273,7 +6283,7 @@ p, span, a, h1, h2, h3, label {
       padding: 10vh 7%;
       background-color: rgba(0, 0, 0, 0.6); }
       .rr-section.separator .rr-section-content p.content {
-        color: #FC717B;
+        color: #FF9CA3;
         font-family: SSM, Quoter; }
       .rr-section.separator .rr-section-content p.author {
         font-family: SSM, Quoter;
@@ -6293,7 +6303,12 @@ p, span, a, h1, h2, h3, label {
 .btn-orange {
   background-color: #ff6c00;
   border: 1px solid #ff6c00;
-  color: #fff; }
+  color: #fff;
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  -ms-transition: all 100ms linear;
+  transition: all 100ms linear; }
   .btn-orange .submit {
     display: inline-block; }
   .btn-orange .submitted {
@@ -6308,19 +6323,30 @@ p, span, a, h1, h2, h3, label {
   .btn-orange:active:focus, .btn-orange:focus {
     outline: none; }
 
+form .rr-error {
+  width: 100%;
+  color: #ff6c00;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  display: inline-block; }
+
 form input.rr-form-error, form textarea.rr-form-error {
   border-color: #D52100; }
+  form input.rr-form-error:focus, form textarea.rr-form-error:focus {
+    border-color: #D52100;
+    box-shadow: 0 0 10px #D52100 !important; }
 
-.border-right {
-  border-right: 1px solid #ffffff; }
-
-textarea#feedback {
+form textarea#feedback {
   height: 120px;
   resize: vertical; }
 
-input:focus, textarea:focus {
+form input:focus, form textarea:focus {
   color: #ff6c00;
-  box-shadow: none !important; }
+  box-shadow: 0 0 10px #ff6c00; }
+
+.border-right {
+  border-right: 1px solid #ffffff; }
 
 img.rr-promo {
   border-radius: 50%; }
@@ -6385,22 +6411,8 @@ img.rr-promo {
     .rr-footer .copyright .purple {
       background-color: rgba(81, 34, 180, 0.8); }
 
-.rr-icon {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  font-size: 16px;
-  -moz-osx-font-smoothing: grayscale; }
-
-.rr-icon.remove-circle:before {
-  content: "\e088"; }
-
-.rr-icon:empty {
-  width: 1em; }
+#rr-translations {
+  display: none; }
 
 /* Fotorama customization */
 .fotorama__active .fotorama__dot {
