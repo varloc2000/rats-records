@@ -1,24 +1,31 @@
+{#
+    Main page content template
+#}
 {% spaceless %}
+
+    {% include('_top_menu.html.twig') %}
+
     <div 
-        id="first" 
-        class="rr-section parallax-window" 
-        data-parallax="scroll" 
+        id="first"
+        class="rr-section" 
+        data-type="background"
+        data-speed="2"
+        data-direction="-"
         data-image-src="app/public/images/promo/1_sm.JPG"
     >
         <div class="rr-section-content text-center">
             <p class="content">
-                {# <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px"> #}
-                {# <img class="rr-promo" src="app/public/images/logo/logo 2.svg" title="RR" width="280px"> #}
+                <!-- <img class="rr-promo" src="app/public/images/main/ratty_velvet_bless.png" title="RR" width="230px"> -->
+                <!-- <img class="rr-promo" src="app/public/images/logo/logo 2.svg" title="RR" width="280px"> -->
             </p>
             <header>
                 <h3>
-                    Рады Вас видеть! Но не всех.
+                    <!-- Рады Вас видеть! Но не всех. -->
                 </h3>
             </header>
         </div>
+        {% include('_navbar.html.twig') %}
     </div>
-
-    {% include('_navbar.html.twig') %}
 
     <div id="latest" class="rr-section">
         <div class="rr-section-content">
@@ -27,7 +34,7 @@
     </div>
 
     <div class="rr-section separator separator-one">
-        <div class="rr-section-content">
+        <div class="rr-section-content tv">
             {%- include('_block_about.html.twig') -%}
         </div>
     </div>
@@ -39,7 +46,7 @@
     </div>
 
     <div class="rr-section separator separator-two">
-        <div class="rr-section-content">
+        <div class="rr-section-content tv">
             {%- include('_block_about_two.html.twig') -%}
         </div>
     </div>
@@ -50,8 +57,8 @@
         </div>
     </div>
 
-    <div id="fifth" class="rr-section">
-        <div class="rr-section-content">
+    <div id="fifth" class="rr-section separator">
+        <div class="rr-section-content tv">
             {%- include('_block_mail.html.twig') -%}
         </div>
     </div>
@@ -91,16 +98,5 @@
     </div>
     {# End translations #}
 
-    <script src="/app/public/js/smooth_scroll.js" type="text/javascript"></script>
-    <script src="/app/public/vendor/parallax.js/parallax.min.js" type="text/javascript"></script>
-    <script src="/app/public/vendor/fotorama/fotorama.js" type="text/javascript"></script>
-    <script src="/app/public/vendor/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script>
-        document.addEventListener("content_loaded", function() {
-            var scroller = new RR.pageScroller();
-            var submitter = new RR.formSubmitter();
-
-            $('#rr-gallery').fotorama();
-        });
-    </script>
+    <script src="/app/public/js/dist/content.min.js" type="text/javascript"></script>
 {% endspaceless %}

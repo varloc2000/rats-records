@@ -6182,62 +6182,101 @@ p, span, a, h1, h2, h3, label {
   ::-webkit-scrollbar-thumb:active {
     background-color: #ff6c00; } }
 
-.rr-header {
-  padding: 0 1rem;
-  height: 56px;
-  background-color: #1B1414; }
-  .rr-header .rr-logo > span:after {
-    content: 'rats records'; }
-  @media (max-width: 768px) {
-    .rr-header .rr-logo > span:after {
-      content: 'rr'; } }
-  .rr-header .rr-logo {
-    color: #ff6c00;
-    text-shadow: 2px 2px 0 #fff, 7px 5px 0 #070508;
-    font-weight: bold;
-    font-size: 4em;
-    line-height: 54px;
-    letter-spacing: -4px;
-    text-transform: uppercase;
-    text-decoration: none;
-    vertical-align: sub;
-    float: left; }
-    .rr-header .rr-logo:hover {
-      border: none; }
-    .rr-header .rr-logo span {
-      font-family: "FrederickatheGreat", Arial !important; }
-  .rr-header .navbar-toggler {
+.rr-top-menu {
+  padding: 0 20rem 0 1rem;
+  height: 70px;
+  box-shadow: inset 0 30px 36px -5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  -o-transition: all 100ms linear;
+  -ms-transition: all 100ms linear;
+  transition: all 100ms linear; }
+  .rr-top-menu.rr-top-menu-slim {
+    height: 56px;
+    padding: 0 1rem 0 1rem;
+    background-color: #000; }
+    .rr-top-menu.rr-top-menu-slim li a {
+      line-height: 46px;
+      font-size: 18px; }
+    .rr-top-menu.rr-top-menu-slim .rr-logo {
+      display: inline-block; }
+  .rr-top-menu::after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1; }
+  .rr-top-menu .rr-logo {
+    display: none; }
+  .rr-top-menu li {
+    padding: 0; }
+    .rr-top-menu li a {
+      display: inline-block;
+      line-height: 60px;
+      padding: 5px 15px;
+      font-size: 20px;
+      -webkit-transition: background-color 100ms linear;
+      -moz-transition: background-color 100ms linear;
+      -o-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+      transition: background-color 100ms linear; }
+      .rr-top-menu li a:hover {
+        background-color: #FC3F4D;
+        color: #fff; }
+  .rr-top-menu .navbar-toggler {
     padding: 0px;
     margin-top: 0;
     margin-bottom: 0;
     font-size: 33px;
     color: #fff;
     background-color: transparent; }
-    .rr-header .navbar-toggler:active:focus, .rr-header .navbar-toggler:focus {
+    .rr-top-menu .navbar-toggler:active:focus, .rr-top-menu .navbar-toggler:focus {
       outline: none; }
-  .rr-header li {
-    padding: 0; }
-    .rr-header li a {
-      display: inline-block;
-      line-height: 46px;
-      padding: 5px 15px;
-      font-size: 18px;
-      -webkit-transition: background-color 100ms linear;
-      -moz-transition: background-color 100ms linear;
-      -o-transition: background-color 100ms linear;
-      -ms-transition: background-color 100ms linear;
-      transition: background-color 100ms linear; }
-      .rr-header li a:hover {
-        background-color: #FC3F4D;
-        color: #fff; }
+
+.rr-header {
+  position: absolute;
+  padding: 0 1rem;
+  width: 100%;
+  height: 56px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100; }
+
+.rr-logo > span:after {
+  content: 'rats records'; }
+
+@media (max-width: 768px) {
+  .rr-logo > span:after {
+    content: 'rr'; } }
+
+.rr-logo {
+  color: #ff6c00;
+  text-shadow: 2px 2px 0 #fff, 7px 5px 0 rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  font-size: 4em;
+  line-height: 54px;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: sub;
+  float: left; }
+  .rr-logo:hover {
+    border: none; }
+  .rr-logo span {
+    font-family: "FrederickatheGreat", Arial !important; }
 
 .rr-section {
   position: relative;
-  background-color: #070508;
+  background-color: #070707;
   background-size: cover;
   background-position: 50% 0%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   width: 100%;
   height: 120vh;
   min-height: 400px;
@@ -6246,52 +6285,29 @@ p, span, a, h1, h2, h3, label {
   line-height: normal;
   text-align: center;
   font-family: arial, sans-serif; }
-  .rr-section .rr-section-content {
-    width: 100%;
-    height: 100%; }
-    .rr-section .rr-section-content.shadow {
-      box-shadow: 0 0 150px 30px #000 inset; }
-  .rr-section p.content {
-    font-size: 30px;
-    line-height: 42px; }
-    @media (max-width: 768px) {
-      .rr-section p.content {
-        font-size: 20px;
-        line-height: 30px; } }
-  .rr-section h3 {
-    margin: 20px 0 10vh; }
-  .rr-section#first {
-    height: 90vh;
-    background-image: url("../images/promo/1_sm.JPG");
-    background-attachment: initial; }
-    .rr-section#first .rr-section-content {
-      padding-top: 20vh;
+  .rr-section.separator {
+    height: 80vh; }
+    .rr-section.separator.separator-one {
+      background-color: #ff6c00; }
+    .rr-section.separator.separator-two {
+      background-color: #FC3F4D; }
+    .rr-section.separator .rr-section-content {
+      padding: 30vh 7%;
       background-color: rgba(0, 0, 0, 0.2); }
+  .rr-section#first {
+    height: 99vh;
+    background-image: url("../images/promo/1_sm.JPG"); }
+    .rr-section#first .rr-section-content {
+      padding-top: 20vh; }
   .rr-section#latest {
     height: auto;
     min-height: 100vh; }
     .rr-section#latest .rr-section-content {
       padding: 0 0 50px; }
-  .rr-section.separator {
-    height: auto;
-    min-height: 100px; }
-    .rr-section.separator.separator-one {
-      background-image: url("../images/promo/27_sm.jpg"); }
-    .rr-section.separator.separator-two {
-      background-image: url("../images/promo/31_sm.jpg"); }
-    .rr-section.separator .rr-section-content {
-      padding: 10vh 7%;
-      background-color: rgba(0, 0, 0, 0.6); }
-      .rr-section.separator .rr-section-content p.content {
-        color: #FF9CA3;
-        font-family: SSM, Quoter; }
-      .rr-section.separator .rr-section-content p.author {
-        font-family: SSM, Quoter;
-        color: #5DCFC3; }
   .rr-section#fifth {
     min-height: 100vh;
     height: 100%;
-    background-image: url("../images/promo/4_sm.JPG"); }
+    background-color: #FC3F4D; }
     .rr-section#fifth .rr-section-content {
       min-height: 100vh;
       padding: 20px;
@@ -6299,6 +6315,34 @@ p, span, a, h1, h2, h3, label {
       .rr-section#fifth .rr-section-content p.content {
         min-height: 340px;
         padding-top: 30px; }
+  .rr-section .rr-section-content {
+    width: 100%;
+    height: 100%; }
+    .rr-section .rr-section-content.shadow {
+      box-shadow: 0 0 140px 80px #000 inset; }
+    .rr-section .rr-section-content.tv p {
+      color: #ffffff;
+      text-shadow: 2px 0 rgba(255, 0, 0, 0.9), -2px 0 rgba(0, 0, 255, 0.9);
+      font-family: 'Jura'; }
+    .rr-section .rr-section-content.tv::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 33.33333%, rgba(255, 255, 255, 0.4) 33.33333%, rgba(255, 255, 255, 0.4) 66.66666%, rgba(255, 255, 255, 0.6) 66.66666%), linear-gradient(to right, rgba(255, 0, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 33.33333%, rgba(0, 255, 0, 0.7) 66.66666%, rgba(0, 0, 255, 0.7) 66.66666%);
+      background-size: 3px 3px;
+      mix-blend-mode: multiply; }
+    .rr-section .rr-section-content p.content {
+      font-size: 30px;
+      line-height: 42px; }
+      @media (max-width: 768px) {
+        .rr-section .rr-section-content p.content {
+          font-size: 20px;
+          line-height: 30px; } }
+    .rr-section .rr-section-content h3 {
+      margin: 20px 0 10vh; }
 
 .btn-orange {
   background-color: #ff6c00;
@@ -6347,9 +6391,6 @@ form input:focus, form textarea:focus {
 
 .border-right {
   border-right: 1px solid #ffffff; }
-
-img.rr-promo {
-  border-radius: 50%; }
 
 .rr-footer {
   position: relative;

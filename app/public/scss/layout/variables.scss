@@ -5,6 +5,8 @@ $fa-font-path: "./../vendor/font-awesome/fonts";
 //** Load fonts from this directory.
 $icon-font-path: "./../vendor/bootstrap/fonts/";
 
+$pixel-size: 3px;
+
 $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
@@ -17,6 +19,7 @@ $brand-primary: #5122B4;
 $brand-danger: #D52100;
 $brand-success: #6AA63B;
 $brand-orange: #ff6c00;
+$brand-select: #56BBC6;
 
 $link-color: #ffffff;
 $link-hover-color: $brand-orange;
